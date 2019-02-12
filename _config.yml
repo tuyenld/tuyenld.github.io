@@ -24,6 +24,8 @@ name                     : "tuyenld"
 description              : "Welcome to my world."
 url                      : "https://crushcoding.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
+# https://cloudinary.com/blog/the_holy_grail_of_image_optimization_or_balancing_visual_quality_and_file_size
+cloudinaryurl            : "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/"
 repository               : "tuyenld/tuyenld.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : true # true, false (default)
@@ -102,7 +104,7 @@ social:
 analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : UA-131544135-1
+    tracking_id          : UA-133437467-1
     anonymize_ip         : # true, false (default)
 
 

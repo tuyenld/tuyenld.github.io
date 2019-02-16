@@ -31,6 +31,8 @@ I see the name of flash chip is the same, so I didn't checked datasheet for comp
 
 Secondly, you need to choose OpenWRT firmware.
 Why I used openwrt-18.06.1-ramips-mt76x8-tl-**wr841n-v13**-squashfs-sysupgrade instead of openwrt-18.06.1-ramips-mt76x8-tl-**wr840n-v5**-squashfs-sysupgrade?
+
+
 Because it used the same CPU and different in flash and RAM chip.
 
 | Description | [TP-LINK TL-WR841N v13.x](https://wikidevi.com/wiki/TP-LINK_TL-WR841N_v13.x) | [TP-LINK TL-WR840N v5](https://wikidevi.com/wiki/TP-LINK_TL-WR840N_v5) |
@@ -51,7 +53,7 @@ No `/overlay` will be mounted:
 If everything is good, it should be like this:
 <script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_good.log"></script>
 
-Now, you have new flash chip and suitable firware, but you can not use this firware to program new flash chip. Because **RAW** flash need more partion than firmware such as: bootloader and art. See more in (here)[https://openwrt.org/docs/techref/flash.layout]
+Now, you have new flash chip and suitable firware, but you can not use this firware to program new flash chip. Because **RAW** flash need more partion than firmware such as: bootloader and art. See more in [here](https://openwrt.org/docs/techref/flash.layout)
 
 You can use bellow shell script to generate firmware for any flash with different capacity.
 <script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=create_new_firmware.sh"></script>

@@ -150,7 +150,13 @@ https://cloudinary.com/documentation/solution_overview#urls_and_endpoints
   <figcaption>Look at 580 x 300 getting some love.</figcaption>
 </figure> 
 
-<figure class="align-center">
-  <img src="{{ site.cloudinaryurl }}image-alignment-580x300.jpg" alt="">
-  <figcaption>Look at 580 x 300 getting some love.</figcaption>
-</figure> 
+## Auto generate jekyll post
+Y:\working\tuyenld.github.io\_config.yml
+
+D:\microsoft-window\2.Portable\Sublime Text Build 3143 x64\Data\Packages\Jekyll\Jekyll.sublime-settings
+
+D:\microsoft-window\2.Portable\Sublime Text Build 3143 x64\Data\Packages\User\insert_image.sublime-snippet
+
+Y:\working\tuyenld.github.io\crushcoding.sublime-project
+
+D:\microsoft-window\2.Portable\Sublime Text Build 3143 x64\Data\Packages\User\Jekyll Templates\default.yaml

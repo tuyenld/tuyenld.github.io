@@ -6,6 +6,8 @@ categories:
 tags: 
   - Em
 toc: false
+hidden: true
+exclude_from_search: true
 ---
 
 Khi anh viết những dòng này, không phải vì anh yếu đuối càng không phải vì anh cô đơn, chỉ đơn giản là anh muốn em hiểu anh hơn.

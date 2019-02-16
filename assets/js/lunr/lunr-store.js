@@ -14,6 +14,10 @@ var store = [
       {%- else -%}
         {%- assign teaser = site.teaser -%}
       {%- endif -%}
+      {% comment %} ldtuyen | tregiengchan {% endcomment %}
+      {% if doc.exclude_from_search %}
+        {% continue %}
+      {% endif %}
       {
         "title": {{ doc.title | jsonify }},
         "excerpt":

@@ -82,6 +82,10 @@ bundle _1.15_ exec jekyll build
 
 # Production
 JEKYLL_ENV=production bundle _1.15_ exec jekyll serve 
+
+# Debug, verbose
+JEKYLL_ENV=production bundle _1.15_ exec jekyll serve  -V
+
 ```
 
 ------------------------------------

@@ -1,6 +1,6 @@
 ---
-title: nguoi-la-mai-thao-yen
-excerpt: "Dù có cố gắng đến thế nào, cô vẫn chơi vơi. Nơi đây sẽ không bao giờ dành cho cô."
+title: Người lạ - Mai Thảo Yên
+excerpt: "Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trổng trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô."
 categories:
   - Life
 tags: 

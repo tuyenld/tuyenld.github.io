@@ -154,9 +154,46 @@ https://cloudinary.com/documentation/solution_overview#urls_and_endpoints
 Y:\working\tuyenld.github.io\_config.yml
 
 D:\microsoft-window\2.Portable\Sublime Text Build 3143 x64\Data\Packages\Jekyll\Jekyll.sublime-settings
+```
+"jekyll_posts_path": "D:\\working\\tuyenld.github.io\\_posts",
+"jekyll_drafts_path": "D:\\working\\tuyenld.github.io\\_draft",
+```
 
 D:\microsoft-window\2.Portable\Sublime Text Build 3143 x64\Data\Packages\User\insert_image.sublime-snippet
+```
+<snippet>
+	<content><![CDATA[
+<figure class="align-center">
+  <img src="{{ site.cloudinaryurl }}${TM_FILENAME/(.+)\..+|.*/$1/:name}/${1:image}" alt="">
+  <figcaption>${2:caption}.</figcaption>
+</figure>
+$0
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>insert-image</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>text.html, text.html.markdown, source.json, text.html.textile</scope> -->
+</snippet>
+
+```
 
 Y:\working\tuyenld.github.io\crushcoding.sublime-project
+```
+
+```
+
 
 D:\microsoft-window\2.Portable\Sublime Text Build 3143 x64\Data\Packages\User\Jekyll Templates\default.yaml
+```
+# default post
+---
+title: default
+excerpt: "Short content."
+categories:
+  - Uncategorized
+tags: 
+  - No tags
+toc: false
+---
+
+```

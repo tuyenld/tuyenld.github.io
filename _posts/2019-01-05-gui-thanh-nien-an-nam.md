@@ -2,7 +2,7 @@
 title: "Gửi thanh niên An Nam"
 excerpt: "Phụ lục \"Bản án chế độ thực dân Pháp\" do Nguyễn Ái Quốc soạn thảo năm 1925."
 categories:
-  - Định hướng tương lai
+  - Life
 tags: 
   - Nguyễn Ái Quốc
   - An Nam

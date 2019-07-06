@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://crushcoding.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://crushcoding.com/" rel="alternate" type="text/html" /><updated>2019-07-06T21:18:47+07:00</updated><id>https://crushcoding.com/</id><title type="html">I love you so much</title><subtitle>tuyenld's note
+</subtitle><author><name>Le Dinh-Tuyen</name><email>tuyenld.work@gmail.com</email></author><entry><title type="html">How to use Google Analytics API</title><link href="https://crushcoding.com/blog/how-to-use-google-analytics-api" rel="alternate" type="text/html" title="How to use Google Analytics API" /><published>2019-07-06T00:00:00+07:00</published><updated>2019-07-06T00:00:00+07:00</updated><id>https://crushcoding.com/blog/how-to-use-google-analytics-api</id><content type="html" xml:base="https://crushcoding.com/blog/how-to-use-google-analytics-api">&lt;p&gt;I want to show &lt;em&gt;pageview&lt;/em&gt; on my blog. One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Services Account&lt;/li&gt;
+  &lt;li&gt;Access Token&lt;/li&gt;
+  &lt;li&gt;Fresh Token&lt;/li&gt;
+  &lt;li&gt;OAuth 2.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do I need spend all my free time to understand these?&lt;/p&gt;
+
+&lt;p&gt;I don’t know where can I start, I just want to it as simple as possible.
+Using google API is not easy task for me in the first time, even it is several line of code. I tried to find a sample example on github page, but I failed. I can’t find any instruction one by one to do that. Therefore, I want to share with you how can I do that. Let’s see.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-setting-on-your-account&quot;&gt;1. Setting on your account&lt;/h2&gt;
+&lt;p&gt;In this step you need to find:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Your Profile ID: &lt;code class=&quot;highlighter-rouge&quot;&gt;profileID&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Service account&lt;/code&gt; private key (&lt;code class=&quot;highlighter-rouge&quot;&gt;KEY_FILEPATH&lt;/code&gt; *json file)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;11-add-a-services-account&quot;&gt;1.1 Add a &lt;em&gt;Services Account&lt;/em&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;1-goto-google-console&quot;&gt;1. Goto &lt;a href=&quot;https://console.developers.google.com/iam-admin/serviceaccounts?supportedpurview=project&quot;&gt;Google console&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;2-click-create-service-account-on-the-top-near-navigation-bar&quot;&gt;2. Click &lt;em&gt;Create service account&lt;/em&gt; on the top, near navigation bar.&lt;/h4&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-acc.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+&lt;h4 id=&quot;3-click-create-key-choose-json&quot;&gt;3. Click &lt;em&gt;CREATE KEY&lt;/em&gt;, choose &lt;em&gt;json&lt;/em&gt;&lt;/h4&gt;
+
+&lt;p class=&quot;info&quot;&gt;You are able to download this private json file only one time.&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/json-key-service-acc.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After finish, you will see something like this.&lt;/p&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-finish.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;12-add-the-services-account-to-your-google-analytics-service&quot;&gt;1.2 Add the &lt;em&gt;Services Account&lt;/em&gt; to your &lt;em&gt;Google analytics service&lt;/em&gt;&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-goto-google-analytics&quot;&gt;1. Goto &lt;a href=&quot;https://analytics.google.com/analytics/web/&quot;&gt;Google analytics&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;it will redirect you to link like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://analytics.google.com/analytics/web/#/a133437467w193286472p188904382/admin/account/settings
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/a[6 digits]w[8 digits]p[8 digits]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The 8 digits which after the “p” are your profile ID. (in my case this is 188904382)&lt;/p&gt;
+
+&lt;h4 id=&quot;2-click-user-management&quot;&gt;2. Click &lt;em&gt;User Management&lt;/em&gt;&lt;/h4&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-google-api-service.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;3-click--on-the-top-to-add-service-account--click-add-users&quot;&gt;3. Click &lt;em&gt;+&lt;/em&gt; on the top to add &lt;em&gt;Service Account&lt;/em&gt; &amp;gt; Click &lt;em&gt;Add users&lt;/em&gt;&lt;/h4&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/click-plus-symbol-to-add-new-acc.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-your-email.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After finish, you will see something as following.&lt;/p&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-analytics-finish.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;2-using-ruby&quot;&gt;2. Using ruby&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'googleauth'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'google/apis/analytics_v3'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80
+&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ga:188904382'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Profile ID 
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'300daysAgo'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yesterday'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ga:pageviews'&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Metrics code
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ga:pagePath'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Dimensions
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# The scope for the OAuth2 request.
+&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;SCOPE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://www.googleapis.com/auth/analytics.readonly'&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://www.googleapis.com/analytics/v3/data/ga'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# The location of the key file with the key json data.
+&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;KEY_FILEPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'crushcoding-163b3f074083.json'&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;authorizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Auth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ServiceAccountCredentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;make_creds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;json_key_io: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;KEY_FILEPATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;scope: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SCOPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fetch_access_token!&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Apis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;AnalyticsV3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;AnalyticsService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;authorization&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorizer&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;post_stats&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_ga_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;dimensions: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;post_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sample output as following.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;20
+/life/nguoi-la-mai-thao-yen.html
+1
+/life/nguoi-la-mai-thao-yen/
+13
+/openwrt/2019/02/11/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html
+1
+/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-using-python&quot;&gt;3. Using python&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# service-account.py
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;httplib2&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;oauth2client.service_account&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServiceAccountCredentials&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ga:188904382'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Profile ID 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'300daysAgo'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'yesterday'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ga:pageviews'&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Metrics code
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ga:pagePath'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Dimensions
+# The scope for the OAuth2 request.
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SCOPE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://www.googleapis.com/auth/analytics.readonly'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://www.googleapis.com/analytics/v3/data/ga'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# The location of the key file with the key json data.
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KEY_FILEPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'crushcoding-163b3f074083.json'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Defines a method to get an access token from the ServiceAccount object.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServiceAccountCredentials&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_json_keyfile_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;KEY_FILEPATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SCOPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;access_token&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Sample: https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382
+# &amp;amp;start-date=30daysAgo&amp;amp;end-date=yesterday&amp;amp;metrics=ga%3Apageviews
+# &amp;amp;dimensions=ga%3ApagePath&amp;amp;access_token=ya29.Gxxx
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'?ids='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;start-date='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; \
+			&lt;span class=&quot;s&quot;&gt;'&amp;amp;end-date='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;metrics='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; \
+			&lt;span class=&quot;s&quot;&gt;'&amp;amp;dimensions='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;access_token={0}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sample output as following.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;          ['/about.html', '2'],
+          ['/archive.html', '5'],
+          ['/archive.html?tag=An+Nam', '1'],
+          ['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],
+          ['/archive.html?tag=Văn+học', '7'],
+          ['/archive.html?tag=life', '1'],
+          ['/categories/', '18'],
+          ['/header-image', '4'],
+          ['/kkk', '3'],
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;4-some-error-you-may-encounted&quot;&gt;4. Some error you may encounted&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error: Authorization failed. Server message: { &quot;error&quot;: &quot;invalid_grant&quot;, &quot;error_description&quot;: &quot;Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values and use a clock with skew to account for clock differences between systems.&quot; }
+             Error: Run jekyll build --trace for more information.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;I ues on Ubuntu on my Virtual box and Ubuntu time is not synced. Solution is update time on Ubuntu: &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo ntpdate time.nist.gov&lt;/code&gt;`&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;5-references&quot;&gt;5. References&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ga-dev-tools.appspot.com/query-explorer/?csw=1&quot;&gt;Google Query Explorer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://martinfowler.com/articles/command-line-google.html&quot;&gt;Martin Fowler blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://z3nth10n.net/en/2019/03/22/jekyll-ga-v2-plugin-to-get-google-analytics-data-into-your-site&quot;&gt;Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Le Dinh-Tuyen</name><email>tuyenld.work@gmail.com</email></author><category term="blog" /><category term="jekyll" /><summary type="html">Using Google Analytics on ruby and python.</summary></entry><entry><title type="html">Người lạ - Mai Thảo Yên</title><link href="https://crushcoding.com/life/nguoi-la-mai-thao-yen" rel="alternate" type="text/html" title="Người lạ - Mai Thảo Yên" /><published>2019-03-22T00:00:00+07:00</published><updated>2019-03-22T00:00:00+07:00</updated><id>https://crushcoding.com/life/nguoi-la-mai-thao-yen</id><content type="html" xml:base="https://crushcoding.com/life/nguoi-la-mai-thao-yen">&lt;p&gt;Tôi bắt gặp &lt;strong&gt;Người lạ&lt;/strong&gt; trong bài giới thiệu &lt;a href=&quot;https://tuoitre.vn/van-hoc-tuoi-20-lan-thu-6-nguoi-tre-tren-duong-toi-di-tim-toi-20181224093228485.htm&quot;&gt;Văn học tuổi 20 của báo Tuổi trẻ&lt;/a&gt;.
+Ở cái tuổi của tác giả và của tôi thì những suy nghĩ về cuộc đời, những câu hỏi không tìm được lời giải khá là rõ nét. Câu chuyện bắt đầu với một sự chơi vơi, sự hoài nghi để rồi kết thúc trong một khoảng không vô định, cô đơn đến nao lòng.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Dù sao, chính An đã chọn đưa mình đến đây, ngồi ở những bậc thang đá này và mơ về biển khơi. Cái giá phải đánh đổi dù sao cũng vừa vặn và công bằng so với sự tham lam của cô.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Trước khi đọc cuốn sách này, tôi cứ nghĩ du học là thiên đường, khi nghe những lời tâm sự của An - mà có thể cũng là chính của tác giả thì mới thấu hiểu phần nào của sống của những du học sinh như An. Đó hẳn phải là một sự hi sinh, chịu đựng rất lớn, nhưng như theo cách cô nói - dù sao nó cũng công bằng với những ước mơ hoài bão của cô.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nhưng buổi chiều hôm nay, khi chỉ còn An một mình trên bậc thang này, khi thanh âm rõ ràng nhất không đến từ tiếng sóng nước đập vào bờ cuồn cuộn, mà đến từ sự trống trải trong lòng, cô lại thấy mình như một chiếc thuyền đã rời bến. Ở giữa khơi xa, con thuyền này cần những ngọn gió sau lưng, sóng biển bốn bề, và cảm giác lao về phía trước để thấy mình toàn vẹn. Kể cả khi không rõ điểm đến là đâu. Kể cả khi có thể chẳng có điểm đến nào dành cho nó. An có thể đi rất nhiều chân trời, ngắm nhìn cuộc sống muôn màu ở những bến cảng khác nhau, nhưng về sau cùng, cô vẫn cần có biển cả, cần có sự lênh đênh này để nhìn thấy chính mình. Có lẽ kiếp sống này buộc An phải trở thành một người lạ ở chính quê hương cô, ở cả thành phố đã chứng kiến cô trưởng thành, trầy trật, va vấp. Mà cũng có lẽ, nếu người ta có một thứ gọi là bản chất, thì bản chất của An chình là chiếc thuyền đó.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Đã bao giờ bạn cảm thấy cô đơn trên chính ngôi nhà của mình, lạc lõng giữa thành phố đầy bon chen, phiền muộn? Và nếu muốn biến mình thành một con thuyền, có thể bơi ra biển lớn, để một lần được hiểu về bản chất của chính mình, bạn có đủ dũng cảm để ra đi? Bạn có đủ nghị lực để vượt qua được sự cô đơn sắp đến?&lt;/p&gt;
+
+&lt;p&gt;Sẽ chẳng có một câu trả lời nào hoàn hảo, cũng không ai trả lời cho bạn, hoặc nếu có ai đó cho bạn lời khuyên thì chắc gì đã đúng với bạn? Bạn là duy nhất, vậy nên hãy tự tìm câu trả lời cho chính mình. Và khi đã lựa chọn rồi thì cũng đừng quay lại, chẳng có quyết định nào là hoàn toàn đúng hay sai cả. Cuộc sống không đơn giản như vậy, cũng không thể rạch ròi trắng-đen, đúng-sai. Hãy trân quý điều đó vì cuộc sống muôn màu. Điều này có vẻ đi ngược lại thế giới của máy tính, khi chúng ta chỉ có những bit 1 và 0, thế giới của máy tính thật buồn tẻ và đơn giản, còn cuộc sống của chúng ta thì không.&lt;/p&gt;</content><author><name>Le Dinh-Tuyen</name><email>tuyenld.work@gmail.com</email></author><category term="Văn học" /><summary type="html">Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trống trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô.</summary></entry><entry><title type="html">Upgrade flash chip on TP-Link from 4mb to 8mb</title><link href="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb" rel="alternate" type="text/html" title="Upgrade flash chip on TP-Link from 4mb to 8mb" /><published>2019-02-11T00:00:00+07:00</published><updated>2019-02-11T00:00:00+07:00</updated><id>https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb</id><content type="html" xml:base="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb">&lt;h2 id=&quot;1-pre-requirement&quot;&gt;1. Pre-requirement&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;New flash chip: I used Winbond 8MiB GD25Q64CSIG&lt;/li&gt;
+  &lt;li&gt;Soldering iron: desolder old flash chip and re-solder new flash chip&lt;/li&gt;
+  &lt;li&gt;ROM programer and IC socket: I am using CH-341A (~ 5$)&lt;/li&gt;
+  &lt;li&gt;One PC/Laptop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-lets-do-it&quot;&gt;2. Let’s do it&lt;/h2&gt;
+&lt;h3 id=&quot;21-desolder-old-flash-chip&quot;&gt;2.1 Desolder old flash chip&lt;/h3&gt;
+&lt;p&gt;Hot air soldering station is ideally suited for desoldering flash. If you not, you can follow this video to do this.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/nZGEtpECPQY&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h3 id=&quot;22-program-new-flash-chip&quot;&gt;2.2 Program new flash chip&lt;/h3&gt;
+&lt;p&gt;Firstly, you need to choose new flash chip you want to replace. Why I chose &lt;code class=&quot;highlighter-rouge&quot;&gt;Winbond GD25Q64CSIG&lt;/code&gt; for replacement, see table bellow:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Original&lt;/th&gt;
+      &lt;th&gt;Mod&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;flash&lt;/td&gt;
+      &lt;td&gt;GigaDevice GD25Q32B (4MB)&lt;/td&gt;
+      &lt;td&gt;Winbond GD25Q64CSIG (8MB)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;firmware&lt;/td&gt;
+      &lt;td&gt;TL-WR840N(VN)_V5_170517&lt;/td&gt;
+      &lt;td&gt;openwrt-18.06.1-ramips-mt76x8-tl-wr841n-v13-squashfs-sysupgrade&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I see the name of flash chip is the same, so I didn’t checked datasheet for compatible.&lt;/p&gt;
+
+&lt;p&gt;Secondly, you need to choose OpenWRT firmware.
+Why I used openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr841n-v13&lt;/strong&gt;-squashfs-sysupgrade instead of openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr840n-v5&lt;/strong&gt;-squashfs-sysupgrade?&lt;/p&gt;
+
+&lt;p&gt;Because it used the same CPU and different in flash and RAM chip.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;https://wikidevi.com/wiki/TP-LINK_TL-WR841N_v13.x&quot;&gt;TP-LINK TL-WR841N v13.x&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a href=&quot;https://wikidevi.com/wiki/TP-LINK_TL-WR840N_v5&quot;&gt;TP-LINK TL-WR840N v5&lt;/a&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CPU&lt;/td&gt;
+      &lt;td&gt;MediaTek MT7628NN (580MHz)&lt;/td&gt;
+      &lt;td&gt;MediaTek MT7628NN @575MHz&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RAM&lt;/td&gt;
+      &lt;td&gt;Winbond W9751G6JB-25 (64MB)&lt;/td&gt;
+      &lt;td&gt;ESMT M14D5121632A (64MB)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Flash&lt;/td&gt;
+      &lt;td&gt;GigaDevice GD25Q64CSIG (8MB)&lt;/td&gt;
+      &lt;td&gt;GigaDevice GD25Q32B (4MB)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Note!&lt;/strong&gt; You are able to use openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr840n-v5&lt;/strong&gt;-squashfs-sysupgrade with 8MB flash chip, your router still booting but you can not any configuration after reboot. You may got error &lt;code class=&quot;highlighter-rouge&quot;&gt;Your image is probably too big, leaving not enough space for jffs2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the first time, I faced this problem. I can not save any configuration after reboot. If you look at boot log, it read:
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_bad.log&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;No &lt;code class=&quot;highlighter-rouge&quot;&gt;/overlay&lt;/code&gt; will be mounted:
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_bad_no_overlay.log&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;If everything is good, it should be like this:
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_good.log&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, you have new flash chip and suitable firware, but you can not use this firware to program new flash chip. Because &lt;strong&gt;RAW&lt;/strong&gt; flash need more partion than firmware such as: bootloader and art. See more in &lt;a href=&quot;https://openwrt.org/docs/techref/flash.layout&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can use bellow shell script to generate firmware for any flash with different capacity.
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=create_new_firmware.sh&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;parameter&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;flash_size_in_MB&lt;/td&gt;
+      &lt;td&gt;new flash chip capacity&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;sysupgrade_OpenWRT&lt;/td&gt;
+      &lt;td&gt;OpenWRT image (firmware)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;art_file&lt;/td&gt;
+      &lt;td&gt;ART partion from original flash, the last 64k block of the chip no matter what the chip size.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;boot_loader&lt;/td&gt;
+      &lt;td&gt;bootloader, the first 128kB from original flash&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Output firmware&lt;/td&gt;
+      &lt;td&gt;sysupgrade_OpenWRT_dump.bin, you can use this to program your new flash chip&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;If you don’t want to use this script, you can create image by yourself. You may to need hex editor like &lt;a href=&quot;https://mh-nexus.de/en/hxd/&quot;&gt;HxDen&lt;/a&gt; to do this.&lt;/p&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/create_image_manual.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;New firmware layout&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;All file which I used in &lt;a href=&quot;https://drive.google.com/file/d/1kqXvFQYrolipvrrD3Rkv7J7JTZwgVHDn/view?usp=sharing&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;23-re-solder-new-flash-chip&quot;&gt;2.3 Re-solder new flash chip&lt;/h3&gt;
+&lt;p&gt;After use CH341A to program new flash chip, you can re-solder new flash chip on target board.&lt;/p&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Note!&lt;/strong&gt; If your board can not booting, don’t worry. You can use &lt;a href=&quot;https://www.ebay.com/itm/SOIC8-SOP8-Flash-Chip-IC-Test-Clip-Socket-Adapter-BIOS-CH341A-USB-Programmer-/372555847443&quot;&gt;Clip Socket Adapter&lt;/a&gt; to try program flash again with out desolder chip.&lt;/p&gt;
+&lt;h2 id=&quot;3-enjoy&quot;&gt;3. Enjoy&lt;/h2&gt;
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/software_status.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;Software with new flash chip (8MB).&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Note!&lt;/strong&gt; I used image come from &lt;strong&gt;TL-WR841N v13.x&lt;/strong&gt;, except for LED will not working, everything work well (Wi-Fi, Ethernet, Router feature).&lt;/p&gt;</content><author><name>Le Dinh-Tuyen</name><email>tuyenld.work@gmail.com</email></author><category term="TL-WR840N" /><summary type="html">How to upgrade flash chip on TPLink TL-WR840N v5.</summary></entry><entry><title type="html">Gửi thanh niên An Nam</title><link href="https://crushcoding.com/life/gui-thanh-nien-an-nam" rel="alternate" type="text/html" title="Gửi thanh niên An Nam" /><published>2019-01-05T00:00:00+07:00</published><updated>2019-01-05T00:00:00+07:00</updated><id>https://crushcoding.com/life/gui-thanh-nien-an-nam</id><content type="html" xml:base="https://crushcoding.com/life/gui-thanh-nien-an-nam">&lt;p&gt;Ông Đu-Me, nguyên toàn quyền Đông Dương đã viết:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Khi nước Pháp đến Đông Dương, thì dân tộc Việt Nam đã chín muồi để làm nô lệ”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Từ đó đến nay hơn một nửa thế kỷ đã trôi qua. Nhiều biến cố phi thường đã làm đảo lộn thế giới. Nhật-Bản đã đứng vào hàng đầu các cường quốc trên thể giới. Trung-Hoa đã làm cách mạng. Nga đã tống cổ lũ bạo chúa đi để trở thành một nước cộng hoà vô sản. Một luồng gió giải phóng mạnh mẽ đã làm cho các dân tộc bị áp bức vùng lên. Người Ai-rơ-lan, Ai-Cập, Triều-Tiên, Ấn-Độ, tất cả những người chiến bại hôm qua và nô lệ hôm nay đó, đương đấu tranh dũng cảm cho nền độc lập ngày mai của họ. &lt;strong&gt;Riêng người Việt Nam, thì vẫn cứ thế: sẵn sàng làm nô lệ.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hãy nghe đoạn văn khốn nạn này của một tên khách Việt Nam trong một bữa tiệc hai trăm người ăn, tổ chức ra để chiêu đãi bọn U-tơ-rây, Va-luy-dơ và bè lũ và để ngửi mùi bít tất thối của bọn “liên minh dân tộc” này. Anh chàng Việt Nam ấy đã không ngại bỏ ra 85 quan cho một bữa chè chén. Hắn đọc diễn văn tại bữa tiệc:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Tôi lấy làm tự hào được thay mặt cho toàn thể cử tọa nói lên tấm lòng tôn kính sâu sắc, niềm vui mừng và lòng biết ơn của chúng tôi đối với các vị. Đối với con mắt khâm phục của chúng tôi, các vị thật là tiêu biểu cho chính phủ của dân tộc Pháp vinh quang. Tôi không tìm ra dược danh từ nào đủ đẹp để nói lên cho thật đúng ý nghĩa của tư tưởng sâu kín trong chúng tôi, nhưng thưa các vị, các vị hãy tin ở tình gắn bó thuỷ chung, ở lòng trung thành, ở sự sùng bái của chúng tôi đối với nước Đại Pháp, là người đỡ đầu và bảo hộ, đã coi chúng tôi như con, không phân biệt mầu da và chủng tộc. Mỗi người của chúng tôi đều đã tự mình nhận thấy tất cả những ân huệ mà Nhà nước chí tôn và những vị đại diện cho nước Đại Pháp đã ban cho chúng tôi bằng cách áp dụng đúng đắn và sáng suốt những luật pháp rộng rãi và khoan hồng.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Trong đám tang viên toàn quyền Lông, ông N.K.V., tiến sĩ luật, tiến sĩ khoa chính trị và kinh tế, làm việc tại toà biện lý Sài Gòn, đã quả quyết rằng, nếu có thể phát biểu thay toàn thể nhân dân Đông Dương, thì ông sẽ đau đớn nói lên lời cảm tạ thiết tha đối với quan toàn quyền về tất cả những gì mà Ngài đã làm cho dân tộc Việt Nam. Rồi ông V. kêu to lên rằng:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Những người mà nhờ những biện pháp bao dung của Ngài, ngày nay đang đựơc cùng các vị đại diện của Nhà nước bảo hộ góp phần vào sự phồn vinh không ngừng tăng lên của xứ Đông Dương, những người ấy cảm tạ Ngài tự đáy lòng và sùng bái hình ảnh của Ngài. Kinh tế là vấn đề mà Ngài lo nghĩ đến nhiều nhất. Ngài đã muốn cho Đông Dương có đủ trang bị kinh tế để trở thành một nước Pháp thứ hai, một nước Pháp hùng cường ở Viễn Đông, một chi nhánh của nước Pháp Cộng hoà! Ngài đã đem hết tâm hồn, trí não vào sứ mệnh của Ngài là khai hoá cho một dân tộc bị ngăn cản trên con đường tiến bộ vì nhiều điều kiện lịch sử và khí hậu. Ngài là người chiến sỹ vô song của tiến bộ và sứ giả của văn minh…”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Còn ông Cao-Văn-Sen, kỹ sư, hội trưởng hội những người Đông dương tại Pháp, thì nói rằng việc ông Lông chết quá sớm là một cái tang cho Đông Dương. Rồi ông kết thúc bài điếu văn bằng những lời sau đây:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Thưa quan toàn quyền, chúng tôi chân thành thương tiếc Ngài vì đối với tất cả chúng tôi, Ngài là một ông chủ bao dung, khoan thứ như một người cha”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Từ việc trên, tôi xin kết luận rằng, nếu quả thật tất cả những người Việt Nam đều rạp mình sát đất như bè lũ tay sai ấy của chính quyền thì người Việt Nam có phải chịu số kiếp nô lệ, cũng là đáng đời!&lt;/p&gt;
+
+&lt;p&gt;Thanh niên ta cũng nên cần biết là hiện nay có hơn &lt;strong&gt;hai nghìn&lt;/strong&gt; thanh niên Trung-Hoa trên đất Pháp và độ &lt;strong&gt;năm vạn&lt;/strong&gt; ở châu Âu và châu Mỹ. Hầu hết những thanh niên ấy đều đã tốt nghiệp Hán văn và tất cả đang là sinh viên - công nhân. Còn chúng ta, thì chúng ta có những sinh viên được học bổng và những sinh viên thường, nhờ ơn của nhà nước hay tiền của cha mẹ (hại thay, &lt;strong&gt;hai cái nguồn đấy đều không bao giờ cạn cả&lt;/strong&gt;), mà đang dành một nửa thì giờ vào các việc… &lt;strong&gt;chơi bi-a&lt;/strong&gt;, một nửa của nửa thì giờ còn lại để đến các chốn ăn chơi; số thì giờ còn lại, mà ít khi còn lắm, thì để vào trường đại học hoặc trường trung học. Nhưng sinh viên - công nhân Trung Quốc thì lại không có mục đích nào khác hơn là nhằm &lt;strong&gt;thực sự chấn hưng nền kinh tế nước nhà&lt;/strong&gt;; và họ theo châm ngôn:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Sinh sống bằng lao động của bản thân và vừa học hỏi vừa lao động”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Họ đã làm như thế này: vừa đặt chân lên đất nước người là tất cả những người có năng khiếu giống nhau và cùng muốn học một nghề thì tập hợp lại thành nhóm để vận động xin việc với bọn chủ. Khi được nhận vào xưởng thợ hay nhà máy thì cố nhiên là họ bắt đầu bằng cách học việc, rồi sau trở thành thợ.&lt;/p&gt;
+
+&lt;p&gt;Đối với nhiều người đã được nuôi dưỡng trong cảnh giàu sang và được gia đình chiều chuộng, thì làm những viêc nặng nhọc là một điều gian khổ. Nếu họ không có một quyết tâm vững chắc, không được một sức mạnh tinh thần phi thường thúc đẩy thì phần lớn đã phải chùn bước.&lt;/p&gt;
+
+&lt;p&gt;Nhưng cho tới nay tất cả vẫn tiếp tục làm việc. Một trở lực thứ hai là ngôn ngữ bất đồng, họ đã khắc phục được trở lực ấy nhờ biết lợi dụng khiếu quan sát, cái khiếu gần như là một bản năng đặc biệt của những người Viễn đông chúng ta. Nếu họ không hiểu được hay hiểu một cách khó khăn những lời chủ họ nói, thì họ chăm chú quan sát những cái mà chủ chỉ cho họ.&lt;/p&gt;
+
+&lt;p&gt;Họ kiếm không được bao nhiêu tiền. Với số tiền công ít ỏi, trước hết họ phải tính sao cho đủ sống. Và, họ coi việc không xin tiền chính phủ, không xin tiền gia đình là &lt;strong&gt;một vấn đề danh dự&lt;/strong&gt;. Sau nữa, tuỳ theo số tiền kiếm được họ trích một phần để đóng vào quỹ tương tế do họ lập ra. Quỹ này nhằm hai mục đích:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Giúp đỡ những sinh viên đau ốm có giấy chứng nhận của thầy thuốc, và những sinh viên thất nghiệp có giấy chứng nhận của chủ.&lt;/li&gt;
+  &lt;li&gt;Trợ cấp một số tiền trong một năm cho tất cả những người mới học nghề xong để giúp họ bổ túc nghiệp vụ.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lao động ở nước nào, họ cũng xuất bản ở đấy một tờ tạp chí (luôn luôn là do sinh viên - công nhân đóng góp). Tạp chí ấy viết bằng chữ Hán, cung cấp tin tức của Tổ quốc và đăng những vấn đề lớn trên thế giới, v.v… Tạp chí dành một mục cho độc giả trao đổi những việc bổ ích cho việc học nghề của họ, báo cho nhau biết sự tiến bộ của từng người, khuyên nhủ và động viên nhau. Ban ngày họ làm việc, ban đêm họ học tập.&lt;/p&gt;
+
+&lt;p&gt;Kiên trì, quyết tâm và đoàn kết như thế, các “ông chủ trẻ tuổi” của chúng ta chắc chắn sẽ đạt mục đích. &lt;strong&gt;Với một đạo quân 50.000 công nhân dũng cảm đáng khâm phục, lại được đào tạo trong kỷ luật và kỹ thuật hiện đại&lt;/strong&gt;, thì không bao lâu nữa, Trung Quốc sẽ có địa vị trong hàng các cường quốc công nghiệp và thương nghiệp thế giới.&lt;/p&gt;
+
+&lt;p&gt;Ở Đông Dương, &lt;strong&gt;chúng ta có đủ tất cả những cái mà một dân tộc có thể mong muốn&lt;/strong&gt; như: hải cảng, hầm mỏ, đồng ruộng mênh mông, rừng rú bao la; chúng ta có những người lao động khéo léo và cần cù.&lt;/p&gt;
+
+&lt;p&gt;Nhưng chúng ta thiếu tổ chức và thiếu người tổ chức! Bởi thế công nghiệp và thương nghiệp của chúng ta là một con số không. Thế thì thanh niên của ta đang làm gì? Nói ra thì buồn, buồn lắm: &lt;strong&gt;Họ không làm gì cả&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Những thanh niên không có phương tiện thì không dám rời quê nhà; những người có phương tiện thì lại chìm ngập trong sự biếng nhác; còn những kẻ đã xuất dương thì chỉ nghĩ đến việc thoả mãn tính tò mò của tuổi trẻ mà thôi!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hỡi Đông Dương đáng thương hại! Người sẽ chết mất, nếu đám thanh niên già cỗi của Người không sớm hồi sinh.&lt;/p&gt;
+
+&lt;p&gt;– 1925&lt;/p&gt;
+
+&lt;p&gt;(Phụ lục Bản án chế độ thực dân Pháp, nguyên tác tiếng Pháp Le Procès de la Colonisation Francaise, Librairie du Travail, Paris 1925, bản dịch tiếng Việt của xnb Sự Thật, Hà Nội 1960)&lt;/p&gt;
+
+&lt;p&gt;Nguồn: &lt;a href=&quot;http://www.talawas.org/talaDB/showFile.php?res=1569&amp;amp;rb=0504&quot;&gt;http://www.talawas.org/talaDB/showFile.php?res=1569&amp;amp;rb=0504&lt;/a&gt;&lt;/p&gt;</content><author><name>Le Dinh-Tuyen</name><email>tuyenld.work@gmail.com</email></author><category term="Văn học" /><summary type="html">Phụ lục &quot;Bản án chế độ thực dân Pháp&quot; do Nguyễn Ái Quốc soạn thảo năm 1925.</summary></entry></feed>

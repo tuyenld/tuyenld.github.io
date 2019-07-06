@@ -1,4 +1,11 @@
 <!-- start custom comments snippet -->
-<div id="commento"></div>
-<script src="https://cdn.commento.io/js/commento.js"></script>
+{%- if page.layout == "article" -%}
+	<script src="https://utteranc.es/client.js"
+	        repo="tuyenld-work/tuyenld-work.github.io"
+	        issue-term="pathname"
+	        theme="github-light"
+	        crossorigin="anonymous"
+	        async>
+	</script>
+{%- endif -%}
 <!-- end custom comments snippet -->

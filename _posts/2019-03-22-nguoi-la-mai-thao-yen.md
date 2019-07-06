@@ -1,14 +1,12 @@
 ---
 title: Người lạ - Mai Thảo Yên
-excerpt: "Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trổng trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô."
+excerpt: "Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trống trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô."
 categories:
   - Life
 tags: 
   - Văn học
 toc: false
 ---
-
-Lẽ ra, blog được sinh ra để chia sẻ những vấn đề dành cho dân kỹ thuật. Tại mấy hôm nay đang vướng vấn đề liên quan đến [Device tree](https://elinux.org/Device_Tree_Reference) trong Linux mà chưa giải quyết được, khi mình hiểu rõ thằng này thì sẽ viết ra cho mọi người tiết kiệm thời gian, còn giờ thì chưa.
 
 
 Tôi bắt gặp **Người lạ** trong bài giới thiệu [Văn học tuổi 20 của báo Tuổi trẻ](https://tuoitre.vn/van-hoc-tuoi-20-lan-thu-6-nguoi-tre-tren-duong-toi-di-tim-toi-20181224093228485.htm).

@@ -4,8 +4,7 @@ excerpt: "Phụ lục \"Bản án chế độ thực dân Pháp\" do Nguyễn Á
 categories:
   - Life
 tags: 
-  - Nguyễn Ái Quốc
-  - An Nam
+  - Văn học
 toc: false
 ---
 

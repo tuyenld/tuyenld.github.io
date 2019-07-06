@@ -1,6 +1,6 @@
 ---
-title: Upgrade flash chip on TPlink-TL-WR840N v5 from 4mb to 8mb
-excerpt: "How to upgrade flash chip on TPLink TL-WR840N."
+title: Upgrade flash chip on TP-Link from 4mb to 8mb
+excerpt: "How to upgrade flash chip on TPLink TL-WR840N v5."
 categories:
   - OpenWRT
 tags: 
@@ -8,17 +8,17 @@ tags:
 ---
 
 
-# 1. What you need before begin
+## 1. Pre-requirement
 * New flash chip: I used Winbond 8MiB GD25Q64CSIG
 * Soldering iron: desolder old flash chip and re-solder new flash chip
 * ROM programer and IC socket: I am using CH-341A (~ 5$)
 * One PC/Laptop
 
-# 2. Let's start
-## 2.1 Desolder old flash chip
+## 2. Let's do it
+### 2.1 Desolder old flash chip
 Hot air soldering station is ideally suited for desoldering flash. If you not, you can follow this video to do this.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nZGEtpECPQY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-## 2.2 Program new flash chip
+### 2.2 Program new flash chip
 Firstly, you need to choose new flash chip you want to replace. Why I chose `Winbond GD25Q64CSIG` for replacement, see table bellow:
 
 | Description |          Original         |                               Mod                               |
@@ -75,12 +75,12 @@ If you don't want to use this script, you can create image by yourself. You may 
 </figure>
 
 All file which I used in [here](https://drive.google.com/file/d/1kqXvFQYrolipvrrD3Rkv7J7JTZwgVHDn/view?usp=sharing)
-## 2.3 Re-solder new flash chip
+### 2.3 Re-solder new flash chip
 After use CH341A to program new flash chip, you can re-solder new flash chip on target board.
 
 **Note!** If your board can not booting, don't worry. You can use [Clip Socket Adapter](https://www.ebay.com/itm/SOIC8-SOP8-Flash-Chip-IC-Test-Clip-Socket-Adapter-BIOS-CH341A-USB-Programmer-/372555847443) to try program flash again with out desolder chip.
 {: .notice--warning}
-# 3. Enjoy
+## 3. Enjoy
 <figure class="align-center">
   <img src="{{ site.cloudinaryurl }}2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/software_status.jpg" alt="">
   <figcaption>Software with new flash chip (8MB).</figcaption>

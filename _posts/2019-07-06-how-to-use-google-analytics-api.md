@@ -1,6 +1,6 @@
 ---
 title: How to use Google Analytics API
-excerpt: "Using Google Analytics on ruby and python."
+excerpt: "Using Google Analytics API on ruby and python."
 categories:
   - blog
 tags: 
@@ -200,4 +200,4 @@ Error: Authorization failed. Server message: { "error": "invalid_grant", "error_
 ## 5. References
 - [Google Query Explorer](https://ga-dev-tools.appspot.com/query-explorer/?csw=1)
 - [Martin Fowler blog](https://martinfowler.com/articles/command-line-google.html)
-- [Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site](https://z3nth10n.net/en/2019/03/22/jekyll-ga-v2-plugin-to-get-google-analytics-data-into-your-site)
+- [Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site - Jekyll static site](https://z3nth10n.net/en/2019/03/22/jekyll-ga-v2-plugin-to-get-google-analytics-data-into-your-site)

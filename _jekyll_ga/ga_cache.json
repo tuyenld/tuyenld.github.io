@@ -2,7 +2,7 @@
   "page-stats": {
     "/": {
       "pagePath": "/",
-      "pageviews": "152"
+      "pageviews": "162"
     }
   },
   "post-stats": {
@@ -12,7 +12,7 @@
     },
     "/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb": {
       "pagePath": "/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb",
-      "pageviews": "8"
+      "pageviews": "12"
     },
     "/life/nguoi-la-mai-thao-yen": {
       "pagePath": "/life/nguoi-la-mai-thao-yen",
@@ -20,16 +20,16 @@
     },
     "/blog/how-to-use-google-analytics-api": {
       "pagePath": "/blog/how-to-use-google-analytics-api",
-      "pageviews": "23"
+      "pageviews": "26"
     }
   },
   "site-stats": {
-    "pageviews": "213"
+    "pageviews": "230"
   },
   "headers": [
     {
       "name": "pageviews",
-      "value": "213",
+      "value": "230",
       "diff_value": null,
       "value_perc": null
     }

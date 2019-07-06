@@ -22,6 +22,13 @@ var store = [
         "teaser":null},
       
       {
+        "title": "Kinh nghiệm du lịch Brazil",
+        "excerpt":"Đặt tiêu đề cho hay vậy thôi, chứ mình có đi du lịch đâu, business đàng hoàng đấy chứ. Anh đã làm mọi thứ để không phải đi, vì anh biết rằng chuyến đó sẽ chẳng dễ dàng gì. Support xuyên đêm anh cũng đã thử, anh đã cố nghĩ...","categories": ["life"],
+        "tags": ["trip"],
+        "url": "https://crushcoding.com/life/brazil-co-don-truong-thanh",
+        "teaser":null},
+      
+      {
         "title": "How to use Google Analytics API",
         "excerpt":"I want to show pageview on my blog. One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product. Services Account Access Token Fresh Token OAuth...","categories": ["blog"],
         "tags": ["blog","jekyll"],

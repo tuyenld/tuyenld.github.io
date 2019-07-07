@@ -17,7 +17,7 @@ var store = [
       {
         "title": "Người lạ - Mai Thảo Yên",
         "excerpt":"Tôi bắt gặp Người lạ trong bài giới thiệu Văn học tuổi 20 của báo Tuổi trẻ. Ở cái tuổi của tác giả và của tôi thì những suy nghĩ về cuộc đời, những câu hỏi không tìm được lời giải khá là rõ nét. Câu chuyện bắt đầu với...","categories": ["Life"],
-        "tags": ["Văn học"],
+        "tags": ["Văn học","Schoolarship"],
         "url": "https://crushcoding.com/life/nguoi-la-mai-thao-yen",
         "teaser":null},
       

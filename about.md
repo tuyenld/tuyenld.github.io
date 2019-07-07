@@ -20,7 +20,7 @@ key: page-about
 
 <!-- ![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg) -->
 
-Welcome to my world, where I wrote everything about my felling, my experience and so on. I am happy if you can find some helpful information.
+I am Le Dinh-Tuyen. Welcome to my world, where I wrote everything about my felling, my experience and so on. I am happy if you can find some helpful information.
 
 
 Contact me at:

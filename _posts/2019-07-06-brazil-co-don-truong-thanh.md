@@ -1,5 +1,5 @@
 ---
-title: Kinh nghiệm du lịch Brazil
+title: Brazil bâng quơ
 excerpt: "40 ngày gian nan, áp lực và vô định."
 categories:
   - life
@@ -8,14 +8,13 @@ tags:
 toc: false
 ---
 
-Đặt tiêu đề cho hay vậy thôi, chứ mình có đi du lịch đâu, business đàng hoàng đấy chứ.
 Anh đã làm mọi thứ để không phải đi, vì anh biết rằng chuyến đó sẽ chẳng dễ dàng gì. Support xuyên đêm anh cũng đã thử, anh đã cố nghĩ hết các trường hợp có thể xảy ra, nhưng không có kết quả. Và rồi cái gì đến cũng phải đến, anh phải đi mặc dù tâm trí đang đâu đâu, kế hoạch là gì anh không biết, anh chưa từng gặp phải tình huống như vậy. Và vì để chứng tỏ người Việt Nam mình không thua kém, anh đi.
 ^
 Cảm giác khó chịu đầu tiên là chuyên bay dài quá, phải mất 8h đồng hồ từ VN -> Qatar, và anh lại phải transit 8h nữa ở Qatar để rồi mất thêm 16h nữa từ Qatar -> Sao Paulo, vậy là anh sẽ mất 32h đồng hồ để đến nơi cần đến. Cảm giác đầu tiên khi đến Qatar là bọn nó làm ăn chuyên nghiệp hơn mình nhiều. Mình đang lơ ngơ không biết khu vực transit đi lối nào thì đã có ngay 1 thằng nhân viên ra hỏi và giúp đỡ tận tình. Tiếp đến là cần phải tìm nơi nào đó để ngủ. Ở Qatar có rất nhiều **Sleeping room** xếp dọc lối đi ra các cửa ra máy bay hoặc gần khu vực vệ sinh. Nếu không biết thì bạn có thể hỏi bất cứ nhân viên nào ở đó.
 ^
-Nào dậy đi, anh còn cần bay thêm 16h nữa. Đây là thời gian tù nhất, vì ngủ nhiều thì đau đầu, không ngủ thì không biết làm gì cả. Xem TV thì nó đặt gần quá, mình lại mắt sáng nên nhìn gần rất là khó chịu, có lẽ lần sau nên đi vé thương gia xem thế nào :laughing:
+Nào dậy đi, anh còn cần bay thêm 16h nữa. Đây là thời gian tù nhất, vì ngủ nhiều thì đau đầu, không ngủ thì không biết làm gì cả. Xem TV thì nó đặt gần quá, mắt mình lại 11/10 nên nhìn gần rất là khó chịu, có lẽ lần sau nên đi vé thương gia xem thế nào :laughing:
 ^
-Thôi thì trầy trật mãi cũng đến Sao Paulo, một thành phố anh được nghe nói là đầy nguy hiểm. Tuy nhiên, anh đâu có tâm trí để ý đến điều đó. Cái làm anh suy nghĩ là làm sao cho xong việc còn về. Khó khăn mới chỉ bắt đầu, tuần đầu tiên anh đến chỗ khách hàng vài lần, không  tìm thấy lỗi và câu chuyện còn dài lắm. Dự định của anh đầu tiên là 14 ngày, nhưng phải đến 42 ngày anh mới được về nhưng mới chỉ hoàn thành 70% công việc.
+Thôi thì trầy trật mãi cũng đến Sao Paulo, một thành phố anh được nghe nói là đầy nguy hiểm. Tuy nhiên, anh đâu có tâm trí để ý đến điều đó. Cái làm anh suy nghĩ là làm sao cho xong việc còn về. Khó khăn mới chỉ bắt đầu, tuần đầu tiên anh đến chỗ khách hàng vài lần, không tìm thấy lỗi và câu chuyện còn dài lắm. Dự định của anh đầu tiên là 14 ngày, nhưng phải đến 42 ngày anh mới được về nhưng mới chỉ hoàn thành 70% công việc.
 ^
 Anh có tuyệt vọng không?
 > Có.
@@ -35,9 +34,9 @@ Chuyến đi này có phải nằm trong dự định của anh?
 ^
 Dù sao, anh cũng nhận ra được một điều: **Nếu không có một quyết tâm vững vàng, một mục đích xác định, và đi đến cùng tới giấc mơ đó** thì chắc chắn anh sẽ gục ngã, sẽ buông xuôi. Hành trình tìm kiếm và thực hiện giấc mơ chưa bao giờ và sẽ không bao giờ là dễ dàng cả. Và anh cần phải khắc sâu vào tiềm thức mình điều đó. Thà để anh chết trên con đường đi tìm giấc mơ của mình hơn là chết trong những lo sợ mà không dám tìm kiếm nó.
 ^
-Ngoài ra, anh còn thấy sao bọn nó hiện đại hơn mình quá. Đường xá thì không bằng phẳng như mình đâu, mà toàn như kiểu đi trên núi. Nhưng anh chưa thấy người ta vượt đèn đỏ bao giờ, cũng không bóp còi inh ỏi như ở mình, ở đây họ hay dùng tay để ra hiệu :+1: nghĩa là ổn, mày sang đường đi. Hệ thống tàu điện ngầm của bọn này thì to kinh khủng, ở những đoạn nối giữa các line, phải đi bộ đến mấy tầng để chuyển sang line tiếp theo. Trên mỗi toa tàu đều có tiếng Bồ Đào Nha và tiếng Anh, nên sử dụng rất đơn giản.
+Anh bắt đầu nghĩ nhảm, anh thấy sao bọn nó hiện đại hơn mình quá. Đường xá thì không bằng phẳng như mình đâu, mà toàn như kiểu đi trên núi. Nhưng anh chưa thấy người ta vượt đèn đỏ bao giờ, cũng không bóp còi inh ỏi như ở mình, ở đây họ hay dùng tay để ra hiệu :+1: nghĩa là ổn, mày sang đường đi. Hệ thống tàu điện ngầm của bọn này thì to kinh khủng, ở những đoạn nối giữa các line, phải đi bộ đến mấy tầng để chuyển sang line tiếp theo. Trên mỗi toa tàu đều có tiếng Bồ Đào Nha và tiếng Anh, nên sử dụng rất đơn giản.
 ^
-Từ đây anh có một suy nghĩ:
+Ngồi trên tàu điện ngầm, một vài suy nghĩ cứ lẳn quẩn trong tâm trí:
 > Người ta sẵn sàng bỏ ra một số tiền lớn để mua một chiếc IPhone, nhưng có ai chấp nhận bỏ ra một số tiền lớn cho một bữa ăn.
 ^
 Dĩ nhiên là không, không ai muốn bỏ ra một khoản lớn cho nhu cầu cơ bản của mình cả. Mặc dù nhu cầu cơ bản là cái quan trọng hơn. Anh có thể chết nếu không ăn uống, nhưng nếu thiếu "Smart phone", anh vẫn sống ngon ơ. Trước đây, anh thường băn khoăn về con đường phía trước của mình. Anh muốn trở thành một gã nông dân, anh muốn sống trên núi được gần với thiên nhiên.

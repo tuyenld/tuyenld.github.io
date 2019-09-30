@@ -54,4 +54,11 @@ var store = [
         "excerpt":"Nguồn - thái người ta nói, cách tốt nhất để ăn một con voi, là ăn một miếng thịt của nó mỗi ngày. ngẫm lại chuyện học, chuyện làm, mình thấy đây là một lời khuyên có lý. tri thức thì bao la vô tận, không thể nào ngày một...","categories": ["Life"],
         "tags": ["No tags"],
         "url": "https://crushcoding.com/life/mot-nghe-cho-chin-con-hon-chin-nghe",
+        "teaser":null},
+      
+      {
+        "title": "Cứ đi rồi sẽ đến... [Chuyện đi học]",
+        "excerpt":"Source: Notes by Vy Vy Le Tháng 7… Tâm điểm của những ngày hè oi bức ở Hà Nội Tháng 7 của tôi hôm nay Nó không còn là tháng 7 của 7 năm về trước khi tất cả những đứa 18 tuổi phải vật lộn bước vào kỳ thi...","categories": ["Schoolarship"],
+        "tags": ["Schoolarship"],
+        "url": "https://crushcoding.com/schoolarship/cu-di-roi-se-den-chuyen-di-hoc",
         "teaser":null}]

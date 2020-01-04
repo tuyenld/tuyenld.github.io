@@ -293,7 +293,7 @@
                 href="/archive.html?tag=jekyll">jekyll</a>
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Jul 06, 2019</span>
             </li><!-- Tedy -->
-              <li><i class="far fa-eye"></i> <span id="/blog/how-to-use-google-analytics-api" class="js-pageview" data-page-key="">41</span> views</li></ul></div><meta itemprop="author" content="Le Dinh-Tuyen"/><meta itemprop="datePublished" content="2019-07-06T00:00:00+07:00">
+              <li><i class="far fa-eye"></i> <span id="/blog/how-to-use-google-analytics-api" class="js-pageview" data-page-key="">48</span> views</li></ul></div><meta itemprop="author" content="Le Dinh-Tuyen"/><meta itemprop="datePublished" content="2019-07-06T00:00:00+00:00">
     <meta itemprop="keywords" content="blog,jekyll"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><p>I want to show <em>pageview</em> on my blog. One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.</p>
@@ -435,7 +435,8 @@ Using google API is not easy task for me in the first time, even it is several l
 
 <span class="n">post_stats</span><span class="p">.</span><span class="nf">rows</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="n">row</span>
-<span class="k">end</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Sample output as following.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20
@@ -531,7 +532,8 @@ Using google API is not easy task for me in the first time, even it is several l
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">ga_data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">ga_data</span><span class="p">)</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">ga_data</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Sample output as following.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          ['/about.html', '2'],
@@ -561,7 +563,7 @@ Using google API is not easy task for me in the first time, even it is several l
   <li><a href="https://martinfowler.com/articles/command-line-google.html">Martin Fowler blog</a></li>
   <li><a href="https://z3nth10n.net/en/2019/03/22/jekyll-ga-v2-plugin-to-get-google-analytics-data-into-your-site">Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site - Jekyll static site</a></li>
 </ul>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-07-06T00:00:00+07:00"><!-- start custom article footer snippet -->
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-07-06T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
     <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.

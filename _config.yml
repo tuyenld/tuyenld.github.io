@@ -205,6 +205,13 @@ exclude:
   - /screenshots
   - /test
   - /vendor
+  - HowToInstallMM.md
+  - Dockerfile.dev
+  - Rakefile
+  - todo.md
+  - /tools
+  - /docker
+
 
 defaults:
   - scope:
@@ -235,7 +242,7 @@ plugins:
 
 jekyll_ga:
   profileID: ga:188904382   # Profile ID 
-  jsonAuthentificationFile: /home/tuyenld/working/crushcoding-800295291157.json
+  jsonAuthentificationFile: /etc/crushcoding-800295291157.json
   start: 1 jan 2005          # Beginning of report, Google Analytics launch date 2005-01-01
   end: now                  # End of report
   compare_period: false #Error:  undefined method `to_date' for "2019-06-26":String      
@@ -251,5 +258,5 @@ jekyll_ga:
 # JEKYLL_ENV=production bundle exec jekyll serve
 # sudo ntpdate time.nist.gov
 host: 0.0.0.0
-port: 5001
+port: 4000
 

@@ -1,7 +1,7 @@
 version: "3.5"
 
 services:
-  jekyll-text-theme_dev:
+  jekyll-text-theme_dev_tuyenld:
     build:
       context: ../
       dockerfile: Dockerfile.dev

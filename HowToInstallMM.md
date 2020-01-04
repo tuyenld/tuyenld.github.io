@@ -120,3 +120,35 @@ host: 0.0.0.0
 port: 5000
 ```
 bundle exec jekyll serve
+
+## Docker
+```bash
+sudo apt-get install git
+sudo apt-get install curl
+
+ls -la
+# -rw-r--r--  1 ldtuyen ldtuyen 22610446 Thg 1   4 13:55 containerd.io_1.2.6-3_amd64.deb
+# -rw-r--r--  1 ldtuyen ldtuyen 22820222 Thg 1   4 13:55 docker-ce_19.03.5~3-0~debian-buster_amd64.deb
+# -rw-r--r--  1 ldtuyen ldtuyen 42523182 Thg 1   4 13:55 docker-ce-cli_19.03.5~3-0~debian-buster_amd64.deb
+sudo dpkg -i *.deb
+sudo docker run hello-world
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+mkdir working
+cd working/
+git clone https://github.com/kitian616/jekyll-TeXt-theme.git
+cd jekyll-TeXt-theme/
+
+sudo docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.6 bundle install
+sudo docker-compose -f ./docker/docker-compose.build-image.yml build
+sudo docker-compose -f ./docker/docker-compose.default.yml up
+
+sudo docker ps
+sudo docker images
+# Just for test
+sudo docker run -i -v "$PWD":/usr/src/app -t ruby:2.6 /bin/bash
+```

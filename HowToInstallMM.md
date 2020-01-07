@@ -145,10 +145,23 @@ cd jekyll-TeXt-theme/
 
 sudo docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.6 bundle install
 sudo docker-compose -f ./docker/docker-compose.build-image.yml build
+
+# Run doker to compile post
 sudo docker-compose -f ./docker/docker-compose.default.yml up
 
 sudo docker ps
 sudo docker images
+
 # Just for test
 sudo docker run -i -v "$PWD":/usr/src/app -t ruby:2.6 /bin/bash
+
+
+# copy Docker images from one host to another
+# you use exported file system for creating a new image then 
+# this new image will not contain any USER, EXPOSE, RUN etc. commands from your Dockerfile.
+# >>>> DO NOT USE docker export
+
+sudo docker save -o ~/working/VMs/docker_jekyll-text-theme_dev_tuyenld.tar docker_jekyll-text-theme_dev_tuyenld:latest
+docker load -i ~/working/VMs/docker_jekyll-text-theme_dev_tuyenld.tar
+
 ```

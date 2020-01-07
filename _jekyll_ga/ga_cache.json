@@ -2,7 +2,7 @@
   "page-stats": {
     "/": {
       "pagePath": "/",
-      "pageviews": "206"
+      "pageviews": "223"
     }
   },
   "post-stats": {
@@ -12,32 +12,40 @@
     },
     "/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb": {
       "pagePath": "/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb",
-      "pageviews": "25"
+      "pageviews": "62"
     },
     "/life/nguoi-la-mai-thao-yen": {
       "pagePath": "/life/nguoi-la-mai-thao-yen",
-      "pageviews": "24"
+      "pageviews": "25"
     },
     "/life/brazil-co-don-truong-thanh": {
       "pagePath": "/life/brazil-co-don-truong-thanh",
-      "pageviews": "12"
+      "pageviews": "13"
     },
     "/blog/how-to-use-google-analytics-api": {
       "pagePath": "/blog/how-to-use-google-analytics-api",
-      "pageviews": "41"
+      "pageviews": "48"
+    },
+    "/life/hoc-khmt-nen-doc-sach-gi": {
+      "pagePath": "/life/hoc-khmt-nen-doc-sach-gi",
+      "pageviews": "4"
     },
     "/life/mot-nghe-cho-chin-con-hon-chin-nghe": {
       "pagePath": "/life/mot-nghe-cho-chin-con-hon-chin-nghe",
-      "pageviews": "1"
+      "pageviews": "7"
+    },
+    "/schoolarship/cu-di-roi-se-den-chuyen-di-hoc": {
+      "pagePath": "/schoolarship/cu-di-roi-se-den-chuyen-di-hoc",
+      "pageviews": "3"
     }
   },
   "site-stats": {
-    "pageviews": "321"
+    "pageviews": "397"
   },
   "headers": [
     {
       "name": "pageviews",
-      "value": "321",
+      "value": "397",
       "diff_value": null,
       "value_perc": null
     }

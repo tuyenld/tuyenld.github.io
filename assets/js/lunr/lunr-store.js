@@ -44,7 +44,7 @@ var store = [
       
       {
         "title": "Làm an toàn thông tin thì học gì",
-        "excerpt":"Nguồn - thái Làm an toàn thông tin thì học gì? May 02, 2012 1 Giới thiệu Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn...","categories": ["Life"],
+        "excerpt":"Nguồn - thái, May 02, 2012 1 Giới thiệu Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn thông tin...","categories": ["Life"],
         "tags": ["Book"],
         "url": "https://crushcoding.com/life/lam-attt-thi-hoc-gi",
         "teaser":null},

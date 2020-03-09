@@ -58,7 +58,7 @@ author:
 ##############################
 # repository: user_name/repo_name
 repository : "tuyenld/tuyenld.github.io"
-repository_tree: master
+repository_tree: dev
 
 
 ## => Paths
@@ -223,7 +223,7 @@ defaults:
       license: true
       aside:
         toc: true
-      show_edit_on_github: true
+      show_edit_on_github: false
       show_subscribe: true
       pageview: true
 

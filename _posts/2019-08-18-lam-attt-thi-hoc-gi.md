@@ -8,12 +8,7 @@ tags:
 toc: true
 ---
 
-Nguồn - [thái](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
-
-# Làm an toàn thông tin thì học gì?
-
-[May 02, 2012](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
-
+Nguồn - [thái, May 02, 2012](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
   
 ## 1 Giới thiệu
   

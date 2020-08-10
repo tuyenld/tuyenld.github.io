@@ -1,6 +1,9 @@
 ---
 title: Upgrade flash chip on TP-Link from 4mb to 8mb
 excerpt: "How to upgrade flash chip on TPLink TL-WR840N v5."
+aside: true
+aside:
+  toc: true
 categories:
   - OpenWRT
 tags: 

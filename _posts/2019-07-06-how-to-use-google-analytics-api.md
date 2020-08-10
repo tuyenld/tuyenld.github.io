@@ -6,9 +6,12 @@ categories:
 tags: 
   - blog
   - jekyll
+aside: true
+aside:
+  toc: true
 ---
 
-I want to show *pageview* on my blog. One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.
+I want to display **pageview** on my blog (you can see the "eye" icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.
 * Services Account
 * Access Token
 * Fresh Token

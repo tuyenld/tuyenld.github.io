@@ -58,13 +58,9 @@ rbenv ()
 ```
 
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-
 rbenv install -l
-
 rbenv install -v 2.3.0
 rbenv global 2.3.0
-
-
 ## Fix error in Ubuntu server 18.04
 
 ```
@@ -112,15 +108,14 @@ end
 
 bundle
 
+```bash
 vi _config.yml
-```
+
 # Add at the end of file
 # deployment
 host: 0.0.0.0
 port: 5000
 ```
-bundle exec jekyll serve
-
 ## Docker
 ```bash
 sudo apt-get install git
@@ -154,7 +149,12 @@ sudo docker images
 
 # Just for test
 sudo docker run -i -v "$PWD":/usr/src/app -t ruby:2.6 /bin/bash
+# Open port
+sudo docker run -i -v "$PWD":/usr/src/app -p 4000:4000 -t ruby:2.6 /bin/bash 
 
+JEKYLL_ENV=production bundle exec jekyll serve
+# Debug, verbose
+JEKYLL_ENV=production bundle exec jekyll serve -V
 
 # copy Docker images from one host to another
 # you use exported file system for creating a new image then 

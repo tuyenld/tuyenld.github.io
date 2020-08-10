@@ -5,12 +5,14 @@ categories:
   - Life
 tags: 
   - Book
-toc: true
+aside: true
+aside:
+  toc: true
 ---
 
-Nguồn - [thái, May 02, 2012](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
+Bài viết gốc - [thái, May 02, 2012](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
   
-## 1 Giới thiệu
+## 1. Giới thiệu
   
 Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn thông tin là một ngành rộng lớn với rất nhiều lĩnh vực. Những gì tôi biết và làm được chỉ gói gọn trong một hai lĩnh vực. Có rất nhiều mảng kiến thức cơ bản mà tôi không nắm vững và cũng có nhiều kỹ năng mà tôi không thạo. Hack tài khoản Yahoo! Mail là một trong số đó. Tôi cũng không biết cách tìm địa chỉ IP của bạn chat :-(.  
 ^
@@ -22,7 +24,7 @@ Xét theo [năm mức ngu dốt](http://www.procul.org/blog/2005/09/01/nnm-m%E1%
 ^
 Tôi thấy anh Hưng nói có lý, nên mục tiêu chính của bài viết này là cung cấp một quá trình hiệu quả để bớt ngu về an toàn thông tin.  
 ^
-## 2 Làm an toàn thông tin là làm gì? 
+## 2. Làm an toàn thông tin là làm gì? 
 Tôi muốn viết phần này vì nhiều người tưởng tôi làm bảo vệ khi tôi nói tôi làm security. Ngoài ra có lẽ là do thị trường việc làm an toàn thông tin ở Việt Nam không phong phú nên hầu hết đều nghĩ rằng làm an toàn thông tin nghĩa là đảm bảo an toàn hệ thống mạng (network/system security), trong khi thực tế đây chỉ là một trong số rất nhiều công việc trong ngành.  
 ^
 Trong bốn phần nhỏ tiếp theo, tôi sẽ giới thiệu bốn nhóm công việc chính trong ngành. Đối với mỗi nhóm công việc, tôi sẽ bàn một chút về triển vọng nghề nghiệp ở Việt Nam và Mỹ, hai nơi mà tôi có dịp được quan sát. Nếu bạn không biết bạn thích làm gì thì cứ chọn một công việc rồi làm thử. Các công việc này đều có liên quan nhau, nên kiến thức mà bạn học được trong quá trình thử vẫn hữu ích cho những nghề khác.  
@@ -73,7 +75,7 @@ Tôi nghĩ rằng sau hàng loạt vụ tấn công vừa rồi thì chắc hẳ
 ^
 Tuy nhiên cũng cần lưu ý rằng trong vài năm gần đây ở [Việt Nam](http://googleonlinesecurity.blogspot.com/2010/03/chilling-effects-of-malware.html) còn xuất hiện những loại mã độc nhắm vào đông đảo người dùng máy tính bình thường. Vấn nạn này có lẽ sẽ còn kéo dài trong nhiều năm tới và lẽ đương nhiên "phe ta" lúc nào cũng cần thêm những chiến sĩ lành nghề như anh [TQN](http://www.hvaonline.net/hvaonline/posts/list/38818.hva). Thành ra dẫu triển vọng nghề nghiệp không sáng sủa cho lắm, nhưng tôi rất hi vọng sẽ ngày càng nhiều người tham gia vào việc phân tích các mã độc nhắm vào người dùng máy tính ở Việt Nam. Đối với tôi họ là những người hùng thầm lặng, chiến đấu đêm ngày với các "thế lực thù địch" để bảo vệ tất cả chúng ta.  
   
-## 3 Học như thế nào?
+## 3. Học như thế nào?
   
 Đa số những bạn viết thư cho tôi đều đang học đại học ngành CNTT và tất cả đều than rằng chương trình học quá chán, không có những thứ mà các bạn muốn học. Tôi nghĩ đây là một ngộ nhận.  
 ^
@@ -99,7 +101,7 @@ Bạn có thể tham khảo chương trình [SCPD](http://scpd.stanford.edu/) n�
 ^ 
 Ngoài Stanford và Coursera ra, bạn cũng có thể tham khảo các lớp trên [Udacity](http://www.udacity.com/), [OCW](http://ocw.mit.edu/index.htm) và [MITx](http://mitx.mit.edu/). Khi tôi đang viết những dòng này thì MIT và Harvard công bố dự án [edX](http://web.mit.edu/press/2012/mit-harvard-edx-announcement.html). Chúng ta đang sống trong một thời đại cực kỳ thú vị! Bây giờ chỉ cần bạn chịu học thì muốn học cái gì cũng có lớp và học liệu miễn phí. Nhưng mà học cái gì bây giờ?
 
-## 4 Học cái gì?
+## 4. Học cái gì?
   
 Có ba món quan trọng cần phải học: lập trình, lập trình và lập trình! Để làm việc được trong ngành này, bạn phải yêu thích lập trình. Không có cách nào khác. Thề luôn!  
 ^
@@ -179,7 +181,7 @@ Chú ý đây là những cuốn sách tập trung vào công việc hàng ngày
 ^
 Ngoài ra trong các sách mà tôi vừa liệt kê không có cuốn sách toán (và lý thuyết khoa học máy tính) nào cả. Tôi nghĩ bạn sẽ tự có câu trả lời cho câu hỏi "Có nên học toán hay không?" khi bắt đầu học mật mã. Về hai mảng này thì tôi rất thích lớp "Great Ideas in Theoretical Computer Science" của [Scott Aaronson](http://www.scottaaronson.com/blog/) và cuốn "[A Computational Introduction to Number Theory and Algebra](http://shoup.net/ntb/)" của Victor Shoup. Thích đến nỗi tôi phải viết đoạn này chỉ để nhắc đến chúng ;-). Tôi cũng đã từng dành ra nhiều tháng để đánh vật với [Introduction to the Theory of Computation](http://www-math.mit.edu/~sipser/) của Michael Sipser. Nhưng thôi, tôi không muốn giới thiệu sách toán nữa vì tôi rất dốt món này!
 
-## 5 Bắt đầu nói nhảm và hết
+## 5. Bắt đầu nói nhảm và hết
 
 Phew! Không ngờ là tôi cũng viết được cho đến đây (hi vọng là bạn vẫn đang đọc!). Tôi định viết dông dài về thái độ học tập này nọ, nhưng thôi bài đã dài và nhiều thông tin rồi, nên tôi chỉ nói ngắn gọn thế này:  
 ^

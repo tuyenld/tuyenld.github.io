@@ -30,21 +30,21 @@ var store = [
       
       {
         "title": "How to use Google Analytics API",
-        "excerpt":"I want to show pageview on my blog. One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product. Services Account Access Token Fresh Token OAuth...","categories": ["blog"],
+        "excerpt":"I want to display pageview on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many...","categories": ["blog"],
         "tags": ["blog","jekyll"],
         "url": "https://crushcoding.com/blog/how-to-use-google-analytics-api",
         "teaser":null},
       
       {
         "title": "Học Khoa Học Máy Tính nên đọc sách gì",
-        "excerpt":"Nguồn - Blog Khoa Học Máy Tính Học Khoa Học Máy Tính nên đọc sách gì? By NQH Published: 01/10/2007 Bạn trantempo hỏi một danh sách các sách nên đọc trong KHMT. Bạn Nguyên đã đưa một danh sách sơ bộ. Tôi sẽ cập nhật từ từ vào danh sách...","categories": ["Life"],
+        "excerpt":"Bài viết gốc - Blog Khoa Học Máy Tính Bạn trantempo hỏi một danh sách các sách nên đọc trong KHMT. Bạn Nguyên đã đưa một danh sách sơ bộ. Tôi sẽ cập nhật từ từ vào danh sách dưới đây trong một vài tuần tới để có một danh...","categories": ["Life"],
         "tags": ["Book"],
         "url": "https://crushcoding.com/life/hoc-khmt-nen-doc-sach-gi",
         "teaser":null},
       
       {
         "title": "Làm an toàn thông tin thì học gì",
-        "excerpt":"Nguồn - thái, May 02, 2012 1 Giới thiệu Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn thông tin...","categories": ["Life"],
+        "excerpt":"Bài viết gốc - thái, May 02, 2012 1. Giới thiệu Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn...","categories": ["Life"],
         "tags": ["Book"],
         "url": "https://crushcoding.com/life/lam-attt-thi-hoc-gi",
         "teaser":null},

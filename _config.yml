@@ -93,7 +93,8 @@ analytics:
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+# remote_theme: mmistakes/minimal-mistakes
+remote_theme: minicomp/ed
 # Outputting
 permalink: /:categories/:title
 paginate: 8 # amount of posts to show

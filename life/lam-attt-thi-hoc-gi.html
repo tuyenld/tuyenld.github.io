@@ -1,0 +1,1066 @@
+<!DOCTYPE html><html lang="en">
+  <head><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133437467-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-133437467-1');
+		
+	</script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Làm an toàn thông tin thì học gì - I love you so much</title>
+
+<meta name="description" content="Danh sách của bác thaidn.">
+<link rel="canonical" href="https://crushcoding.com/life/lam-attt-thi-hoc-gi"><link rel="alternate" type="application/rss+xml" title="I love you so much" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.4',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script></head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="104px" height="109px" viewBox="-0.5 -0.5 104 109" content="&lt;mxfile modified=&quot;2019-06-23T23:49:43.502Z&quot; host=&quot;www.draw.io&quot; agent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36&quot; etag=&quot;k8gziEznNOkNhQZwsled&quot; version=&quot;10.8.0&quot; type=&quot;google&quot;&gt;&lt;diagram id=&quot;U_B1RkneLMTxPP0pNnES&quot; name=&quot;Page-1&quot;&gt;jZPfb4IwEMf/Gh41QOeij5O5H8mWLDPGvZkCBzS2HClVYH/9im1BYkzmg7l+7q53vfvikUi0r5JWxSemwL3QT1uPPHth+EAC/d+DzgCy9A3IJUsNCkawZb9goQs7sRTqSaBC5IpVU5hgWUKiJoxKic00LEM+rVrRHG7ANqH8lu5ZqgpDlwt/5G/A8sJVDnzrEdQFW1AXNMXmCpGNRyKJqIwl2gh4Pzs3F5P3csc7NCahVP9JWL+L5Pw9w/gYNmW322/3P7tZEJprzpSf7Ittt6pzIziDVExP5IPGwL+wZophqV0xKoXCI+vhZb4+pLQuILUHylnehya6R5AaZIzzCDnKy9Uku/w0L5TgGgXadOWebK7Cqq+hJB6HFaxM1arvULR5r7w5cL1/2WfOBdYZqDqwxqE8lHiIT/yo0+x7dRFo704yGPajdQ0oQMlOh7gEt32r6Ue34mZUyGphUHEtDqcNakWZD1ePe9OGXZ07jhK5+K6+M7L5Aw==&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);"><defs/><g><ellipse cx="56" cy="54" rx="42.75" ry="40.90909090909091" fill="#ffffff" stroke="#000000" stroke-width="9" pointer-events="none"/><path d="M 46.75 35.82 L 70.5 35.82 L 70.5 4 M 46.75 72.18 L 70.5 72.18 L 70.5 104 M 43.9 33.09 L 43.9 74.91 M 4 54 L 43.9 54" fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" pointer-events="none"/><path d="M 46.75 31.27 L 46.75 76.73" fill="#ffffff" stroke="#000000" stroke-width="1.82" stroke-miterlimit="10" pointer-events="none"/></g></svg><a title="tuyenld's note
+" href="/">I love you so much</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/archive.html">Archive</a></li><li class="navigation__item"><a href="/about.html">About</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Làm an toàn thông tin thì học gì</h1></header></div><meta itemprop="headline" content="Làm an toàn thông tin thì học gì"><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=Book">Book</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 18, 2019</span>
+            </li><!-- Tedy -->
+              <li><i class="far fa-eye"></i> <span id="/life/lam-attt-thi-hoc-gi" class="js-pageview" data-page-key="">1</span> views</li></ul></div><meta itemprop="author" content="Le Dinh-Tuyen"/><meta itemprop="datePublished" content="2019-08-18T00:00:00+00:00">
+    <meta itemprop="keywords" content="Book"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><p>Bài viết gốc - <a href="https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html">thái, May 02, 2012</a></p>
+
+<h2 id="1-giới-thiệu">1. Giới thiệu</h2>
+
+<p>Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn thông tin là một ngành rộng lớn với rất nhiều lĩnh vực. Những gì tôi biết và làm được chỉ gói gọn trong một hai lĩnh vực. Có rất nhiều mảng kiến thức cơ bản mà tôi không nắm vững và cũng có nhiều kỹ năng mà tôi không thạo. Hack tài khoản Yahoo! Mail là một trong số đó. Tôi cũng không biết cách tìm địa chỉ IP của bạn chat :-(.</p>
+<p>Xét theo <a href="http://www.procul.org/blog/2005/09/01/nnm-m%E1%BB%A9c-ngu-d%E1%BB%91t/">năm mức ngu dốt</a> thì tôi nằm ở mức “1OI - thiếu kiến thức” ở hầu hết các lĩnh vực trong an toàn thông tin. Cũng có lĩnh vực tôi nằm ở mức “2OI - thiếu nhận thức”. Nhiều lần đọc sách vở hoặc nói chuyện với đồng nghiệp, tôi hay nhận ra rằng có nhiều thứ tôi không biết là tôi không biết. Theo ý của anh Ngô Quang Hưng thì đây là chuyện bình thường:</p>
+<blockquote>
+  <p>Dân máy tính thường phải đọc/học rất nhiều để theo kịp sự phát triển với tốc độ ánh sáng của ngành mình. Trong quá trình này, với mỗi vấn đề X của ngành, ta sẽ chuyển dần dần từ 3OI xuống 1OI. Sau đó, nếu X là cái mà ta thật sự thích hoặc cần cho công việc thì sẽ chuyển nó lên 0OI.</p>
+</blockquote>
+<blockquote>
+  <p>Rất nhiều sinh viên và nghiên cứu sinh KHMT ở mức 3OI khi mới bắt đầu đi học. Sau đó họ tìm hiểu về quá trình nghiên cứu, quá trình tìm các vấn đề và hướng nghiên cứu mới, quá trính cập nhật kiến thức về ngành của mình, và chuyển dần các thứ lên 2OI. Để có một quá trình hiệu quả từ 3OI lên 2OI không dễ chút nào. Ví dụ đơn giản: các journals, conference nào trong ngành mình là có giá trị, làm thế nào để tìm đọc các bài trong chúng, phương pháp lọc bài đọc thế nào, vân vân.</p>
+</blockquote>
+<p>Tôi thấy anh Hưng nói có lý, nên mục tiêu chính của bài viết này là cung cấp một quá trình hiệu quả để bớt ngu về an toàn thông tin.</p>
+<h2 id="2-làm-an-toàn-thông-tin-là-làm-gì">2. Làm an toàn thông tin là làm gì?</h2>
+<p>Tôi muốn viết phần này vì nhiều người tưởng tôi làm bảo vệ khi tôi nói tôi làm security. Ngoài ra có lẽ là do thị trường việc làm an toàn thông tin ở Việt Nam không phong phú nên hầu hết đều nghĩ rằng làm an toàn thông tin nghĩa là đảm bảo an toàn hệ thống mạng (network/system security), trong khi thực tế đây chỉ là một trong số rất nhiều công việc trong ngành.</p>
+<p>Trong bốn phần nhỏ tiếp theo, tôi sẽ giới thiệu bốn nhóm công việc chính trong ngành. Đối với mỗi nhóm công việc, tôi sẽ bàn một chút về triển vọng nghề nghiệp ở Việt Nam và Mỹ, hai nơi mà tôi có dịp được quan sát. Nếu bạn không biết bạn thích làm gì thì cứ chọn một công việc rồi làm thử. Các công việc này đều có liên quan nhau, nên kiến thức mà bạn học được trong quá trình thử vẫn hữu ích cho những nghề khác.</p>
+
+<h3 id="21-an-toàn-sản-phẩm-product-security">2.1 An toàn sản phẩm (product security)</h3>
+<p>Công việc chính của nhóm này là làm việc với các đội phát triển sản phẩm để đảm bảo sản phẩm làm ra an toàn cho người dùng và an toàn cho hệ thống của công ty, cụ thể là:</p>
+<ul>
+  <li>Kiểm định mã nguồn và thiết kế của sản phẩm</li>
+  <li>Phát triển các giải pháp kỹ thuật và quy trình phát triển phần mềm an toàn để phát hiện và ngăn chặn những kỹ thuật tấn công đã biết</li>
+  <li>Đào tạo nhân lực để nâng cao nhận thức về an toàn thông tin cũng như kỹ năng viết mã an toàn</li>
+  <li>Nghiên cứu các hướng tấn công mới có thể ảnh hưởng hệ thống sản phẩm và dịch vụ của công ty</li>
+</ul>
+
+<p>Tóm gọn lại thì nhóm này chuyên <a href="http://vnhacker.blogspot.com/2011/11/tim-lo-lay-tien.html">tìm lỗ hổng</a> và kỹ thuật tấn công mới. Đây là công việc của tôi và tôi thấy đây là công việc thú vị nhất trong ngành :-).</p>
+<p>Ở Mỹ thì thông thường thì chỉ có các hãng có phần mềm và dịch vụ lớn như Facebook, Google, Microsoft, Oracle, v.v. hay các tập đoàn tài chính ngân hàng lớn mới có đội ngũ tại chỗ để đảm nhiệm công việc này. Các công ty nhỏ thường chỉ thuê dịch vụ của các công ty tư vấn. IBM và Big Four đều có cung cấp dịch vụ tư vấn này. Dẫu vậy nếu được chọn lựa thì tôi sẽ chọn làm cho các công ty chuyên sâu như Matasano, iSec, Leviathan, Gotham, IOActive, Immunity, v.v.</p>
+<p>Ở Việt Nam thì thị trường việc làm cho người làm an toàn sản phẩm có vẻ ảm đạm hơn. Cho đến nay tôi biết chỉ có một vài công ty ở Việt Nam là có nhân viên chuyên trách lĩnh vực này. Các công ty khác (nếu có quan tâm đến an toàn thông tin) thì hầu như chỉ tập trung vào an toàn vận hành. Các công ty tư vấn an toàn thông tin ở Việt Nam cũng không tư vấn an toàn sản phẩm, mà chỉ tập trung tư vấn chung chung về các quy trình và tiêu chuẩn an toàn thông tin.<em>2.2 An toàn vận hành (operations security)</em></p>
+<p>Công việc chính của nhóm này là đảm bảo sự an toàn cho toàn bộ hệ thống thông tin của doanh nghiệp, với ba nhiệm vụ chính:</p>
+<ul>
+  <li>Ngăn chặn: đưa ra các chính sách, quy định, hướng dẫn về an toàn vận hành; kiện toàn toàn bộ hệ thống thông tin, từ các vành đai cho đến máy tính của người dùng cuối; cấp và thu hồi quyền truy cập hệ thống; quét tìm lỗ hổng trong hệ thống, theo dõi thông tin lỗ hổng mới và làm việc với các bên liên quan để vá lỗi, v.v.</li>
+</ul>
+<ul>
+  <li>Theo dõi và phát hiện: <a href="http://vnhacker.blogspot.com/2009/12/giam-sat-ninh-mang-hay-la-lam-nao-e.html">giám sát an ninh mạng</a>.</li>
+</ul>
+<ul>
+  <li>Xử lý: phản hồi (incident response) và điều tra số (digital forensics) khi xảy ra sự cố an toàn thông tin, từ tài khoản của nhân viên bị đánh cắp, rò rỉ thông tin sản phẩm mới cho đến tấn công từ chối dịch vụ.Đây là công việc khó nhất, nhưng lại ít <a href="http://vnhacker.blogspot.com/2007/01/phn-thng-no-dnh-cho-ngi-lm-bo-mt.html">phần thưởng</a> nhất của ngành an toàn thông tin.</li>
+</ul>
+<p>Tương tự như trên, chỉ có các hãng lớn của Mỹ mới có đội ngũ tại chỗ để phụ trách toàn bộ khối lượng công việc đồ sộ này, nhất là mảng xử lý và điều tra. Đa số các công ty chỉ tập trung vào ngăn chặn và sử dụng dịch vụ của bên thứ ba cho hai mảng còn lại. Các hãng như Mandiant, Netwitness hay HBGary cung cấp dịch vụ điều tra các vụ xâm nhập và có rất nhiều hãng khác cung cấp dịch vụ giám sát an ninh mạng.</p>
+<p>Ở Việt Nam thì thị trường việc làm cho người làm an toàn vận hành tương đối phong phú hơn so với an toàn sản phẩm. Các công ty và tổ chức tài chính lớn đều có một vài vị trí chuyên trách về an toàn vận hành. Đa số người làm về an toàn thông tin ở Việt Nam mà tôi biết là làm trong lĩnh vực này. Dẫu vậy hầu như chưa có ai và công ty tư vấn nào làm về phản hồi và điều tra sự cố.</p>
+
+<h3 id="23-phát-triển-công-cụ-applied-security">2.3 Phát triển công cụ (applied security)</h3>
+<p>Công việc chính của nhóm này là phát triển và cung cấp các công cụ, dịch vụ và thư viện phần mềm có liên quan đến an toàn thông tin cho các nhóm phát triển sản phẩm sử dụng lại.</p>
+<p>Nhóm này bao gồm các kỹ sư nhiều năm kinh nghiệm và có kiến thức vững chắc về an toàn thông tin, viết mã an toàn và mật mã học. Họ phát triển các thư viện và dịch vụ dùng chung như phân tích mã tĩnh - phân tích mã động (static - dynamic code analysis), hộp cát (sandboxing), xác thực (authentication), kiểm soát truy cập (authorization), mã hóa (encryption) và quản lý khóa (key management), v.v.</p>
+<p>Đây là dạng công việc dành cho những ai đang viết phần mềm chuyên nghiệp và muốn chuyển qua làm về an toàn thông tin. Đây cũng là công việc của những người thích làm an toàn sản phẩm nhưng muốn tập trung vào việc xây dựng sản phẩm hơn là tìm lỗ hổng.</p>
+<p>Rõ ràng loại công việc này chỉ xuất hiện ở các công ty phần mềm lớn. Ở các công ty phần mềm nhỏ hơn thì các kỹ sư phần mềm thường phải tự cáng đáng công việc này mà ít có sự hỗ trợ từ nguồn nào khác. Ở Việt Nam thì tôi không biết có ai làm dạng công việc này không.</p>
+
+<h3 id="24-tìm-diệt-mã-độc-và-các-nguy-cơ-khác-threat-analysis">2.4 Tìm diệt mã độc và các nguy cơ khác (threat analysis)</h3>
+
+<p>Ngoài an toàn sản phẩm ra thì đây là một lĩnh vực mà tôi muốn làm. Công việc chính của nhóm này là phân tích, truy tìm nguồn gốc và tiêu diệt tận gốc mã độc và các tấn công có chủ đích (targeted attack). Mã độc ở đây có thể là virút, sâu máy tính, hay mã khai thác các lỗ hổng đã biết hoặc chưa được biết đến mà phần mềm diệt virút thông thường chưa phát hiện được. Các loại mã độc này thường được sử dụng trong các tấn công có chủ đích vào <a href="http://googleblog.blogspot.com/2010/01/new-approach-to-china.html">doanh nghiệp</a>.</p>
+<p>Tôi nghĩ rằng sau hàng loạt vụ tấn công vừa rồi thì chắc hẳn các công ty lớn với nhiều tài sản trí tuệ giá trị đều muốn có những chuyên gia trong lĩnh vực này trong đội ngũ của họ. Ngoài ra các công ty chuyên về điều tra và xử lý sự cố như Mandiant, HBGary hay Netwitness mà tôi đề cập ở trên đều đang ăn nên làm ra và lúc nào cũng cần người. Các công ty sản xuất phần mềm diệt virút dĩ nhiên cũng là một lựa chọn.</p>
+<p>Ở Việt Nam thì tôi nghĩ hầu hết doanh nghiệp vẫn chưa thấy được nguy cơ đến từ các cuộc tấn công có chủ đích, thành ra họ sẽ không tuyển người chuyên trách vấn đề này. Tôi cũng không biết có công ty tư vấn nào ở Việt Nam chuyên về điều tra và xử lý sự cố hay không. Tôi nghĩ lựa chọn khả dĩ nhất cho những người thích mảng công việc này là các công ty phần mềm diệt virút.</p>
+<p>Tuy nhiên cũng cần lưu ý rằng trong vài năm gần đây ở <a href="http://googleonlinesecurity.blogspot.com/2010/03/chilling-effects-of-malware.html">Việt Nam</a> còn xuất hiện những loại mã độc nhắm vào đông đảo người dùng máy tính bình thường. Vấn nạn này có lẽ sẽ còn kéo dài trong nhiều năm tới và lẽ đương nhiên “phe ta” lúc nào cũng cần thêm những chiến sĩ lành nghề như anh <a href="http://www.hvaonline.net/hvaonline/posts/list/38818.hva">TQN</a>. Thành ra dẫu triển vọng nghề nghiệp không sáng sủa cho lắm, nhưng tôi rất hi vọng sẽ ngày càng nhiều người tham gia vào việc phân tích các mã độc nhắm vào người dùng máy tính ở Việt Nam. Đối với tôi họ là những người hùng thầm lặng, chiến đấu đêm ngày với các “thế lực thù địch” để bảo vệ tất cả chúng ta.</p>
+
+<h2 id="3-học-như-thế-nào">3. Học như thế nào?</h2>
+
+<p>Đa số những bạn viết thư cho tôi đều đang học đại học ngành CNTT và tất cả đều than rằng chương trình học quá chán, không có những thứ mà các bạn muốn học. Tôi nghĩ đây là một ngộ nhận.</p>
+<p>Hối tiếc lớn thứ nhì trong sự nghiệp học tập mấy chục năm của tôi là đã không học nghiêm túc khi còn là sinh viên (hối tiếc lớn nhất là tôi đã không nghỉ hẳn, nhưng đó là một câu chuyện dài khác). Tôi cũng đã nghĩ rằng chương trình học ở đại học là lạc hậu và không cần thiết. Bây giờ nhìn lại thì tôi thấy nội dung và cách dạy của từng môn học thì đúng là lạc hậu (chỉ có mấy môn triết học Mác-Lênin là bắt kịp <a href="http://www.ou.edu.vn/dtn/Pages/Moi-ban-tham-gia-cuoc-thi-Anh-sang-thoi-dai-2012.aspx">ánh sáng thời đại</a>), nhưng toàn bộ giáo trình đại học vẫn cung cấp được một cái sườn kiến thức rất cần thiết cho một kỹ sư an toàn thông tin.</p>
+<p>Ở đại học người ta có cách tiếp cận top-down, nghĩa là dạy từ đầu đến cuối những kiến thức nằm trong chương trình. Điều này dễ dẫn đến tình trạng là người học phải học những kiến thức mà họ không thấy cần thiết. Nếu chương trình học cũ kỹ và không có nhiều thực hành, hoặc người dạy không chỉ ra được bức tranh toàn cảnh, vị trí hiện tại của người học và bước tiếp theo họ nên làm là gì thì người học sẽ dễ cảm thấy rằng họ đang phí thời gian học những kiến thức vô bổ.</p>
+<p>Trong khi khi đi làm thì cách tiếp cận là bottom-up, nghĩa là lao vào làm, thấy thiếu kiến thức chỗ nào thì học để bù vào chỗ đó. Lúc này tôi hoàn toàn chủ động trong việc học và tôi cũng hiểu rõ tôi cần học cái gì và tại sao. Điều thú vị là mỗi khi truy ngược lại nguồn gốc của những kiến thức tôi cần phải có, tôi thường thấy chúng nằm trong chương trình đại học.</p>
+<p>Ví dụ như tôi muốn luyện kỹ năng dịch ngược mã phần mềm (reverse code engineering - RCE) thì tôi thấy rằng tôi cần phải có kiến thức về tổ chức và cấu trúc máy tính. Hoặc nếu tôi muốn học về mật mã học thì tôi phải học lý thuyết tính toán, mà khởi nguồn là lý thuyết automata. Nhưng tại sao trước đó tôi cũng đi làm nhưng không thấy được những lỗ hổng kiến thức này? Tôi nghĩ là do tôi làm không đủ sâu. Ví dụ như nếu bạn suốt ngày chỉ lập trình PHP thì bạn sẽ không thể hiểu được tại sao phải nắm vững tổ chức và kiến trúc máy tính. Hoặc giả như công việc của bạn là sysadmin thì cũng sẽ rất khó để bạn thấy được tại sao cần phải học lý thuyết automata.</p>
+<p>Những gì tôi nói lan man ở trên có thể tóm gọn lại thế này:</p>
+
+<ul>
+  <li>Học dựa theo chương trình đại học. Nếu bạn đang học đại học các ngành công nghệ thông tin, khoa học máy tính hay toán tin thì nên tập trung vào việc học các môn trong trường. Các học liệu trong phần 4 cũng được soạn theo các đại học lớn trên thế giới.</li>
+  <li>Học kiến thức căn bản thật vững (cái gì là căn bản thì xem phần 4), những món còn lại khi nào cần (căn cứ vào nhu cầu công việc) thì hẵng học.</li>
+  <li>Tìm dự án lề (side project) mà bạn thích để làm để có thể nhanh chóng nhận ra những mảng kiến thức còn thiếu.</li>
+  <li>Thời điểm tốt nhất để học một cái gì đó là khi bạn đang là sinh viên. Thời điểm tốt thứ hai là ngay bây giờ!</li>
+</ul>
+
+<p>Các lớp mà tôi liệt kê trong phần 4 đa số là của đại học Stanford. Bạn không cần phải đến tận nơi, ngồi trong lớp mới có thể học được. Tôi thấy trong nhiều trường hợp thì bạn chỉ cần đọc lecture notes, sách giáo khoa mà lớp sử dụng rồi làm bài tập đầy đủ thì vẫn sẽ tiếp thu đủ kiến thức. Một số lớp mà tôi liệt kê dưới đây được dạy miễn phí rộng rãi trên <a href="https://www.coursera.org/">Coursera</a>.</p>
+<p>Bạn có thể tham khảo chương trình <a href="http://scpd.stanford.edu/">SCPD</a> nếu muốn học chung với các sinh viên Stanford khác. Đây là chương trình học từ xa thông qua video. Buổi sáng lớp diễn ra thì buổi chiều bạn đã có video để xem. Thi cử như các sinh viên chính quy khác và điểm phải trên B mới được học tiếp. Đây là chương trình mà tôi theo học. Điểm thú vị là mỗi học kỳ bạn chỉ cần lấy một lớp, nhưng Stanford vẫn sẽ cho bạn xem video của tất cả các lớp khác.</p>
+<p>Ngoài Stanford và Coursera ra, bạn cũng có thể tham khảo các lớp trên <a href="http://www.udacity.com/">Udacity</a>, <a href="http://ocw.mit.edu/index.htm">OCW</a> và <a href="http://mitx.mit.edu/">MITx</a>. Khi tôi đang viết những dòng này thì MIT và Harvard công bố dự án <a href="http://web.mit.edu/press/2012/mit-harvard-edx-announcement.html">edX</a>. Chúng ta đang sống trong một thời đại cực kỳ thú vị! Bây giờ chỉ cần bạn chịu học thì muốn học cái gì cũng có lớp và học liệu miễn phí. Nhưng mà học cái gì bây giờ?</p>
+
+<h2 id="4-học-cái-gì">4. Học cái gì?</h2>
+
+<p>Có ba món quan trọng cần phải học: lập trình, lập trình và lập trình! Để làm việc được trong ngành này, bạn phải yêu thích lập trình. Không có cách nào khác. Thề luôn!</p>
+<p>Tôi dành khá nhiều thời gian tìm hiểu giáo trình khoa học máy tính của các trường đại học lớn trên thế giới và tôi thấy tất cả các môn học đều có phần bài tập là lập trình. Học cái gì viết phần mềm cho cái đó. Học về hệ điều hành thì phần bài tập là viết một hệ điều hành. Học về mạng thì viết phần mềm giả lập router, switch hay firewall. Cá nhân tôi cũng thấy rằng lập trình là cách tốt nhất để tiếp thu kiến thức một môn học nào đó, biến nó thành của mình. Nói cách khác, lập trình là một cách <a href="http://www.procul.org/blog/2007/06/12/ma-hoa-tri-th%E1%BB%A9c-nh%C6%B0-th%E1%BA%BF-nao/">mã hóa tri thức</a> khá hiệu quả.</p>
+<p>Ngoài ra nhìn vào mô tả công việc ở phần 2, bạn cũng có thể thấy kỹ năng lập trình quan trọng đến dường nào, bởi hầu hết các vấn đề và giải pháp của an toàn thông tin là đến từ phần mềm. Rõ ràng muốn tìm lỗi của phần mềm thì bạn phải hiểu được phần mềm thông qua mã nguồn trực tiếp hay trung gian của nó. Rất có thể bạn sẽ không phải lập trình hàng ngày, nhưng bạn phải viết được những công cụ nhỏ hay những thư viện hỗ trợ cho công việc và các lập trình viên khác.</p>
+<p>Vậy làm thế nào để lập trình giỏi? Câu hỏi này làm tôi nhớ đến câu chuyện cười về ông lập trình viên không thể ra khỏi phòng tắm vì trên chai dầu gội có ghi hướng dẫn sử dụng là “cho vào tay, xoa lên đầu, xả nước và lập lại”. Từ khóa trong câu chuyện này là “lập lại”: muốn giỏi lập trình thì cách tốt nhất là lập trình nhiều vô!</p>
+<p>Nhưng mà lập trình bằng ngôn ngữ gì bây giờ? Đây là câu hỏi dễ làm cho các lập trình viên oánh nhau nhất ;-). Cá nhân tôi thấy rằng người làm an toàn thông tin bây giờ cần phải thông thạo C, x86 Assembly, Python (hoặc Ruby) và JavaScript. Tôi có nói lý do tại sao trong phần giới thiệu sách tiếp theo.</p>
+
+<h3 id="41-lập-trình">4.1 Lập trình</h3>
+
+<ul>
+  <li>Brian Kernighan, Dennis Ritchie, <em>The C Programming Language (2nd Edition)</em>: kinh điển và phải-đọc cho tất cả những ai muốn học C! Linus Torvalds từng nói rằng “[…] <em>all right-thinking people know that (a) K&amp;R are _right_ and (b) K&amp;R are right</em>”. Tôi đã từng rất sợ C (vì nghĩ nó phức tạp), và cuốn này giúp tôi không còn sợ nữa.</li>
+</ul>
+<ul>
+  <li>Randal Bryant, David O’Hallaron, <em>Computer Systems: A Programmer’s Perspective</em>: cuốn này được dùng cho lớp <a href="http://cs107.stanford.edu/">CS107</a>. Đọc cuốn này và làm bài tập của lớp CS107 sẽ rèn cho bạn kỹ năng lập trình C và x86 Assembly. Sau khi đọc cuốn này, bạn sẽ biết tại sao có lỗi tràn bộ đệm và cách khai thác chúng. Tôi rất thích các chương nói về x86 và sự liên kết giữa các công cụ như preprocessor, compiler và linker.</li>
+</ul>
+<ul>
+  <li>David Hanson, <em>C Interfaces and Implementations</em>: muốn mau “lên cơ” bida thì phải thường xuyên xem người khác chơi để mà học “đường” mới. Tương tự, muốn giỏi lập trình thì phải thường xuyên đọc mã của những cao thủ. David Hanson là một cao thủ C và cuốn sách này sẽ chỉ cho bạn nhiều “đường” mới trong việc sử dụng C. Tôi thích các bài tập của cuốn sách này. Tôi nghĩ chỉ cần luyện các bài này là đủ để trở thành một lập trình viên C hạng lông.</li>
+</ul>
+<ul>
+  <li>Justin Seitz, <em>Gray Hat Python: Python Programming for Hackers and Reverse Engineers</em>: cuốn này sẽ giúp bạn sử dụng Python để viết những công cụ nho nhỏ mà bất kỳ ai làm an toàn thông tin cũng sẽ phải viết một vài lần trong đời.</li>
+</ul>
+<ul>
+  <li>Douglas Crockford, <em>JavaScript: The Good Parts</em>: JavaScript là ngôn ngữ thống trị WWW. Nếu bạn muốn làm an toàn (ứng dụng và trình duyệt) web thì bắt buộc phải thành thạo ngôn ngữ. Cuốn sách rất mỏng này của tác giả JSON giới thiệu đầy đủ những vấn đề mà người làm an toàn ứng dụng cần phải biết về JavaScript. Cuốn này có thể dùng làm sách giáo khoa thay cho cuốn “Javascript: The Definitive Guide” trong lớp <a href="http://crypto.stanford.edu/cs142/">CS142</a> (xem bên dưới). Đọc cuốn này tôi mới hiểu closure là gì và bản chất prototypal của JavaScript.</li>
+</ul>
+<ul>
+  <li>Sẽ đọc: những cuốn được giới thiệu ở <a href="https://sites.google.com/site/cinterfacesimplementations/recommended-books">đây</a>.</li>
+</ul>
+
+<h3 id="42-hệ-điều-hành">4.2 Hệ điều hành</h3>
+
+<ul>
+  <li>Abraham Silberschatz, Peter Galvin, and Greg Gagne, <em>Operating System Concepts, 8th Edition Update</em>: cuốn này là giáo trình của lớp <a href="http://www.stanford.edu/~ouster/cgi-bin/cs140-winter12/index.php">CS140</a>. Tôi nghĩ không cần đọc cuốn này, chỉ cần đọc notes và làm bài tập (viết các phần khác nhau của một hệ điều hành!) là đủ. Đây là một lớp nặng. Tôi theo đuổi lớp CS140 này giữa chừng thì phải dừng lại do không có đủ thời gian.</li>
+</ul>
+<ul>
+  <li>Intel Software Developer Manuals: tôi thấy nên đọc tài liệu của <a href="http://www.scs.stanford.edu/05au-cs240c/lab/i386/toc.htm">80386</a> trước, rồi sau đó hẵng đọc tài liệu của các <a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">CPU mới hơn</a>.</li>
+</ul>
+<ul>
+  <li>Red Hat, <em>Introduction to System Administration</em>: tôi rất thích chương nói về “philosophy of sysadmin” của cuốn này và tôi nghĩ kỹ năng quản trị hệ thống là cực kỳ cần thiết khi muốn nghiên cứu các kỹ thuật tấn công/phòng thủ mới. Không thể làm an toàn vận hành nếu không có kỹ năng quản trị hệ thống.</li>
+</ul>
+
+<h3 id="43-mạng-máy-tính">4.3 Mạng máy tính</h3>
+
+<ul>
+  <li>Richard Stevens, <em>TCP/IP Illustrated Vol I</em>: cuốn sách này quá nổi tiếng rồi nên tôi nghĩ không cần phải giới thiệu. Tôi chưa đọc Vol II, III nhưng nhất định sẽ tìm đọc trong thời gian tới. Lớp <a href="http://cs144.stanford.edu/">CS144</a> dùng một cuốn sách khác. Tôi chưa học lớp này, nhưng tôi thấy bài tập của họ khá thú vị.</li>
+</ul>
+<ul>
+  <li>Stephen Northcutt, Lenny Zeltser, Scott Winters, Karen Kent, Ronald W. Ritchey, <em>Inside Network Perimeter Security, 2nd Edition</em>: tôi thích cuốn này vì nó viết rất dễ hiểu về các vấn đề  và công cụ thường gặp trong an toàn mạng.</li>
+</ul>
+<ul>
+  <li>Sẽ đọc: Fyodor, <em>Nmap Network Scanning</em>.</li>
+</ul>
+
+<p>Sau khi đã có những kiến thức cơ bản ở trên, bạn có thể theo đuổi lớp <a href="http://cs155.stanford.edu/">CS155</a>. Lớp này có trên Coursera với tên <a href="http://www.security-class.org/">Computer Security</a>. Song song với lớp CS155, bạn có thể tìm đọc các sách sau:</p>
+
+<h3 id="44-tìm-lỗi-phầm-mềm">4.4 Tìm lỗi phầm mềm</h3>
+
+<ul>
+  <li>Mark Dowd, John McDonald, Justin Schuh, <em>The Art of Software Security Assessment: Identifying and Preventing Software Vulnerabilities</em>: Kinh điển và phải-đọc! Cuốn này là kinh thánh của lĩnh vực an ninh ứng dụng. Tôi thích nhất phần nói về tràn số nguyên và những vấn đề của ngôn ngữ C trong cuốn này.</li>
+</ul>
+<ul>
+  <li>Dafydd Stuttard, Marcus Pinto, <em>The Web Application Hacker’s Handbook: Discovering and Exploiting Security Flaws</em>: cuốn này tập trung vào ứng dụng web. Tôi không đọc cuốn này kỹ lắm, mà chỉ thường dùng nó để tham khảo. Dẫu vậy tôi nghĩ nó là một cuốn giới thiệu tốt cho những ai mới bắt đầu.</li>
+</ul>
+<ul>
+  <li>Michal Zalewski, <em>The Tangled Web</em>: cuốn này mới xuất bản gần đây nhưng đã ngay lập tức trở thành kinh điển! Cuốn này đúc kết quá trình nghiên cứu về an ninh web trong vài năm trời của một trong những hacker xuất sắc nhất thế giới. Tôi nghĩ chỉ cần đọc cuốn này là bạn đã có thể bắt đầu tìm lỗ kiếm tiền được rồi. Cuốn này và cuốn ở trên được dùng làm sách giáo khoa của lớp <a href="http://crypto.stanford.edu/cs142/">CS142</a>.</li>
+</ul>
+<ul>
+  <li>Sẽ đọc: Tobias Klein, <em>A Bug Hunter’s Diary: A Guided Tour Through the Wilds of Software Security</em></li>
+</ul>
+
+<h3 id="45-dịch-ngược-mã-phần-mềm">4.5 Dịch ngược mã phần mềm</h3>
+
+<ul>
+  <li>Eldad Eilam, <em>Reversing: Secrets of Reverse Engineering</em>: mặc dù có rất nhiều người viết về RCE nhưng tôi thấy đây là cuốn duy nhất hệ thống hóa được các bước quan trọng cần phải làm khi cần dịch ngược mã của một tệp chương trình nào đó.</li>
+</ul>
+<ul>
+  <li>Chris Eagle, <em>The IDA Pro Book: The Unofficial Guide to the World’s Most Popular Disassembler</em>: IDA Pro là công cụ tốt nhất để làm RCE và đây là cuốn sách tốt nhất về IDA Pro. Nắm vững C và x86 Assembly thì chỉ cần đọc cuốn này là bạn có thể bắt đầu RCE các phần mềm phức tạp.</li>
+</ul>
+<ul>
+  <li>
+    <p>Tham khảo các tài liệu về <a href="http://pentest.cryptocity.net/reverse-engineering/">dịch ngược mã phần mềm</a> của lớp PenTest của đại học NYU.</p>
+  </li>
+  <li>
+    <p>Sẽ đọc: Michael Sikorski, Andrew Honig, <em>Practical Malware Analysis: The Hands-On Guide to Dissecting Malicious Software</em></p>
+  </li>
+</ul>
+
+<h3 id="46-điều-tra-số-digital-forensics">4.6 Điều tra số (digital forensics)</h3>
+
+<ul>
+  <li>Brian Carrier, <em>File System Forensic Analysis</em>: Brian Carrier là tác giả của bộ công cụ forensic nổi tiếng <a href="http://www.sleuthkit.org/">The Sleuth Kit</a>. Cuốn này đã giúp tôi “khai quật” được một đoạn video bị xóa lưu trong một máy camera quay lén các máy ATM.</li>
+</ul>
+<ul>
+  <li>Sẽ đọc: Cory Altheide, Harlan Carvey, <em>Digital Forensics with Open Source Tools</em></li>
+</ul>
+
+<h3 id="47-mật-mã-hóa">4.7 Mật mã hóa</h3>
+
+<ul>
+  <li>Niels Ferguson, Bruce Schneier, <em>Practical Cryptography</em>: tôi có nhiều kỷ niệm đẹp với cuốn này ;-). Hầu hết các kết quả làm việc của tôi trong vài năm vừa rồi là nhờ vào việc đọc cuốn này. Tôi chép lại đây giới thiệu rất hay của một người bạn: “<em>The best security books, you can read “inside out”, taking any recommendation on what to do and looking for people to do the opposite to find flaws. “Firewalls and Internet Security” was like that. So was “Practical Unix Security”, and so is TOASSA. This is that book for crypto. It’s also the one book on crypto you should allow yourself to read until you start actually finding crypto flaws.</em>”</li>
+</ul>
+<ul>
+  <li>Jonathan Katz, Yehuda Lindell, <em>Introduction to Modern Cryptography: Principles and Protocols</em>: đây là sách giáo khoa của lớp <a href="http://cs255.stanford.edu/">CS255</a>. Lớp này là lớp <a href="https://www.coursera.org/course/crypto">Cryptography</a> trên Coursera.</li>
+</ul>
+<p>Chú ý đây là những cuốn sách tập trung vào công việc hàng ngày và sở thích của tôi – nói cách khác, còn thiếu nhiều sách của các mảng công việc khác. Dẫu vậy tôi nghĩ những cuốn sách này sẽ giúp bạn có được một kiến thức nền tảng vững chắc để từ đó theo đuổi các nghề nghiệp khác nhau trong ngành an toàn thông tin. Trong thời gian tới tôi sẽ cập nhật thêm những cuốn sách mà tôi đang và sẽ đọc. Nếu bạn biết sách nào hay thì hãy giới thiệu cho tôi.</p>
+<p>Ngoài ra trong các sách mà tôi vừa liệt kê không có cuốn sách toán (và lý thuyết khoa học máy tính) nào cả. Tôi nghĩ bạn sẽ tự có câu trả lời cho câu hỏi “Có nên học toán hay không?” khi bắt đầu học mật mã. Về hai mảng này thì tôi rất thích lớp “Great Ideas in Theoretical Computer Science” của <a href="http://www.scottaaronson.com/blog/">Scott Aaronson</a> và cuốn “<a href="http://shoup.net/ntb/">A Computational Introduction to Number Theory and Algebra</a>” của Victor Shoup. Thích đến nỗi tôi phải viết đoạn này chỉ để nhắc đến chúng ;-). Tôi cũng đã từng dành ra nhiều tháng để đánh vật với <a href="http://www-math.mit.edu/~sipser/">Introduction to the Theory of Computation</a> của Michael Sipser. Nhưng thôi, tôi không muốn giới thiệu sách toán nữa vì tôi rất dốt món này!</p>
+
+<h2 id="5-bắt-đầu-nói-nhảm-và-hết">5. Bắt đầu nói nhảm và hết</h2>
+
+<p>Phew! Không ngờ là tôi cũng viết được cho đến đây (hi vọng là bạn vẫn đang đọc!). Tôi định viết dông dài về thái độ học tập này nọ, nhưng thôi bài đã dài và nhiều thông tin rồi, nên tôi chỉ nói ngắn gọn thế này:</p>
+<p>Cái mà tôi vừa “vẽ” ra là một con đường. Thú thật là tôi không biết đích đến của nó là gì – tôi chỉ biết rằng hành trình mà tôi đã đi qua (và hi vọng là những chặng đường sắp tới) đã mang đến cho tôi rất nhiều niềm vui – niềm vui của một con người đi khám phá thế giới, chinh phục những thử thách, để rồi chia sẻ những câu chuyện hay ho với tất cả mọi người.</p>
+<p>Mỗi ngày tôi đều dành thời gian đọc sách, làm bài tập, viết mã hoặc chứng minh một cái gì đó. Không ai bắt tôi phải làm những chuyện đó. Có những thứ tôi học cũng không (hoặc chưa) có liên quan gì đến công việc. Tôi học chỉ vì tôi thích và tò mò. Tôi học vì tôi muốn hiểu thêm những thứ mà tôi cho là hay ho. Tôi học vì tôi muốn đi mãi, đi mãi, đi đến tận cùng những cái mà người ta viết trong sách, để xem ở đó có gì hay không.</p>
+<p>Hôm rồi tôi đọc một mẩu chuyện về Richard Feynman, trong đó có đoạn kể về lúc Feynman bị bệnh gần đất xa trời, ông tâm sự rằng, “[I’m going to die but I’m not as sad as you think because] when you get as old as I am, you start to realize that you’ve told most of the good stuff you know to other people anyway”. Đương nhiên những gì tôi biết làm sao mà “good” bằng những gì Feynman biết, nhưng dẫu sao thì tôi cũng sẽ học theo Feynman: có biết chuyện gì hay ho thì kể cho nhiều người khác cùng biết. Bài này là một chuyện như thế.</p>
+<p>Happy hacking!</p>
+<p><em>(cảm ơn đại ca M. đã đọc và sửa bản nháp của bài này)</em></p>
+
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-08-18T00:00:00+00:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
+    <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
+        <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+      </a>
+    </p>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/life/hoc-khmt-nen-doc-sach-gi">Học Khoa Học Máy Tính nên đọc sách gì</a></div><div class="next"><span>NEXT</span><a href="/life/mot-nghe-cho-chin-con-hon-chin-nghe">Một nghề cho chín còn hơn chín nghề</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script></div><section class="page__comments d-print-none"><!-- start custom comments snippet --><script src="https://utteranc.es/client.js"
+	        repo="tuyenld/tuyenld.github.io"
+	        issue-term="pathname"
+	        theme="github-light"
+	        crossorigin="anonymous"
+	        async>
+	</script><!-- end custom comments snippet --></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet --></div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Le Dinh-Tuyen"><meta itemprop="url" content="/"><meta itemprop="description" content="I am a happy programmer."><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><li title="Send me an Email.">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:tuyenld.work@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a><li title="Follow me on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/tuyenld" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© I love you so much 2019,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer></div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '014783372275656596289:xyeevhsbdw8'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><!-- start custom pageview snippet (for Home layout) -->
+
+<!-- end custom pageview snippet (for Home layout) -->
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>

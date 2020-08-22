@@ -1,0 +1,1052 @@
+<!DOCTYPE html><html lang="en">
+  <head><!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133437467-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-133437467-1');
+		
+	</script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Học Khoa Học Máy Tính nên đọc sách gì - I love you so much</title>
+
+<meta name="description" content="Danh sách của bác NQH.">
+<link rel="canonical" href="https://crushcoding.com/life/hoc-khmt-nen-doc-sach-gi"><link rel="alternate" type="application/rss+xml" title="I love you so much" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
+
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+
+<!-- end custom head snippets --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
+
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
+
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
+
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
+
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
+
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
+
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
+
+      args = arguments;
+      thisArg = this;
+
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.4',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js',
+        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
+        chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js',
+        gitalk: {
+          js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js',
+          css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
+        },
+        valine: 'https//unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script></head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport has-aside cell cell--auto">
+
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="104px" height="109px" viewBox="-0.5 -0.5 104 109" content="&lt;mxfile modified=&quot;2019-06-23T23:49:43.502Z&quot; host=&quot;www.draw.io&quot; agent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36&quot; etag=&quot;k8gziEznNOkNhQZwsled&quot; version=&quot;10.8.0&quot; type=&quot;google&quot;&gt;&lt;diagram id=&quot;U_B1RkneLMTxPP0pNnES&quot; name=&quot;Page-1&quot;&gt;jZPfb4IwEMf/Gh41QOeij5O5H8mWLDPGvZkCBzS2HClVYH/9im1BYkzmg7l+7q53vfvikUi0r5JWxSemwL3QT1uPPHth+EAC/d+DzgCy9A3IJUsNCkawZb9goQs7sRTqSaBC5IpVU5hgWUKiJoxKic00LEM+rVrRHG7ANqH8lu5ZqgpDlwt/5G/A8sJVDnzrEdQFW1AXNMXmCpGNRyKJqIwl2gh4Pzs3F5P3csc7NCahVP9JWL+L5Pw9w/gYNmW322/3P7tZEJprzpSf7Ittt6pzIziDVExP5IPGwL+wZophqV0xKoXCI+vhZb4+pLQuILUHylnehya6R5AaZIzzCDnKy9Uku/w0L5TgGgXadOWebK7Cqq+hJB6HFaxM1arvULR5r7w5cL1/2WfOBdYZqDqwxqE8lHiIT/yo0+x7dRFo704yGPajdQ0oQMlOh7gEt32r6Ue34mZUyGphUHEtDqcNakWZD1ePe9OGXZ07jhK5+K6+M7L5Aw==&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);"><defs/><g><ellipse cx="56" cy="54" rx="42.75" ry="40.90909090909091" fill="#ffffff" stroke="#000000" stroke-width="9" pointer-events="none"/><path d="M 46.75 35.82 L 70.5 35.82 L 70.5 4 M 46.75 72.18 L 70.5 72.18 L 70.5 104 M 43.9 33.09 L 43.9 74.91 M 4 54 L 43.9 54" fill="none" stroke="#000000" stroke-width="9" stroke-miterlimit="10" pointer-events="none"/><path d="M 46.75 31.27 L 46.75 76.73" fill="#ffffff" stroke="#000000" stroke-width="1.82" stroke-miterlimit="10" pointer-events="none"/></g></svg><a title="tuyenld's note
+" href="/">I love you so much</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/archive.html">Archive</a></li><li class="navigation__item"><a href="/about.html">About</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
+
+              <div class="col-aside d-print-none js-col-aside"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
+
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
+
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>Học Khoa Học Máy Tính nên đọc sách gì</h1></header></div><meta itemprop="headline" content="Học Khoa Học Máy Tính nên đọc sách gì"><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=Book">Book</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Aug 18, 2019</span>
+            </li><!-- Tedy -->
+              <li><i class="far fa-eye"></i> <span id="/life/hoc-khmt-nen-doc-sach-gi" class="js-pageview" data-page-key="">12</span> views</li></ul></div><meta itemprop="author" content="Le Dinh-Tuyen"/><meta itemprop="datePublished" content="2019-08-18T00:00:00+00:00">
+    <meta itemprop="keywords" content="Book"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+
+<!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><!-- https://puppypaste.com/ -->
+
+<p>Bài viết gốc - <a href="https://procul.org/blog/2007/10/01/sach-khmt/">Blog Khoa Học Máy Tính</a></p>
+
+<p>Bạn trantempo <a href="https://procul.org/blog/g-ri-t-long/#comment-35411">hỏi</a> một danh sách các sách nên đọc trong KHMT. Bạn Nguyên đã đưa một danh sách sơ bộ. Tôi sẽ cập nhật từ từ vào danh sách dưới đây trong một vài tuần tới để có một danh sách hoàn tất hơn. (Cần về nhà duyệt lại tủ sách). Các bạn có thể bình luận và thêm vào các quyển sách mà bạn ưa thích.</p>
+
+<h1 id="1-phân-tích-và-thiết-kế-thuật-toán-cơ-bản">1. Phân tích và thiết kế thuật toán (cơ bản)</h1>
+<p>Hiện nay có 3 quyển textbooks được dùng khá phổ biến, trong đó tôi thích quyển của Kleinberg và Tardos nhất. Tuy nhiên, từ quan điểm cá nhân thì tôi chưa thấy hài lòng với cả 3 vì các lý do khác nhau, mặc dù cả ba quyển đều rất tốt.</p>
+
+<ul>
+  <li>Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, and Clifford Stein, Introduction to Algorithms (2e), 1180pp, ISBN: 0262032937, MIT Press, September 2001.</li>
+  <li>Jon Kleinberg, Éva Tardos, Algorithm Design, 864 pages, Addison Wesley, ISBN-10: 0321295358, ISBN-13: 978-0321295354, March 16, 2005.</li>
+  <li>S. Dasgupta, C.H. Papadimitriou, and U.V. Vazirani, <a href="http://www.cs.berkeley.edu/~vazirani/algorithms.html">Algorithms</a>, McGraw Hill, 2007.</li>
+</ul>
+
+<p>Hồi trước có quyển của Aho-Hopcroft-Ullman. Bây giờ đã khá lỗi thời, ít ai dùng.</p>
+
+<ul>
+  <li>Alfred V. Aho John E. Hopcroft Jeffrey Ullman, Data Structures and Algorithms, 427pp. ISBN: 0201000237, Addison Wesley, January 1983.</li>
+</ul>
+
+<p>Tiếc rằng Robert Tarjan không viết sách giáo khoa, nếu không sách về data structure của ông hẳn phải rất hay.</p>
+
+<p>Hiện nay không thể dạy thuật toán cơ bản mà không dạy về NP-Completeness và các phương pháp xác suất. Do đó, các quyển sau đây cũng rất cần thiết:</p>
+
+<ul>
+  <li>Michael R. Garey and David S. Johnson, <em>Computers and Intractability: A Guide to the Theory of NP-Completeness</em>, 338pp. ISBN: 0716710455, W. H. Freeman Company, November 1990.</li>
+  <li>Michael Mitzenmacher and Eli Upfal, <em>Probability and Computing: Randomized Algorithms and Probabilistic Analysis</em>, Cambridge University Press (January 31, 2005)</li>
+</ul>
+
+<p>Tôi xếp 3 tập của Knuth vào dạng “cao cấp hơn”, trong trường hợp bạn đang thắc mắc. Về lecture notes (dạng presentation) thì tôi thấy <a href="http://www.cse.buffalo.edu/~hungngo/classes/2007/Fall-531/tentative_schedule.html">notes</a> của … tôi khá tốt 🙂 (từ từ đến cuối học kỳ sẽ có toàn bộ notes.)</p>
+
+<h1 id="2-phân-tích-và-thiết-kế-thuật-toán-cao-cấp-hơn">2. Phân tích và thiết kế thuật toán (cao cấp hơn)</h1>
+
+<p>Khi nói đến phân tích và thiết kế thuật toán cao cấp, ta thường phải xem xét các đề tài cụ thể để giới thiệu. Các quyển sách cao cấp thường được viết về một đề tài nào đó: approximation algorithms, randomized algorithms, linear programming, convex programming, approximate counting, combinatorial optimization, network flows, algorithmic game theory, vân vân. Tôi sẽ gộp chung chúng lại và giới thiệu một vài quyển tiêu biểu.</p>
+
+<ul>
+  <li>Donald Knuth, The Art of Computer Programming Volumes 1, 2, 3, Addison Wesley.</li>
+  <li>Vijay Vazirani, Approximation Algorithms, Springer-Verlag, 397 pages hardcover, ISBN: 3-540-65367-8, published 2001.</li>
+  <li>Rajeev Motwani and Prabhakar Raghavan, Randomized Algorithms, 492 pages, Cambridge University Press (August 25, 1995), ISBN: 0521474655</li>
+  <li>Vašek Chvátal, Linear Programming, W. H. Freeman, 1983; 478pp. ISBN: 0716715872, W. H. Freeman Company, January 1983.</li>
+  <li>Dorit Hochbaum (Editor), Approximation Algorithms for NP-Hard Problems, 624 pages ; Brooks/Cole Pub Co; ISBN: 0534949681; 1st edition (July 26, 1996)</li>
+  <li>Alexander Schrijver, Theory of Linear and Integer Programming, 484pp. ISBN: 0471982326, Wiley, John &amp; Sons, Incorporated, June 1998.</li>
+  <li>Christos H. Papadimitriou and Kenneth Steiglitz, Combinatorial Optimization: Algorithms and Complexity, Dover Publications; Unabridged edition (January 29, 1998).</li>
+  <li>Mark Jerrum, Counting, Sampling and Integrating: Algorithms and Complexity (Lectures in Mathematics. ETH Zürich), Birkhäuser Basel; 1 edition (April 28, 2003)</li>
+  <li>Ravindra K. Ahuja, Thomas L. Magnanti, and James B. Orlin, Network Flows: Theory, Algorithms, and Applications, Hardcover, 1st ed., 846pp., ISBN: 013617549X, Prentice Hall, February 1993.</li>
+  <li>Noam Nisan, Tim Roughgarden, Eva Tardos, and Vijay V. Vazirani (editors), Algorithmic Game Theory, Cambridge University Press, 2007.</li>
+  <li>Mark de Berg, M. van Krefeld, M. Overmars, and O. Schwarzkopf, Computational Geometry: Algorithms and Applications, Second Edition, Springer; 2nd rev. ed. edition (February 18, 2000).</li>
+</ul>
+
+<p>Đây là tôi hoàn toàn chưa đụng tới rất nhiều các đề tài quan trọng khác: algorithmic number theory, algorithmic coding theory, computational biology, v.v.</p>
+
+<p><strong>Chú ý</strong>: Ngoài ra, không thể nghiên cứu thuật toán hiện đại mà không có hiểu biết sâu sắc về lý thuyết độ phức tạp (computational complexity theory), lý thuyết đồ thị và toán rời rạc, lý thuyết xác suất và lý thuyết thông tin, toán tối ưu và toán ứng dụng, thậm chí cả hình học và giải tích cơ bản (cần cho computational geometry), hay lý thuyết số (cần cho các thuật toán cryptography). Tôi sẽ giới thiệu vài quyển về các đề tài này trong vài ngày tới.</p>
+
+<h1 id="3-combinatorics">3. Combinatorics</h1>
+<p>(bao gồm lý thuyết đồ thị và toán rời rạc). Combinatorics rất rộng, liên quan mật thiết đến rất nhiều nhánh khác nhau của toán học và khoa học máy tính. Dưới đây tôi chỉ liệt kê một sanh sách các sách tôi đã đọc và thấy hữu dụng trong nghiên cứu và trong phát triển tư duy toán học cho KHMT. Nghĩa là không kể những thứ hữu dụng mà tôi không biết gì cả như <a href="http://www.amazon.com/Additive-Combinatorics-Cambridge-Advanced-Mathematics/dp/0521853869/ref=pd_bbs_sr_1/103-5557427-3043056?ie=UTF8&amp;s=books&amp;qid=1191375903&amp;sr=1-1">Additive Combinatorics</a> của bác Terry Tao và bác Vũ Hà Văn.</p>
+
+<h2 id="31-toán-rời-rạc-phổ-thông">3.1 Toán rời rạc phổ thông</h2>
+<p>Hiển nhiên sinh viên học KHMT phải biết toán rời rạc. Tuy nhiên, tôi cực kỳ khó chịu với loại toán rời rạc thường được dạy ở bậc đại học nói chung, vì hai lý do: (1) lớp toán rời rạc kiểu này không chuẩn bị đủ kiến thức cho sinh viên học thêm lên, (2) và nó cho sinh viên một bức tranh bèm nhèm về toán rời rạc, dễ làm sinh viên hiểu không đúng về tầm mức của toán rời rạc. Dĩ nhiên tôi hiểu rằng chương trình đại học thì có giới hạn, còn bể kiến thức thì vô cùng, do đó cái “khó chịu” này của tôi không có cơ sở, Chỉ nhân đây càm ràm để “xả stress” là chính.</p>
+
+<p>Có bốn quyển sách “phải đọc” về toán rời rạc cho sinh viên học KHMT (và cả sinh viên toán):</p>
+
+<ul>
+  <li>J. H. van Lint and R. M. Wilson, <em>A Course in Combinatorics</em>, Cambridge University Press; 2nd edition (December 15, 2001). Rất tuyệt vời! Mỗi chương là một đề tài riêng biệt, từ đồ thị đến generating functions, từ design theory đến coding theory, từ q-series đến extremal set theory, v.v. đều có cả. Đa số các bài tập đều không tầm thường. Nếu bạn muốn biết combinatorics thật sự là gì, mà không có thời gian đọc nhiều quá, thì quyển này là bắt buộc!</li>
+  <li>Ronald L. Graham, Donald E. Knuth, Oren Patashnik, <em>Concrete Mathematics: A Foundation for Computer Science</em>, Addison-Wesley Professional. Viết bởi computer scientists cho computer scientists. Tất cả những thứ sinh viên KHMT cần biết về asymptotic analysis. Kiểu Knuth. Nghĩa là cực kỳ cụ thể và chi tiết về phương pháp. Dĩ nhiên, phạm vi của quyển này rất hẹp, vì đề tài và đối tượng rất cụ thể.</li>
+  <li>Laszlo Lovasz, <em>Combinatorial Problems and Exercises</em>, American Mathematical Society; 2 edition (June 26, 2007). Vừa ra 2nd edition. Cách duy nhất để học toán rời rạc là làm thật nhiều bài tập. Bạn hoàn toàn có thể trở thành một chuyên gia hạng ruồi về graph theory và extremal set theory bằng cách ngồi giải bài tập trong sách này. Nếu bạn đang lấy lớp combinatorics nào đó, nhiều khả năng là thầy của bạn lấy một vài bài tập trong này ra làm bài tập về nhà hoặc cả bài kiểm tra.</li>
+  <li>Martin Aigner, Günter M. Ziegler, and K.H. Hofmann, <em>Proofs from THE BOOK</em>, Springer; 3rd ed. edition (November 13, 2003). Tôi không biết là quyển này đã ra đến 3rd edition, tôi chỉ có 1st edition. Nói đúng ra, quyển này không phải viết về toán rời rạc. Nhưng tư tưởng của nó lại rất tương đồng với tư tưởng của toán rời rạc mà tôi cảm nhận. Khi thấy một chứng minh đẹp như mơ, Erdos hay nói rằng “chứng minh này chắc là phải nằm trong một quyển sách của thượng đế, quyển sách chứa các chứng minh đẹp nhất”. Đó là tư tưởng chính của quyển sách. Nó chứa một bộ sưu tập các chứng minh đẹp như mơ. Dân yêu toán, ai lại không mơ?</li>
+</ul>
+
+<h2 id="32-lý-thuyết-đồ-thị">3.2 Lý thuyết đồ thị</h2>
+<p>(bao gồm cả <strong>algebraic graph theory</strong>). Không có nhánh nào của KHMT mà lại không cần kiến thức cơ bản về lý thuyết đồ thị. Sách mở đầu của lý thuyết đồ thị thì có cực kỳ nhiều. Tôi vẫn thường giới thiệu quyển của West cho sinh viên vì thấy nó vừa phải và phù hợp với dân máy tính. Quyển bài tập của Lovasz ở trên có vài chương về lý thuyết đồ thị rất hay. Tôi quan tâm đến algebraic graph theory nó là công cụ chính để phân tích các expander graphs (dùng cực kỳ nhiều trong complexity theory, algorithm design, randomized algorithms, coding theory, networking, v.v.)</p>
+
+<ul>
+  <li>Douglas West, <em>Introduction to Graph Theory</em>, Prentice Hall; 3 edition (December 1, 2007). Tôi thấy phạm vi đề tài của quyển này rất thích hợp cho dân học KHMT, lại rõ ràng dễ hiểu. Sau khi đọc xong một quyển giới thiệu ngành như quyển này, các quyển kế tiếp đều phải đọc theo đề tài, như algebraic graph theory, extremal graph theory, graph coloring, matching theory, v.v.</li>
+  <li>Tommy R. Jensen and Bjarne Toft, <em>Graph Coloring Problems</em>, Wiley-Interscience; 1st edition (December 1994). Đây là tham khảo kinh điển về các bài toán tô màu đồ thị, dùng cực nhiều trong KHMT.</li>
+  <li>L. Lovász and M.D. Plummer, <em>Matching Theory</em>, Annals of Discrete Mathematics, 29, North-Holland Mathematics Studies, 121. Tôi tin rằng dân làm về graph theory và combinatorial optimization đều … bí mật đọc quyển này 🙂 Một đề tài rất đẹp và rất khó tìm thấy ở sách khác là về các Pfaffian và Permanent. Đặc biệt là về matching trên bipartite graphs thì tất cả những thứ tôi biết đều học từ quyển này ra, và đã dùng kiến thức học được trong ít nhất 5 bài báo!</li>
+  <li>Norman Biggs, <em>Algebraic Graph Theory</em>, Cambridge University Press. Quyển sách be bé này giới thiệu algebraic graph theory rất tốt. Đủ để dùng làm nhiều thứ, bao gồm hiểu các thứ liên quan đến expanders.</li>
+  <li>Dragos M. Cvetkovic, Michael Doob, Horst Sachs, <em>Spectra of Graphs: Theory and Applications</em>, Academic Press; 3rd Revised edition (August 1, 1997). Đây là sách tham khảo chính về algebraic graph theory.</li>
+  <li>Fan Chung, <em>Spectral Graph Theory</em>, American Mathematical Society (May 1997). Sách viết rất tốt và rõ ràng. Cái dở duy nhất là bà Fan Chung lại chọn bộ Lapacian eigenvalues thay vì bộ eigenvalues của đồ thị như trong các applications thường dùng. Chuyển qua chuyển lại các kết quả rất mất thời gian.</li>
+</ul>
+
+<h2 id="32-phương-pháp-xác-suất">3.2 Phương pháp xác suất</h2>
+<p>(bao gồm <strong>random graphs</strong>). Phương pháp xác suất là một trong những công cụ chính của theoretical computer science, với ứng dụng ở khắp mọi nơi. Trong complexity theory &amp; algorithms ta dùng phương pháp xác suất phân tích và thiết kế PCP, randomized (approximation) algorithms, derandomization, pseudo-random number generation, v.v. Trong mạng máy tính ta có randomized routing, randomized MAC protocols, blocking analysis of switches and routers, v.v. Trong cơ sở dữ liệu gần đây phát triển mạnh probabilistic databases, v.v.</p>
+
+<p>Tôi sẽ giới thiệu sách về xác suất và thống kê trong một đề mục riêng. Phần dưới đây chỉ nói riêng về phương pháp xác suất theo nghĩa của Erdos.</p>
+
+<ul>
+  <li>Noga Alon and Joel H. Spencer, <em>The Probabilistic Method</em>, Wiley-Interscience; 2 Sub edition (August 24, 2000). Kinh điển! Không có gì phải bàn.</li>
+  <li>Béla Bollobás, <em>Random Graphs</em>, Cambridge University Press. Lại một quyển kinh điển nữa!</li>
+  <li>Quyển của Mitzenmacher và Upfal đã giới thiệu trong phần <a href="https://procul.org/blog/2007/10/01/sach-khmt/comment-page-2/#pttkttcb">giải thuật</a>.</li>
+</ul>
+
+<h2 id="34--enumerative-combinatorics">3.4  Enumerative combinatorics</h2>
+
+<ul>
+  <li>Richard Stanley, <em>Enumerative Combinantorics</em> Vol. 1 &amp; 2, Cambridge University Press. Kinh điển! Chứa hầu hết tất cả những thứ mà dân khoa học máy tính cần biết về enumerative combinatorics.</li>
+  <li>Dennis Stanton and Dennis White, <em>Constructive combinatorics</em>, Springer; 1 edition (May 15, 1986). Quyển này có lẽ ít người biết nhưng tôi thấy rất hay cho dân học máy tính. Nó viết về enumerative combinatorics từ góc nhìn thuật toán và bijective proofs. Tôi đã lấy lớp của cả hai vị Dennis. Bác Stanton là người thầy có ảnh hưởng lớn nhất đến triết lý giáo dục của tôi.</li>
+  <li>David M. Bressoud, <em>Proofs and Confirmations: The Story of the Alternating-Sign Matrix Conjecture</em>, Cambridge University Press (August 13, 1999). Quyển này phải nói là trên cả tuyệt vời. Quyển sách nói về một conjecture rất nổi tiếng gọi là Alternating Sign Martrix Conjecture và duyệt lại toàn bộ quá trình người ta “tấn công” conjecture này. Tôi đã từng bỏ 6 tháng vật lộn với nó 🙁 . Kết thúc bằng các công trình của Zeilberger và Kuperberg. Nó tuyệt vời ở chỗ, ngoài việc dùng làm sách giáo khoa cho một vài lớp enumerative combinatorics rất tốt, nó vẽ ra rất rõ ràng quá trình phát triển và phương pháp tư duy của một nhánh toán học dựa trên một câu chuyện cụ thể, một đề tài nghiên cứu cụ thể. Terry Tao có viết <a href="http://arxiv.org/abs/math.HO/0702396">một bài</a> hàm chứa ý tưởng tương tự về tính liên thông của các phát triển trong toán. Đến bây giờ mở sách này ra đọc tôi vẫn tìm thấy những cái mới, và cả các bài toán chưa giải được. Enumerative combinatorics là “tình yêu thời niên thiếu” của tôi, và quyển này là quyển tốt nhất giải thích tại sao tôi vẫn còn … day dứt 🙂 (Trong quyển này có nói về một thuật toán tính định thức của <a href="http://en.wikipedia.org/wiki/Charles_Lutwidge_Dodgson">tác giả</a> truyện Alice lạc vào xứ thần tiên!)</li>
+  <li>George E. Andrews, <em>The Theory of Partitions</em>, Cambridge University Press (July 28, 1998). George Andrews là người <a href="http://www.las.uiuc.edu/alumni/news/fall2006/06fall_lostnotebook.html">tìm ra những quyển sổ tay mất tích của Ramanujan</a>. Quyển sách của ông nằm giữa giải tích, lý thuyết số, và enumerative combinatorics. Có lẽ định lý hay nhất trong sách là công thức tính tổng số integer partitions của một số nguyên bất kỳ. Đọc sách này ta sẽ thấy generating functions mạnh như thế nào, và được dùng như thế nào trong các vấn đề cực kỳ hóc búa của lý thuyết số. Ngoài ra, nó cũng là quyển sách rất tốt về các hyper-geometric series và q-series. Tuyệt cú mèo! Có một lần tôi nghe George Andrews trình bày ở một hội nghị, ông mang theo một cuộn giấy to oành in một chương trình ông viết từ hồi đầu thập niên 70 để tìm các conjectures trong enumerative combinatorics. Ông kéo cuộn giấy đi từ đầu đến cuối phòng, chưa hết một nửa.</li>
+</ul>
+
+<h2 id="35-algebraic-combinatorics">3.5 Algebraic combinatorics</h2>
+<p>Tư tưởng của nhánh này rất gần, theo một nghĩa nhất định, với các phương pháp đại số dùng trong coding theory và complexity theory hiện đại. Nó lại liên quan mật thiết đến giải tích của các hàm vuông góc. Tôi làm M.S. Thesis Toán trong nhánh này. Mặc dù bây giờ không làm về nó nữa, nhắc lại vẫn còn thấy “nhiệt huyết” bừng bừng 🙂 . Ngoài ra, nhánh này cũng là anh em cột chèo với algebraic graph theory, rất cần thiết trong cả complexity theory lẫn một số bài toán trong mạng máy tính! Đó là chưa kể liên minh sống còn với representation theory cũng lại được dùng trong KHMT (như trong <a href="https://procul.org/blog/index.php?s=l%C3%BD+thuy%E1%BA%BFt+bi%E1%BB%83u+di%E1%BB%85n+nh%C3%B3m&amp;submit=T%C3%ACm">loạt bài về nhân ma trận</a> tôi đang viết dở).</p>
+
+<ul>
+  <li>Chris Godsil, <em>Algebraic Combinatorics</em>, Chapman &amp; Hall/CRC (April 1, 1993).</li>
+  <li>Chihara, <em>An Introduction to Orthogonal Polynomials</em>, Routledge; 1 edition (January 1, 1978). Quyển kinh điển về các đa thức vuông góc.</li>
+  <li>George E. Andrews, Richard Askey, Ranjan Roy, <em>Special Functions</em>, Cambridge University Press; New Ed edition (February 15, 2001). Tất cả những thứ bạn cần biết về các hàm đặc biệt!</li>
+  <li>William Fulton, <em>Young Tableaux: With Applications to Representation Theory and Geometry</em>, Cambridge University Press (December 28, 1996).</li>
+  <li>I. G. Macdonald, <em>Symmetric Functions and Hall Polynomials</em>, Oxford University Press, USA; 2 edition (June 30, 1999). Quyển này và quyển của Fulton là kinh điển về symmetric functions.</li>
+</ul>
+
+<h2 id="36-extremal-set-theory-extremal-set-systems-và-design-theory">3.6 Extremal set theory, extremal set systems, và design theory</h2>
+<p>Những thứ này thì dùng làm gì trong KHMT? Một vài ví dụ nhỏ: chúng liên quan mật thiết với <a href="https://procul.org/blog/2005/03/29/doan-bi-m%e1%ba%adt/">lý thuyết thử nhóm (group testing)</a> được dùng trong DNA library screening (bio-computing), trong thiết kế MAC protocols và thử lỗi của mạng quang (networking), và thiết kế thuật toán nói chung. Design theory lại cũng liên quan chặt chẽ với coding theory (sẽ giới thiệu sách sau) dùng trong communications và trong complexity theory.</p>
+
+<ul>
+  <li>Konrad Engel, <em>Sperner Theory</em>, Cambridge University Press. Phát triển lý thuyết của một định lý rất đơn giản và hùng mạnh trong topology: định lý Sperner.</li>
+  <li>Bela Bollobas, <em>Combinatorics</em>, Cambridge University Press. Nhỏ và hiệu quả!</li>
+  <li>A. E. Brouwer, A. M. Cohen, A. Neumaier, <em>Distance Regular Graphs</em>, Springer (August 1989). Nhiều bài toán thiết kế các cấu trúc extremal có thể được mô hình hóa bằng distance regular graphs: một loại đồ thị rất giàu có về cấu trúc đại số, nhờ đó bài toán trở nên tổng quát hơn (dùng công cụ của đại số), và đôi khi dễ dàng hơn.</li>
+  <li>Ding-Zhu Du and Frank K. Hwang, <em>Combinatorial Group Testing and Its Applications</em>, World Scientific Publishing Company; 2nd edition (May 2000). Quyển này là tham khảo chính (và duy nhất) cho lý thuyết thử nhóm. Nó là dạng monograph chứ không phải textbook, dùng làm tham khảo.</li>
+</ul>
+
+<h1 id="4-xử-lý-ngôn-ngữ-tự-nhiên-danh-sách-của-anh-bạch-hưng-nguyên">4. Xử lý ngôn ngữ tự nhiên (danh sách của anh <a href="http://www.cs.cmu.edu/~nbach/">Bạch Hưng Nguyên</a>).</h1>
+
+<p>Sách cơ bản:</p>
+
+<ul>
+  <li>[1] Manning &amp; Schutze, <em>Foundation of Statistical NLP</em> – (có online nếu có access vào MIT library)</li>
+  <li>[2] Jurasky &amp; Martin, <em>Speech&amp;Language Procesing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition</em>, <a href="http://www.cs.colorado.edu/~martin/slp2.html">2nd edition</a>.</li>
+</ul>
+
+<p>Tham khảo thêm:</p>
+
+<ul>
+  <li>[3] James Allen, <em>Natural Language Understanding</em></li>
+  <li>[4] Fred Jelinek, <em>Statistical Method for Speech Recognition</em></li>
+  <li>[5] Xudong Huang et al, <em>Spoken Language Processing</em></li>
+</ul>
+
+<p>Lộ trình tự đọc &amp; học trong 1 hoặc 2 học kì theo thứ tự sau</p>
+<blockquote>
+
+  <hr />
+  <p>Chương 1+2+3+4 – [1]: Introduction / Mathematical Foundations/ Linguistic Essential / Corpus-based Work<br />
+Chương 7 – [2]: Phonetics<br />
+——–<br />
+Chương 6 – [1]: Statistical Inference: n-gram Models over Sparse Data<br />
+Chương 4 – [2]: N-grams<br />
+——–<br />
+Chương 8 – [5]: Hidden Markov Models<br />
+Chương 2 – [4]: Hidden Markov Models<br />
+Chương 4 – [2]: Word Classes and Part-of-Speech Tagging<br />
+Chương 6 – [2]: Hidden Markov and Maximum Entropy Models<br />
+——–<br />
+Chương 3 – [3]: Grammar and Parsing<br />
+Chương 12 – [2]: Formal Grammars of English<br />
+Chương 11 – [1]: Probabilistic Context Free Grammar<br />
+Chương 12 – [1]: Probabilistic Parsing<br />
+Chương 13 – [2]: Parsing with Context-Free Grammars<br />
+Chương 14 – [2]: Statistical Parsing<br />
+——–<br />
+Chương 3 – [2]: Words and Transducers<br />
+——–<br />
+Chương 22 – [2]: Information Extraction<br />
+——–<br />
+Chương 25 – [2]: Machine Translation<br />
+——–<br />
+Chương 15 – [1]: Topics in Information Retrieval<br />
+——–<br />
+Chương 16 – [1]: Text Categorization<br />
+——–</p>
+</blockquote>
+
+<p>Lộ trình này giới thiệu chuyên sâu về phương pháp thống kê NLP, mô hình n-gram , mô hình Markov ẩn, &amp; kĩ thuật phân tích câu (parsing). Sau đó là giới thiệu sơ qua một số topics mà NLP đóng vai trò quan trọng như Trích chọn Thông Tin (Information Extraction), Dịch tự động (Machine Translation), Khai Thác Thông Tin (Information Retrieval), &amp; Phân Loại Văn Bản (Text Categorization). Về cơ bản sau khi xong lộ trình này là đủ để bắt tay vào chuyên sâu các vấn đề trong NLP. Rất nhiều topics của NLP không đề cập trong lộ trình này ví dụ như: Các máy Hữu hạn trạng thái (Finite-state Machines), Các kĩ thuật học máy (Machine Learning techniques), Nhận dạng tiếng nói (Speech Recognition), Tổng hợp tiếng nói (Speech Synthesis), Hệ thống Hỏi-Đáp (Q&amp;A systems).</p>
+
+<p><em>Sẽ tiếp tục cập nhật! Không biết bao giờ mới xong.</em></p>
+
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2019-08-18T00:00:00+00:00"><!-- start custom article footer snippet -->
+
+<!-- end custom article footer snippet --><div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">Subscribe</a></div></div><div class="article__license"><div class="license">
+    <p>This work is licensed under a <a itemprop="license" rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial 4.0 International</a> license.
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
+        <img alt="Attribution-NonCommercial 4.0 International" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+      </a>
+    </p>
+  </div></div></footer><div class="article__section-navigator clearfix"><div class="previous"><span>PREVIOUS</span><a href="/blog/how-to-use-google-analytics-api">How to use Google Analytics API</a></div><div class="next"><span>NEXT</span><a href="/life/lam-attt-thi-hoc-gi">Làm an toàn thông tin thì học gì</a></div></div></div>
+
+</div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor d-print-none" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();
+</script></div><section class="page__comments d-print-none"><!-- start custom comments snippet --><script src="https://utteranc.es/client.js"
+	        repo="tuyenld/tuyenld.github.io"
+	        issue-term="pathname"
+	        theme="github-light"
+	        crossorigin="anonymous"
+	        async>
+	</script><!-- end custom comments snippet --></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet --></div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Le Dinh-Tuyen"><meta itemprop="url" content="/"><meta itemprop="description" content="I am a happy programmer."><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><li title="Send me an Email.">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:tuyenld.work@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a><li title="Follow me on Github.">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/tuyenld" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© I love you so much 2019,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
+      </div>
+    </div>
+  </div>
+</footer></div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>window.useDefaultSearchBox = false;</script><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
+
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
+
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark search--google-custom-search-engine">
+    <div class="main">
+      <div class="content js-gcse">
+        <!-- <gcse:search enableAutoComplete="true" gname="search-box"></gcse:search>
+        <gcse:searchresults-only gname="results"></gcse:searchresults-only> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var gcse = document.getElementsByClassName('js-gcse')[0];
+    var gcseSearch = document.createElement('gcse:search');
+    gcseSearch.setAttribute('enableAutoComplete', 'true');
+    gcseSearch.setAttribute('gname', 'search-box');
+    var gcseSearchresults = document.createElement('gcse:searchresults-only');
+    gcseSearchresults.setAttribute('gname', 'results');
+    gcse.appendChild(gcseSearch);
+    gcse.appendChild(gcseSearchresults);
+  </script>
+  <script>var SOURCES = window.TEXT_VARIABLES.sources;
+window.Lazyload.js(SOURCES.jquery, function() {
+  /* global google */
+  var search = (window.search || (window.search = {}));
+  var searchBox, searchInput, clearIcon, searchModal;
+
+  search.clear = function() {
+    searchBox && searchBox.clearAllResults();
+  };
+  search.onShow = function() {
+    searchInput && searchInput.focus();
+  };
+  search.onHide = function() {
+    searchInput && searchInput.blur();
+  };
+
+  window.__gcse = {
+    callback: function() {
+      searchBox = google.search.cse.element.getElement('search-box');
+      searchInput = document.getElementById('gsc-i-id1');
+      clearIcon = document.getElementById('gs_cb50');
+      searchModal = search.searchModal;
+      searchModal && searchModal.$el && searchModal.$el.on('click', function(e) {
+        (e.target === this || e.target === clearIcon || e.target.className === 'gs-title') && searchModal.hide();
+      });
+    }
+  };
+  var cx = '014783372275656596289:xyeevhsbdw8'; // Insert your own Custom Search Engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+    '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+});
+</script></div></div>
+
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
+
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
+
+})();*/
+</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-aside');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    toc = $tocRoot.toc({
+      selectors: TOC_SELECTOR,
+      container: $articleContent,
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    affix = $pageAside.affix({
+      offsetBottom: $pageFooter.outerHeight(),
+      scrollTarget: hasSidebar ? '.js-page-main' : null,
+      scroller: hasSidebar ? '.js-page-main' : null,
+      scroll: hasSidebar ? $('.js-page-main').children() : null,
+      disabled: tocDisabled
+    });
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+    window.pageAsideAffix = affix;
+  });
+})();
+</script><!-- start custom pageview snippet (for Home layout) -->
+
+<!-- end custom pageview snippet (for Home layout) -->
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
+</html>

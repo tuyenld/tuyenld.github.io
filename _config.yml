@@ -1,104 +1,101 @@
-#
-# This file contains configuration flags to customize your site
-#
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
 
-# Name of your site (displayed in the header)
-name: I love you so much
+url: http://yoursite.com
+title: My Octopress Blog
+subtitle: A blogging framework for hackers.
+author: Your Name
+simple_search: https://www.google.com/search
+description:
 
-# Name of the author
-author: Le Dinh-Tuyen
+# Default date format is "ordinal" (resulting in "July 22nd 2007")
+# You can customize the format as defined in
+# http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# Additionally, %o will give you the ordinal representation of the day
+date_format: "ordinal"
 
-# Short bio or description (displayed in the header)
-description: A weird world
+# RSS / Email (optional) subscription links (change if using something like Feedburner)
+subscribe_rss: /atom.xml
+subscribe_email:
+# RSS feeds can list your email address if you like
+email:
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-cloudinaryurl : "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/"
-avatar:         "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/bio/tuyenld.jpg"
-#
-# Flags below are optional
-#
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: tuyenld.work@gmail.com
-  facebook:
-  flickr:
-  github: tuyenld
-  instagram:
-  linkedin: 
-  pinterest:
-  rss: rss
-  twitter: # amit_merchant
-  stackoverflow: 
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-  playconsole:
+# If publishing to a subdirectory as in http://site.com/project set 'root: /project'
+root: /
+permalink: /blog/:year/:month/:day/:title/
+source: source
+destination: public
+plugins: plugins
+code_dir: downloads/code
+category_dir: blog/categories
+markdown: rdiscount
+rdiscount:
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+highlighter: pygments # default python pygments have been replaced by pygments.rb
 
+paginate: 10          # Posts per page on the blog index
+paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
+recent_posts: 5       # Posts in the sidebar Recent Posts section
+excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
+excerpt_separator: "<!--more-->"
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: 
+titlecase: true       # Converts page and post titles to titlecase
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: UA-133437467-1
+# list each of the sidebar modules you want to include, in the order you want them to appear.
+# To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
+default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
 
-# Your website URL (e.g. http://amitmerchant1990.github.io or http://www.amitmerchant.com)
-# Used for Sitemap.xml and your RSS feed
-url: http://www.crushcoding.com
-# enforce_ssl: https://www.amitmerchant.com/reverie
+# Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
+# and add an array with the asides you want to use.
+# blog_index_asides:
+# post_asides:
+# page_asides:
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: # "/reverie"
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
+# Github repositories
+github_user:
+github_repo_count: 0
+github_show_profile_link: true
+github_skip_forks: true
 
-permalink: /:categories/:title
+# Twitter
+twitter_user:
+twitter_tweet_button: true
 
-# The release of Jekyll Now that you're using
-version: v1.2.0
+# Google +1
+google_plus_one: false
+google_plus_one_size: medium
 
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+# Google Plus Profile
+# Hidden: No visible button, just add author information to search results
+googleplus_user:
+googleplus_hidden: false
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
+# Pinboard
+pinboard_user:
+pinboard_count: 3
 
-# Use the following plug-ins
-plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-  - jekyll-seo-tag
-  - jekyll-paginate
+# Delicious
+delicious_user:
+delicious_count: 3
 
-include: ['_pages']
+# Disqus Comments
+disqus_short_name:
+disqus_show_comment_count: false
 
-paginate: 6
-paginate_path: /page:num/
+# Google Analytics
+google_analytics_tracking_id:
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
-
+# Facebook Like
+facebook_like: false

@@ -359,12 +359,20 @@ task :setup_github_pages, :repo do |t, args|
   rm_rf deploy_dir
   mkdir deploy_dir
   cd "#{deploy_dir}" do
-    system "git init"
-    system 'echo "My Octopress Page is coming soon &hellip;" > index.html'
-    system "git add ."
-    system "git commit -m \"Octopress init\""
-    system "git branch -m gh-pages" unless branch == 'master'
-    system "git remote add origin #{repo_url}"
+
+    # tregiengchan
+    temporary_dir = Time.now.strftime('%Y-%m-%d-%H_%M_%S')
+    system "git clone #{repo_url} #{temporary_dir}"
+    system "cp -r #{temporary_dir}/.git ./ "
+    system "rm -rf #{temporary_dir}"
+
+    # system "git init"
+    # system 'echo "My Octopress Page is coming soon &hellip;" > index.html'
+    # system "git add ."
+    # system "git commit -m \"Octopress init\""
+    # system "git branch -m gh-pages" unless branch == 'master'
+    # system "git remote add origin #{repo_url}"
+
     rakefile = IO.read(__FILE__)
     rakefile.sub!(/deploy_branch(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_branch\\1=\\2\\3#{branch}\\3")
     rakefile.sub!(/deploy_default(\s*)=(\s*)(["'])[\w-]*["']/, "deploy_default\\1=\\2\\3push\\3")

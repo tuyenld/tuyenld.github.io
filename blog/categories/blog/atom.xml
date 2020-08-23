@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Blog | tuyenld]]></title>
+  <title><![CDATA[Category: blog | tuyenld]]></title>
   <link href="http://crushcoding.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://crushcoding.com/"/>
-  <updated>2020-08-23T16:19:32+00:00</updated>
+  <updated>2020-08-23T16:29:51+00:00</updated>
   <id>http://crushcoding.com/</id>
   <author>
     <name><![CDATA[Le Dinh-Tuyen]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to Use Google Analytics API]]></title>
+    <title type="html"><![CDATA[How to use Google Analytics API]]></title>
     <link href="http://crushcoding.com/blog/2019/07/06/how-to-use-google-analytics-api/"/>
     <updated>2019-07-06T00:00:00+00:00</updated>
     <id>http://crushcoding.com/blog/2019/07/06/how-to-use-google-analytics-api</id>

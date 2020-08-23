@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | tuyenld]]></title>
+  <title><![CDATA[Category: life | tuyenld]]></title>
   <link href="http://crushcoding.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://crushcoding.com/"/>
-  <updated>2020-08-23T16:19:32+00:00</updated>
+  <updated>2020-08-23T16:29:51+00:00</updated>
   <id>http://crushcoding.com/</id>
   <author>
     <name><![CDATA[Le Dinh-Tuyen]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Một Nghề Cho Chín Còn Hơn Chín Nghề]]></title>
+    <title type="html"><![CDATA[Một nghề cho chín còn hơn chín nghề]]></title>
     <link href="http://crushcoding.com/blog/2019/08/18/mot-nghe-cho-chin-con-hon-chin-nghe/"/>
     <updated>2019-08-18T00:00:00+00:00</updated>
     <id>http://crushcoding.com/blog/2019/08/18/mot-nghe-cho-chin-con-hon-chin-nghe</id>
@@ -74,7 +74,7 @@ nhiều bạn cho rằng, và mình đồng ý, do chúng ta còn non trẻ, ch�
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Làm an Toàn Thông Tin Thì Học Gì]]></title>
+    <title type="html"><![CDATA[Làm an toàn thông tin thì học gì]]></title>
     <link href="http://crushcoding.com/blog/2019/08/18/lam-attt-thi-hoc-gi/"/>
     <updated>2019-08-18T00:00:00+00:00</updated>
     <id>http://crushcoding.com/blog/2019/08/18/lam-attt-thi-hoc-gi</id>
@@ -297,7 +297,7 @@ Happy hacking!<br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Học Khoa Học Máy Tính Nên đọc Sách Gì]]></title>
+    <title type="html"><![CDATA[Học Khoa Học Máy Tính nên đọc sách gì]]></title>
     <link href="http://crushcoding.com/blog/2019/08/18/hoc-khmt-nen-doc-sach-gi/"/>
     <updated>2019-08-18T00:00:00+00:00</updated>
     <id>http://crushcoding.com/blog/2019/08/18/hoc-khmt-nen-doc-sach-gi</id>
@@ -527,7 +527,7 @@ Chương 13 &ndash; [2]: Parsing with Context-Free Grammars</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Brazil Bâng Quơ]]></title>
+    <title type="html"><![CDATA[Brazil bâng quơ]]></title>
     <link href="http://crushcoding.com/blog/2019/07/06/brazil-co-don-truong-thanh/"/>
     <updated>2019-07-06T00:00:00+00:00</updated>
     <id>http://crushcoding.com/blog/2019/07/06/brazil-co-don-truong-thanh</id>
@@ -578,7 +578,7 @@ Còn nữa &hellip;.</p></blockquote>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Người Lạ - Mai Thảo Yên]]></title>
+    <title type="html"><![CDATA[Người lạ - Mai Thảo Yên]]></title>
     <link href="http://crushcoding.com/blog/2019/03/22/nguoi-la-mai-thao-yen/"/>
     <updated>2019-03-22T00:00:00+00:00</updated>
     <id>http://crushcoding.com/blog/2019/03/22/nguoi-la-mai-thao-yen</id>

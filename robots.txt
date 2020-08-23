@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://tuyenld.github.io/sitemap.xml 
+Sitemap: http://crushcoding.com/sitemap.xml 

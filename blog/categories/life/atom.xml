@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Life | tuyenld]]></title>
+  <link href="http://crushcoding.com/blog/categories/life/atom.xml" rel="self"/>
+  <link href="http://crushcoding.com/"/>
+  <updated>2020-08-23T16:19:32+00:00</updated>
+  <id>http://crushcoding.com/</id>
+  <author>
+    <name><![CDATA[Le Dinh-Tuyen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Một Nghề Cho Chín Còn Hơn Chín Nghề]]></title>
+    <link href="http://crushcoding.com/blog/2019/08/18/mot-nghe-cho-chin-con-hon-chin-nghe/"/>
+    <updated>2019-08-18T00:00:00+00:00</updated>
+    <id>http://crushcoding.com/blog/2019/08/18/mot-nghe-cho-chin-con-hon-chin-nghe</id>
+    <content type="html"><![CDATA[<p>Nguồn - <a href="https://vnhacker.blogspot.com/2009/01/mt-ngh-cho-chn-cn-hn-chn-ngh.html">thái</a></p>
+
+<!--more--> 
+
+
+<p>người ta nói, cách tốt nhất để ăn một con voi, là ăn một miếng thịt của nó mỗi ngày. ngẫm lại chuyện học, chuyện làm, mình thấy đây là một lời khuyên có lý. tri thức thì bao la vô tận, không thể nào ngày một ngày hai nắm bắt hết được, mà phải có thời gian, kế hoạch và phương pháp.
+^
+có thời gian nghĩa là phải kiên nhẫn và tập trung, ví dụ như muốn ăn một con voi, phải dành ra 3 tháng liên tục. có kế hoạch nghĩa là phải biết mình đang ở đâu và phải làm gì tiếp theo, ví dụ như bây giờ là đang ăn cái đầu, tiếp theo sẽ ăn cái mình của con voi.
+^
+có phương pháp nghĩa là phải biết lên kế hoạch, làm thế nào để thực thi kế hoạch trong thời gian dự tính, ví dụ như ăn voi thì phải biết cách xẻ thịt nó ra, biết cách ăn, phải biết con voi thì cái gì ngon, cái gì dở, cái gì cần tập trung ăn kỹ, cái gì bỏ đi cũng được.
+^
+trong ba yêu cầu này, cái khó nhất là phương pháp. riêng cách (tự) học, thì trường đại học đã dạy, vấn đề ở đây là không biết nên tập trung học cái gì. lúc này thầy cô, bạn bè, những người đi trước&hellip;sẽ là những người chỉ đường tốt nhất.
+^
+một kinh nghiệm khác mình rút ra được là đối với lĩnh vực tự nhiên, muốn học xa, học sâu, thì phải bắt đầu từ những môn khoa học cơ bản, trong đó toán là bắt buộc.
+^
+những năm đầu đại học, mình đã không hiểu được yêu cầu quan trọng này, nên hết sức lơ là trong việc học toán, hậu quả là những ngày này, mình phải bắt đầu học lại các món lẽ ra phải vững rồi.
+^
+nhiều lúc mình tự hỏi, học những thứ này có phí thời gian không? trong khi các bạn xung quanh thì đổ xô đi học MBA, thì mình lại ngồi cặm cụi học đại số tuyến tính, học lý thuyết số, học lý thuyết xác suất &amp; thống kê&hellip;mình cũng không biết nữa.
+^
+dẫu vậy, mình không hiểu được chuyện, chỉ mới làm trong ngành vài năm, mà có một số bạn đã cảm thấy chán, &ldquo;muốn gác kiếm&rdquo;, chuyển sang làm kinh doanh hay các vị trí quản lý trung gian, không còn làm kỹ thuật nữa.
+^
+mình cũng muốn học về kinh doanh và quản lý, nhưng cái cảm giác chưa nắm vững những kiến thức và kỹ năng nền tảng của cái nghề mình được đào tạo và làm việc bấy lâu nay làm cho mình rất khó chịu.
+^
+mỗi lần nghe một bạn lập trình viên kêu chán lập trình sau 3-4 năm làm việc, là mình lại cảm thấy có gì đó rất bứt rứt. kiểu như leo núi, chưa lên đến đỉnh, mà đã vội xuống. đối với mình thì đây mới chính là phí phạm thời gian.
+^
+vậy thế nào là lên đến đỉnh, cái gì là nền tảng? mình nghĩ đó là: hiểu hết ngọn ngành và có thể áp dụng tốt những mảng kiến thức của một chương trình đào tạo khoa học máy tính ở các trường đại học.
+^
+đây là một nhiệm vụ rất khó, nhưng làm được. làm thế nào thì mình sẽ từ từ trao đổi, dựa trên kinh nghiệm học tập của mình. điều mình muốn nhấn mạnh ở đây là: có cần thiết không?
+^
+tôi làm lập trình, thì chỉ cần biết C, Java, .NET hay Ruby, Python là đủ thôi, chứ cần gì phải học về database, operating system hay là networking? tôi làm mạng thì chỉ cần biết TCP/IP, có thêm cái bằng CCNA là tốt rồi, chứ cần gì phải biết lập trình?
+^
+kinh nghiệm làm việc của mình cho thấy đây là tư duy sai lầm. biết nhiều hơn bao giờ cũng có lợi, giúp cho công việc đơn giản và dễ dàng hơn rất nhiều
+^
+ví dụ một lĩnh vực mà mình biết chắc là nếu học nó, sẽ đem lại nhiều lợi ích, đó là machine learning, nói nôm na là dạy cho máy tính biết cách tự học những kiến thức mới hay nhận dạng được những pattern trong mớ dữ liệu hỗn độn khổng lồ.
+^
+cách đây vài năm, mình có mở một công ty, công ty mình có làm một phần mềm chống spam, và phần mềm này chỉ sử dụng một tí xíu kỹ thuật của machine learning thôi, nhưng đã tỏ ra cực kỳ hiệu quả so với các phần mềm không sử dụng kỹ thuật này.
+^
+machine learning cũng được đánh giá là kỹ năng số 1 mà bất kỳ nhà tuyển dụng nào cũng muốn ứng viên của họ phải có. cũng phải thôi, với lượng dữ liệu và thông tin khổng lồ được tạo ra mỗi ngày, kẻ nào hiểu được chúng nói gì thì kẻ đó sẽ là người chiến thắng.
+^
+quay lại việc các anh kỹ sư máy tính bỏ việc sau khi ra trường vài năm. mình nghĩ đôi khi, chính môi trường làm việc, phải leo cao thì lương nó mới cao, đẩy người ta vào tình thế phải từ bỏ chuyên môn khi chưa đủ độ chín.
+^
+mình nghĩ đây cũng là một điểm mà người làm quản lý cần phải chú ý: lương bổng và quyền lợi là một hàm của năng lực và hiệu quả công việc, chứ không phải của chức vụ hay vị trí.
+^
+nhìn xung quanh, mình thấy rất khó tìm được ai đó có hơn 10 năm kinh nghiệm làm việc liên tục trong một lĩnh vực kỹ thuật nào đó. cao nhất chỉ là 5 năm.
+^
+mình cũng đi làm hơn 5 năm rồi. và mình nghĩ bây nhiêu thời gian chỉ đủ để biết là mình đang thiếu kiến thức và kỹ năng nào, cần phải học thêm cái gì, để làm việc cho tốt hơn.
+^
+vả lại, bạn nào cũng học MBA, về làm sếp hết, thì các bạn quản lý ai? những bạn mới ra trường, làm được 3-4 năm khác? rốt cuộc toàn những bạn không có kinh nghiệm và không đủ kiến thức làm việc với nhau.
+^
+hậu quả là cái gọi là &ldquo;nền CNTT VN&rdquo; toàn phải đi mua đồ của nước ngoài về xài, bởi trong nước không tự sản xuất được, nguyên nhân chính là không có thợ lành nghề. bao nhiêu ngân hàng ở VN sử dụng phần mềm nước ngoài? ngay cả FPT, một công ty tự xem là đi đầu ở VN về công nghệ, nhưng khi thành lập ngân hàng, họ vẫn phải bỏ tiền ra mua phần mềm của Ấn Độ.
+^
+nhiều bạn cho rằng, và mình đồng ý, do chúng ta còn non trẻ, chưa có nhiều kinh nghiệm. vậy hà cớ gì khi mới làm việc có vài năm, chưa đâu vào đâu, lại chuyển chuyên môn?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Làm an Toàn Thông Tin Thì Học Gì]]></title>
+    <link href="http://crushcoding.com/blog/2019/08/18/lam-attt-thi-hoc-gi/"/>
+    <updated>2019-08-18T00:00:00+00:00</updated>
+    <id>http://crushcoding.com/blog/2019/08/18/lam-attt-thi-hoc-gi</id>
+    <content type="html"><![CDATA[<p>Bài viết gốc - <a href="https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html">thái, May 02, 2012</a></p>
+
+<!--more--> 
+
+
+<h2>1. Giới thiệu</h2>
+
+<p>Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn thông tin là một ngành rộng lớn với rất nhiều lĩnh vực. Những gì tôi biết và làm được chỉ gói gọn trong một hai lĩnh vực. Có rất nhiều mảng kiến thức cơ bản mà tôi không nắm vững và cũng có nhiều kỹ năng mà tôi không thạo. Hack tài khoản Yahoo! Mail là một trong số đó. Tôi cũng không biết cách tìm địa chỉ IP của bạn chat :-(.<br/>
+^
+Xét theo <a href="http://www.procul.org/blog/2005/09/01/nnm-m%E1%BB%A9c-ngu-d%E1%BB%91t/">năm mức ngu dốt</a> thì tôi nằm ở mức &ldquo;1OI - thiếu kiến thức&rdquo; ở hầu hết các lĩnh vực trong an toàn thông tin. Cũng có lĩnh vực tôi nằm ở mức &ldquo;2OI - thiếu nhận thức&rdquo;. Nhiều lần đọc sách vở hoặc nói chuyện với đồng nghiệp, tôi hay nhận ra rằng có nhiều thứ tôi không biết là tôi không biết. Theo ý của anh Ngô Quang Hưng thì đây là chuyện bình thường:<br/>
+^</p>
+
+<blockquote><p>Dân máy tính thường phải đọc/học rất nhiều để theo kịp sự phát triển với tốc độ ánh sáng của ngành mình. Trong quá trình này, với mỗi vấn đề X của ngành, ta sẽ chuyển dần dần từ 3OI xuống 1OI. Sau đó, nếu X là cái mà ta thật sự thích hoặc cần cho công việc thì sẽ chuyển nó lên 0OI.
+^
+Rất nhiều sinh viên và nghiên cứu sinh KHMT ở mức 3OI khi mới bắt đầu đi học. Sau đó họ tìm hiểu về quá trình nghiên cứu, quá trình tìm các vấn đề và hướng nghiên cứu mới, quá trính cập nhật kiến thức về ngành của mình, và chuyển dần các thứ lên 2OI. Để có một quá trình hiệu quả từ 3OI lên 2OI không dễ chút nào. Ví dụ đơn giản: các journals, conference nào trong ngành mình là có giá trị, làm thế nào để tìm đọc các bài trong chúng, phương pháp lọc bài đọc thế nào, vân vân.
+^
+Tôi thấy anh Hưng nói có lý, nên mục tiêu chính của bài viết này là cung cấp một quá trình hiệu quả để bớt ngu về an toàn thông tin.<br/>
+^</p>
+
+<h2>2. Làm an toàn thông tin là làm gì?</h2>
+
+<p>Tôi muốn viết phần này vì nhiều người tưởng tôi làm bảo vệ khi tôi nói tôi làm security. Ngoài ra có lẽ là do thị trường việc làm an toàn thông tin ở Việt Nam không phong phú nên hầu hết đều nghĩ rằng làm an toàn thông tin nghĩa là đảm bảo an toàn hệ thống mạng (network/system security), trong khi thực tế đây chỉ là một trong số rất nhiều công việc trong ngành.<br/>
+^
+Trong bốn phần nhỏ tiếp theo, tôi sẽ giới thiệu bốn nhóm công việc chính trong ngành. Đối với mỗi nhóm công việc, tôi sẽ bàn một chút về triển vọng nghề nghiệp ở Việt Nam và Mỹ, hai nơi mà tôi có dịp được quan sát. Nếu bạn không biết bạn thích làm gì thì cứ chọn một công việc rồi làm thử. Các công việc này đều có liên quan nhau, nên kiến thức mà bạn học được trong quá trình thử vẫn hữu ích cho những nghề khác.</p></blockquote>
+
+<h3>2.1 An toàn sản phẩm (product security)</h3>
+
+<p>Công việc chính của nhóm này là làm việc với các đội phát triển sản phẩm để đảm bảo sản phẩm làm ra an toàn cho người dùng và an toàn cho hệ thống của công ty, cụ thể là:<br/>
+^
+* Kiểm định mã nguồn và thiết kế của sản phẩm
+* Phát triển các giải pháp kỹ thuật và quy trình phát triển phần mềm an toàn để phát hiện và ngăn chặn những kỹ thuật tấn công đã biết
+* Đào tạo nhân lực để nâng cao nhận thức về an toàn thông tin cũng như kỹ năng viết mã an toàn
+* Nghiên cứu các hướng tấn công mới có thể ảnh hưởng hệ thống sản phẩm và dịch vụ của công ty</p>
+
+<p>Tóm gọn lại thì nhóm này chuyên <a href="http://vnhacker.blogspot.com/2011/11/tim-lo-lay-tien.html">tìm lỗ hổng</a> và kỹ thuật tấn công mới. Đây là công việc của tôi và tôi thấy đây là công việc thú vị nhất trong ngành :-).
+^
+Ở Mỹ thì thông thường thì chỉ có các hãng có phần mềm và dịch vụ lớn như Facebook, Google, Microsoft, Oracle, v.v. hay các tập đoàn tài chính ngân hàng lớn mới có đội ngũ tại chỗ để đảm nhiệm công việc này. Các công ty nhỏ thường chỉ thuê dịch vụ của các công ty tư vấn. IBM và Big Four đều có cung cấp dịch vụ tư vấn này. Dẫu vậy nếu được chọn lựa thì tôi sẽ chọn làm cho các công ty chuyên sâu như Matasano, iSec, Leviathan, Gotham, IOActive, Immunity, v.v.
+^
+Ở Việt Nam thì thị trường việc làm cho người làm an toàn sản phẩm có vẻ ảm đạm hơn. Cho đến nay tôi biết chỉ có một vài công ty ở Việt Nam là có nhân viên chuyên trách lĩnh vực này. Các công ty khác (nếu có quan tâm đến an toàn thông tin) thì hầu như chỉ tập trung vào an toàn vận hành. Các công ty tư vấn an toàn thông tin ở Việt Nam cũng không tư vấn an toàn sản phẩm, mà chỉ tập trung tư vấn chung chung về các quy trình và tiêu chuẩn an toàn thông tin.<em>2.2 An toàn vận hành (operations security)</em><br/>
+^
+Công việc chính của nhóm này là đảm bảo sự an toàn cho toàn bộ hệ thống thông tin của doanh nghiệp, với ba nhiệm vụ chính:<br/>
+^
+* Ngăn chặn: đưa ra các chính sách, quy định, hướng dẫn về an toàn vận hành; kiện toàn toàn bộ hệ thống thông tin, từ các vành đai cho đến máy tính của người dùng cuối; cấp và thu hồi quyền truy cập hệ thống; quét tìm lỗ hổng trong hệ thống, theo dõi thông tin lỗ hổng mới và làm việc với các bên liên quan để vá lỗi, v.v.
+^
+* Theo dõi và phát hiện: <a href="http://vnhacker.blogspot.com/2009/12/giam-sat-ninh-mang-hay-la-lam-nao-e.html">giám sát an ninh mạng</a>.
+^
+* Xử lý: phản hồi (incident response) và điều tra số (digital forensics) khi xảy ra sự cố an toàn thông tin, từ tài khoản của nhân viên bị đánh cắp, rò rỉ thông tin sản phẩm mới cho đến tấn công từ chối dịch vụ.Đây là công việc khó nhất, nhưng lại ít <a href="http://vnhacker.blogspot.com/2007/01/phn-thng-no-dnh-cho-ngi-lm-bo-mt.html">phần thưởng</a> nhất của ngành an toàn thông tin.<br/>
+^
+Tương tự như trên, chỉ có các hãng lớn của Mỹ mới có đội ngũ tại chỗ để phụ trách toàn bộ khối lượng công việc đồ sộ này, nhất là mảng xử lý và điều tra. Đa số các công ty chỉ tập trung vào ngăn chặn và sử dụng dịch vụ của bên thứ ba cho hai mảng còn lại. Các hãng như Mandiant, Netwitness hay HBGary cung cấp dịch vụ điều tra các vụ xâm nhập và có rất nhiều hãng khác cung cấp dịch vụ giám sát an ninh mạng.<br/>
+^
+Ở Việt Nam thì thị trường việc làm cho người làm an toàn vận hành tương đối phong phú hơn so với an toàn sản phẩm. Các công ty và tổ chức tài chính lớn đều có một vài vị trí chuyên trách về an toàn vận hành. Đa số người làm về an toàn thông tin ở Việt Nam mà tôi biết là làm trong lĩnh vực này. Dẫu vậy hầu như chưa có ai và công ty tư vấn nào làm về phản hồi và điều tra sự cố.</p>
+
+<h3>2.3 Phát triển công cụ (applied security)</h3>
+
+<p>^
+Công việc chính của nhóm này là phát triển và cung cấp các công cụ, dịch vụ và thư viện phần mềm có liên quan đến an toàn thông tin cho các nhóm phát triển sản phẩm sử dụng lại.
+^
+Nhóm này bao gồm các kỹ sư nhiều năm kinh nghiệm và có kiến thức vững chắc về an toàn thông tin, viết mã an toàn và mật mã học. Họ phát triển các thư viện và dịch vụ dùng chung như phân tích mã tĩnh - phân tích mã động (static - dynamic code analysis), hộp cát (sandboxing), xác thực (authentication), kiểm soát truy cập (authorization), mã hóa (encryption) và quản lý khóa (key management), v.v.<br/>
+^
+Đây là dạng công việc dành cho những ai đang viết phần mềm chuyên nghiệp và muốn chuyển qua làm về an toàn thông tin. Đây cũng là công việc của những người thích làm an toàn sản phẩm nhưng muốn tập trung vào việc xây dựng sản phẩm hơn là tìm lỗ hổng.<br/>
+^
+Rõ ràng loại công việc này chỉ xuất hiện ở các công ty phần mềm lớn. Ở các công ty phần mềm nhỏ hơn thì các kỹ sư phần mềm thường phải tự cáng đáng công việc này mà ít có sự hỗ trợ từ nguồn nào khác. Ở Việt Nam thì tôi không biết có ai làm dạng công việc này không.</p>
+
+<h3>2.4 Tìm diệt mã độc và các nguy cơ khác (threat analysis)</h3>
+
+<p>Ngoài an toàn sản phẩm ra thì đây là một lĩnh vực mà tôi muốn làm. Công việc chính của nhóm này là phân tích, truy tìm nguồn gốc và tiêu diệt tận gốc mã độc và các tấn công có chủ đích (targeted attack). Mã độc ở đây có thể là virút, sâu máy tính, hay mã khai thác các lỗ hổng đã biết hoặc chưa được biết đến mà phần mềm diệt virút thông thường chưa phát hiện được. Các loại mã độc này thường được sử dụng trong các tấn công có chủ đích vào <a href="http://googleblog.blogspot.com/2010/01/new-approach-to-china.html">doanh nghiệp</a>.<br/>
+^
+Tôi nghĩ rằng sau hàng loạt vụ tấn công vừa rồi thì chắc hẳn các công ty lớn với nhiều tài sản trí tuệ giá trị đều muốn có những chuyên gia trong lĩnh vực này trong đội ngũ của họ. Ngoài ra các công ty chuyên về điều tra và xử lý sự cố như Mandiant, HBGary hay Netwitness mà tôi đề cập ở trên đều đang ăn nên làm ra và lúc nào cũng cần người. Các công ty sản xuất phần mềm diệt virút dĩ nhiên cũng là một lựa chọn.<br/>
+^
+Ở Việt Nam thì tôi nghĩ hầu hết doanh nghiệp vẫn chưa thấy được nguy cơ đến từ các cuộc tấn công có chủ đích, thành ra họ sẽ không tuyển người chuyên trách vấn đề này. Tôi cũng không biết có công ty tư vấn nào ở Việt Nam chuyên về điều tra và xử lý sự cố hay không. Tôi nghĩ lựa chọn khả dĩ nhất cho những người thích mảng công việc này là các công ty phần mềm diệt virút.<br/>
+^
+Tuy nhiên cũng cần lưu ý rằng trong vài năm gần đây ở <a href="http://googleonlinesecurity.blogspot.com/2010/03/chilling-effects-of-malware.html">Việt Nam</a> còn xuất hiện những loại mã độc nhắm vào đông đảo người dùng máy tính bình thường. Vấn nạn này có lẽ sẽ còn kéo dài trong nhiều năm tới và lẽ đương nhiên &ldquo;phe ta&rdquo; lúc nào cũng cần thêm những chiến sĩ lành nghề như anh <a href="http://www.hvaonline.net/hvaonline/posts/list/38818.hva">TQN</a>. Thành ra dẫu triển vọng nghề nghiệp không sáng sủa cho lắm, nhưng tôi rất hi vọng sẽ ngày càng nhiều người tham gia vào việc phân tích các mã độc nhắm vào người dùng máy tính ở Việt Nam. Đối với tôi họ là những người hùng thầm lặng, chiến đấu đêm ngày với các &ldquo;thế lực thù địch&rdquo; để bảo vệ tất cả chúng ta.</p>
+
+<h2>3. Học như thế nào?</h2>
+
+<p>Đa số những bạn viết thư cho tôi đều đang học đại học ngành CNTT và tất cả đều than rằng chương trình học quá chán, không có những thứ mà các bạn muốn học. Tôi nghĩ đây là một ngộ nhận.<br/>
+^
+Hối tiếc lớn thứ nhì trong sự nghiệp học tập mấy chục năm của tôi là đã không học nghiêm túc khi còn là sinh viên (hối tiếc lớn nhất là tôi đã không nghỉ hẳn, nhưng đó là một câu chuyện dài khác). Tôi cũng đã nghĩ rằng chương trình học ở đại học là lạc hậu và không cần thiết. Bây giờ nhìn lại thì tôi thấy nội dung và cách dạy của từng môn học thì đúng là lạc hậu (chỉ có mấy môn triết học Mác-Lênin là bắt kịp <a href="http://www.ou.edu.vn/dtn/Pages/Moi-ban-tham-gia-cuoc-thi-Anh-sang-thoi-dai-2012.aspx">ánh sáng thời đại</a>), nhưng toàn bộ giáo trình đại học vẫn cung cấp được một cái sườn kiến thức rất cần thiết cho một kỹ sư an toàn thông tin.<br/>
+^
+Ở đại học người ta có cách tiếp cận top-down, nghĩa là dạy từ đầu đến cuối những kiến thức nằm trong chương trình. Điều này dễ dẫn đến tình trạng là người học phải học những kiến thức mà họ không thấy cần thiết. Nếu chương trình học cũ kỹ và không có nhiều thực hành, hoặc người dạy không chỉ ra được bức tranh toàn cảnh, vị trí hiện tại của người học và bước tiếp theo họ nên làm là gì thì người học sẽ dễ cảm thấy rằng họ đang phí thời gian học những kiến thức vô bổ.<br/>
+^
+Trong khi khi đi làm thì cách tiếp cận là bottom-up, nghĩa là lao vào làm, thấy thiếu kiến thức chỗ nào thì học để bù vào chỗ đó. Lúc này tôi hoàn toàn chủ động trong việc học và tôi cũng hiểu rõ tôi cần học cái gì và tại sao. Điều thú vị là mỗi khi truy ngược lại nguồn gốc của những kiến thức tôi cần phải có, tôi thường thấy chúng nằm trong chương trình đại học.<br/>
+^
+Ví dụ như tôi muốn luyện kỹ năng dịch ngược mã phần mềm (reverse code engineering - RCE) thì tôi thấy rằng tôi cần phải có kiến thức về tổ chức và cấu trúc máy tính. Hoặc nếu tôi muốn học về mật mã học thì tôi phải học lý thuyết tính toán, mà khởi nguồn là lý thuyết automata. Nhưng tại sao trước đó tôi cũng đi làm nhưng không thấy được những lỗ hổng kiến thức này? Tôi nghĩ là do tôi làm không đủ sâu. Ví dụ như nếu bạn suốt ngày chỉ lập trình PHP thì bạn sẽ không thể hiểu được tại sao phải nắm vững tổ chức và kiến trúc máy tính. Hoặc giả như công việc của bạn là sysadmin thì cũng sẽ rất khó để bạn thấy được tại sao cần phải học lý thuyết automata.<br/>
+^
+Những gì tôi nói lan man ở trên có thể tóm gọn lại thế này:</p>
+
+<ul>
+<li>Học dựa theo chương trình đại học. Nếu bạn đang học đại học các ngành công nghệ thông tin, khoa học máy tính hay toán tin thì nên tập trung vào việc học các môn trong trường. Các học liệu trong phần 4 cũng được soạn theo các đại học lớn trên thế giới.</li>
+<li>Học kiến thức căn bản thật vững (cái gì là căn bản thì xem phần 4), những món còn lại khi nào cần (căn cứ vào nhu cầu công việc) thì hẵng học.</li>
+<li>Tìm dự án lề (side project) mà bạn thích để làm để có thể nhanh chóng nhận ra những mảng kiến thức còn thiếu.</li>
+<li>Thời điểm tốt nhất để học một cái gì đó là khi bạn đang là sinh viên. Thời điểm tốt thứ hai là ngay bây giờ!</li>
+</ul>
+
+
+<p>Các lớp mà tôi liệt kê trong phần 4 đa số là của đại học Stanford. Bạn không cần phải đến tận nơi, ngồi trong lớp mới có thể học được. Tôi thấy trong nhiều trường hợp thì bạn chỉ cần đọc lecture notes, sách giáo khoa mà lớp sử dụng rồi làm bài tập đầy đủ thì vẫn sẽ tiếp thu đủ kiến thức. Một số lớp mà tôi liệt kê dưới đây được dạy miễn phí rộng rãi trên <a href="https://www.coursera.org/">Coursera</a>.<br/>
+^
+^
+Bạn có thể tham khảo chương trình <a href="http://scpd.stanford.edu/">SCPD</a> nếu muốn học chung với các sinh viên Stanford khác. Đây là chương trình học từ xa thông qua video. Buổi sáng lớp diễn ra thì buổi chiều bạn đã có video để xem. Thi cử như các sinh viên chính quy khác và điểm phải trên B mới được học tiếp. Đây là chương trình mà tôi theo học. Điểm thú vị là mỗi học kỳ bạn chỉ cần lấy một lớp, nhưng Stanford vẫn sẽ cho bạn xem video của tất cả các lớp khác.<br/>
+^
+Ngoài Stanford và Coursera ra, bạn cũng có thể tham khảo các lớp trên <a href="http://www.udacity.com/">Udacity</a>, <a href="http://ocw.mit.edu/index.htm">OCW</a> và <a href="http://mitx.mit.edu/">MITx</a>. Khi tôi đang viết những dòng này thì MIT và Harvard công bố dự án <a href="http://web.mit.edu/press/2012/mit-harvard-edx-announcement.html">edX</a>. Chúng ta đang sống trong một thời đại cực kỳ thú vị! Bây giờ chỉ cần bạn chịu học thì muốn học cái gì cũng có lớp và học liệu miễn phí. Nhưng mà học cái gì bây giờ?</p>
+
+<h2>4. Học cái gì?</h2>
+
+<p>Có ba món quan trọng cần phải học: lập trình, lập trình và lập trình! Để làm việc được trong ngành này, bạn phải yêu thích lập trình. Không có cách nào khác. Thề luôn!<br/>
+^
+Tôi dành khá nhiều thời gian tìm hiểu giáo trình khoa học máy tính của các trường đại học lớn trên thế giới và tôi thấy tất cả các môn học đều có phần bài tập là lập trình. Học cái gì viết phần mềm cho cái đó. Học về hệ điều hành thì phần bài tập là viết một hệ điều hành. Học về mạng thì viết phần mềm giả lập router, switch hay firewall. Cá nhân tôi cũng thấy rằng lập trình là cách tốt nhất để tiếp thu kiến thức một môn học nào đó, biến nó thành của mình. Nói cách khác, lập trình là một cách <a href="http://www.procul.org/blog/2007/06/12/ma-hoa-tri-th%E1%BB%A9c-nh%C6%B0-th%E1%BA%BF-nao/">mã hóa tri thức</a> khá hiệu quả.<br/>
+^
+Ngoài ra nhìn vào mô tả công việc ở phần 2, bạn cũng có thể thấy kỹ năng lập trình quan trọng đến dường nào, bởi hầu hết các vấn đề và giải pháp của an toàn thông tin là đến từ phần mềm. Rõ ràng muốn tìm lỗi của phần mềm thì bạn phải hiểu được phần mềm thông qua mã nguồn trực tiếp hay trung gian của nó. Rất có thể bạn sẽ không phải lập trình hàng ngày, nhưng bạn phải viết được những công cụ nhỏ hay những thư viện hỗ trợ cho công việc và các lập trình viên khác.<br/>
+^
+Vậy làm thế nào để lập trình giỏi? Câu hỏi này làm tôi nhớ đến câu chuyện cười về ông lập trình viên không thể ra khỏi phòng tắm vì trên chai dầu gội có ghi hướng dẫn sử dụng là &ldquo;cho vào tay, xoa lên đầu, xả nước và lập lại&rdquo;. Từ khóa trong câu chuyện này là &ldquo;lập lại&rdquo;: muốn giỏi lập trình thì cách tốt nhất là lập trình nhiều vô!<br/>
+^
+Nhưng mà lập trình bằng ngôn ngữ gì bây giờ? Đây là câu hỏi dễ làm cho các lập trình viên oánh nhau nhất ;-). Cá nhân tôi thấy rằng người làm an toàn thông tin bây giờ cần phải thông thạo C, x86 Assembly, Python (hoặc Ruby) và JavaScript. Tôi có nói lý do tại sao trong phần giới thiệu sách tiếp theo.</p>
+
+<h3>4.1 Lập trình</h3>
+
+<ul>
+<li>Brian Kernighan, Dennis Ritchie, <em>The C Programming Language (2nd Edition)</em>: kinh điển và phải-đọc cho tất cả những ai muốn học C! Linus Torvalds từng nói rằng &ldquo;[&hellip;] <em>all right-thinking people know that (a) K&amp;R are _right_ and (b) K&amp;R are right</em>&rdquo;. Tôi đã từng rất sợ C (vì nghĩ nó phức tạp), và cuốn này giúp tôi không còn sợ nữa.
+^</li>
+<li>Randal Bryant, David O'Hallaron, <em>Computer Systems: A Programmer&rsquo;s Perspective</em>: cuốn này được dùng cho lớp <a href="http://cs107.stanford.edu/">CS107</a>. Đọc cuốn này và làm bài tập của lớp CS107 sẽ rèn cho bạn kỹ năng lập trình C và x86 Assembly. Sau khi đọc cuốn này, bạn sẽ biết tại sao có lỗi tràn bộ đệm và cách khai thác chúng. Tôi rất thích các chương nói về x86 và sự liên kết giữa các công cụ như preprocessor, compiler và linker.
+^</li>
+<li>David Hanson, <em>C Interfaces and Implementations</em>: muốn mau &ldquo;lên cơ&rdquo; bida thì phải thường xuyên xem người khác chơi để mà học &ldquo;đường&rdquo; mới. Tương tự, muốn giỏi lập trình thì phải thường xuyên đọc mã của những cao thủ. David Hanson là một cao thủ C và cuốn sách này sẽ chỉ cho bạn nhiều &ldquo;đường&rdquo; mới trong việc sử dụng C. Tôi thích các bài tập của cuốn sách này. Tôi nghĩ chỉ cần luyện các bài này là đủ để trở thành một lập trình viên C hạng lông.
+^</li>
+<li>Justin Seitz, <em>Gray Hat Python: Python Programming for Hackers and Reverse Engineers</em>: cuốn này sẽ giúp bạn sử dụng Python để viết những công cụ nho nhỏ mà bất kỳ ai làm an toàn thông tin cũng sẽ phải viết một vài lần trong đời.
+^</li>
+<li>Douglas Crockford, <em>JavaScript: The Good Parts</em>: JavaScript là ngôn ngữ thống trị WWW. Nếu bạn muốn làm an toàn (ứng dụng và trình duyệt) web thì bắt buộc phải thành thạo ngôn ngữ. Cuốn sách rất mỏng này của tác giả JSON giới thiệu đầy đủ những vấn đề mà người làm an toàn ứng dụng cần phải biết về JavaScript. Cuốn này có thể dùng làm sách giáo khoa thay cho cuốn &ldquo;Javascript: The Definitive Guide&rdquo; trong lớp <a href="http://crypto.stanford.edu/cs142/">CS142</a> (xem bên dưới). Đọc cuốn này tôi mới hiểu closure là gì và bản chất prototypal của JavaScript.
+^</li>
+<li>Sẽ đọc: những cuốn được giới thiệu ở <a href="https://sites.google.com/site/cinterfacesimplementations/recommended-books">đây</a>.</li>
+</ul>
+
+
+<h3>4.2 Hệ điều hành</h3>
+
+<ul>
+<li>Abraham Silberschatz, Peter Galvin, and Greg Gagne, <em>Operating System Concepts, 8th Edition Update</em>: cuốn này là giáo trình của lớp <a href="http://www.stanford.edu/~ouster/cgi-bin/cs140-winter12/index.php">CS140</a>. Tôi nghĩ không cần đọc cuốn này, chỉ cần đọc notes và làm bài tập (viết các phần khác nhau của một hệ điều hành!) là đủ. Đây là một lớp nặng. Tôi theo đuổi lớp CS140 này giữa chừng thì phải dừng lại do không có đủ thời gian.
+^</li>
+<li>Intel Software Developer Manuals: tôi thấy nên đọc tài liệu của <a href="http://www.scs.stanford.edu/05au-cs240c/lab/i386/toc.htm">80386</a> trước, rồi sau đó hẵng đọc tài liệu của các <a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">CPU mới hơn</a>.
+^</li>
+<li>Red Hat, <em>Introduction to System Administration</em>: tôi rất thích chương nói về &ldquo;philosophy of sysadmin&rdquo; của cuốn này và tôi nghĩ kỹ năng quản trị hệ thống là cực kỳ cần thiết khi muốn nghiên cứu các kỹ thuật tấn công/phòng thủ mới. Không thể làm an toàn vận hành nếu không có kỹ năng quản trị hệ thống.</li>
+</ul>
+
+
+<h3>4.3 Mạng máy tính</h3>
+
+<ul>
+<li>Richard Stevens, <em>TCP/IP Illustrated Vol I</em>: cuốn sách này quá nổi tiếng rồi nên tôi nghĩ không cần phải giới thiệu. Tôi chưa đọc Vol II, III nhưng nhất định sẽ tìm đọc trong thời gian tới. Lớp <a href="http://cs144.stanford.edu/">CS144</a> dùng một cuốn sách khác. Tôi chưa học lớp này, nhưng tôi thấy bài tập của họ khá thú vị.
+^</li>
+<li>Stephen Northcutt, Lenny Zeltser, Scott Winters, Karen Kent, Ronald W. Ritchey, <em>Inside Network Perimeter Security, 2nd Edition</em>: tôi thích cuốn này vì nó viết rất dễ hiểu về các vấn đề  và công cụ thường gặp trong an toàn mạng.
+^</li>
+<li>Sẽ đọc: Fyodor, <em>Nmap Network Scanning</em>.</li>
+</ul>
+
+
+<p>Sau khi đã có những kiến thức cơ bản ở trên, bạn có thể theo đuổi lớp <a href="http://cs155.stanford.edu/">CS155</a>. Lớp này có trên Coursera với tên <a href="http://www.security-class.org/">Computer Security</a>. Song song với lớp CS155, bạn có thể tìm đọc các sách sau:</p>
+
+<h3>4.4 Tìm lỗi phầm mềm</h3>
+
+<ul>
+<li>Mark Dowd, John McDonald, Justin Schuh, <em>The Art of Software Security Assessment: Identifying and Preventing Software Vulnerabilities</em>: Kinh điển và phải-đọc! Cuốn này là kinh thánh của lĩnh vực an ninh ứng dụng. Tôi thích nhất phần nói về tràn số nguyên và những vấn đề của ngôn ngữ C trong cuốn này.
+^</li>
+<li>Dafydd Stuttard, Marcus Pinto, <em>The Web Application Hacker&rsquo;s Handbook: Discovering and Exploiting Security Flaws</em>: cuốn này tập trung vào ứng dụng web. Tôi không đọc cuốn này kỹ lắm, mà chỉ thường dùng nó để tham khảo. Dẫu vậy tôi nghĩ nó là một cuốn giới thiệu tốt cho những ai mới bắt đầu.
+^</li>
+<li>Michal Zalewski, <em>The Tangled Web</em>: cuốn này mới xuất bản gần đây nhưng đã ngay lập tức trở thành kinh điển! Cuốn này đúc kết quá trình nghiên cứu về an ninh web trong vài năm trời của một trong những hacker xuất sắc nhất thế giới. Tôi nghĩ chỉ cần đọc cuốn này là bạn đã có thể bắt đầu tìm lỗ kiếm tiền được rồi. Cuốn này và cuốn ở trên được dùng làm sách giáo khoa của lớp <a href="http://crypto.stanford.edu/cs142/">CS142</a>.
+^</li>
+<li>Sẽ đọc: Tobias Klein, <em>A Bug Hunter&rsquo;s Diary: A Guided Tour Through the Wilds of Software Security</em></li>
+</ul>
+
+
+<h3>4.5 Dịch ngược mã phần mềm</h3>
+
+<ul>
+<li>Eldad Eilam, <em>Reversing: Secrets of Reverse Engineering</em>: mặc dù có rất nhiều người viết về RCE nhưng tôi thấy đây là cuốn duy nhất hệ thống hóa được các bước quan trọng cần phải làm khi cần dịch ngược mã của một tệp chương trình nào đó.
+^</li>
+<li>Chris Eagle, <em>The IDA Pro Book: The Unofficial Guide to the World&rsquo;s Most Popular Disassembler</em>: IDA Pro là công cụ tốt nhất để làm RCE và đây là cuốn sách tốt nhất về IDA Pro. Nắm vững C và x86 Assembly thì chỉ cần đọc cuốn này là bạn có thể bắt đầu RCE các phần mềm phức tạp.
+^</li>
+<li><p>Tham khảo các tài liệu về <a href="http://pentest.cryptocity.net/reverse-engineering/">dịch ngược mã phần mềm</a> của lớp PenTest của đại học NYU.</p></li>
+<li><p>Sẽ đọc: Michael Sikorski, Andrew Honig, <em>Practical Malware Analysis: The Hands-On Guide to Dissecting Malicious Software</em></p></li>
+</ul>
+
+
+<h3>4.6 Điều tra số (digital forensics)</h3>
+
+<ul>
+<li>Brian Carrier, <em>File System Forensic Analysis</em>: Brian Carrier là tác giả của bộ công cụ forensic nổi tiếng <a href="http://www.sleuthkit.org/">The Sleuth Kit</a>. Cuốn này đã giúp tôi &ldquo;khai quật&rdquo; được một đoạn video bị xóa lưu trong một máy camera quay lén các máy ATM.
+^</li>
+<li>Sẽ đọc: Cory Altheide, Harlan Carvey, <em>Digital Forensics with Open Source Tools</em></li>
+</ul>
+
+
+<h3>4.7 Mật mã hóa</h3>
+
+<ul>
+<li>Niels Ferguson, Bruce Schneier, <em>Practical Cryptography</em>: tôi có nhiều kỷ niệm đẹp với cuốn này ;-). Hầu hết các kết quả làm việc của tôi trong vài năm vừa rồi là nhờ vào việc đọc cuốn này. Tôi chép lại đây giới thiệu rất hay của một người bạn: &ldquo;<em>The best security books, you can read "inside out&rdquo;, taking any recommendation on what to do and looking for people to do the opposite to find flaws. &ldquo;Firewalls and Internet Security&rdquo; was like that. So was &ldquo;Practical Unix Security&rdquo;, and so is TOASSA. This is that book for crypto. It&rsquo;s also the one book on crypto you should allow yourself to read until you start actually finding crypto flaws.</em>&ldquo;
+^</li>
+<li>Jonathan Katz, Yehuda Lindell, <em>Introduction to Modern Cryptography: Principles and Protocols</em>: đây là sách giáo khoa của lớp <a href="http://cs255.stanford.edu/">CS255</a>. Lớp này là lớp <a href="https://www.coursera.org/course/crypto">Cryptography</a> trên Coursera.
+^
+Chú ý đây là những cuốn sách tập trung vào công việc hàng ngày và sở thích của tôi &ndash; nói cách khác, còn thiếu nhiều sách của các mảng công việc khác. Dẫu vậy tôi nghĩ những cuốn sách này sẽ giúp bạn có được một kiến thức nền tảng vững chắc để từ đó theo đuổi các nghề nghiệp khác nhau trong ngành an toàn thông tin. Trong thời gian tới tôi sẽ cập nhật thêm những cuốn sách mà tôi đang và sẽ đọc. Nếu bạn biết sách nào hay thì hãy giới thiệu cho tôi.<br/>
+^
+Ngoài ra trong các sách mà tôi vừa liệt kê không có cuốn sách toán (và lý thuyết khoa học máy tính) nào cả. Tôi nghĩ bạn sẽ tự có câu trả lời cho câu hỏi &ldquo;Có nên học toán hay không?&rdquo; khi bắt đầu học mật mã. Về hai mảng này thì tôi rất thích lớp &ldquo;Great Ideas in Theoretical Computer Science&rdquo; của <a href="http://www.scottaaronson.com/blog/">Scott Aaronson</a> và cuốn &ldquo;<a href="http://shoup.net/ntb/">A Computational Introduction to Number Theory and Algebra</a>&rdquo; của Victor Shoup. Thích đến nỗi tôi phải viết đoạn này chỉ để nhắc đến chúng ;-). Tôi cũng đã từng dành ra nhiều tháng để đánh vật với <a href="http://www-math.mit.edu/~sipser/">Introduction to the Theory of Computation</a> của Michael Sipser. Nhưng thôi, tôi không muốn giới thiệu sách toán nữa vì tôi rất dốt món này!</li>
+</ul>
+
+
+<h2>5. Bắt đầu nói nhảm và hết</h2>
+
+<p>Phew! Không ngờ là tôi cũng viết được cho đến đây (hi vọng là bạn vẫn đang đọc!). Tôi định viết dông dài về thái độ học tập này nọ, nhưng thôi bài đã dài và nhiều thông tin rồi, nên tôi chỉ nói ngắn gọn thế này:<br/>
+^
+Cái mà tôi vừa &ldquo;vẽ&rdquo; ra là một con đường. Thú thật là tôi không biết đích đến của nó là gì &ndash; tôi chỉ biết rằng hành trình mà tôi đã đi qua (và hi vọng là những chặng đường sắp tới) đã mang đến cho tôi rất nhiều niềm vui &ndash; niềm vui của một con người đi khám phá thế giới, chinh phục những thử thách, để rồi chia sẻ những câu chuyện hay ho với tất cả mọi người.<br/>
+^
+Mỗi ngày tôi đều dành thời gian đọc sách, làm bài tập, viết mã hoặc chứng minh một cái gì đó. Không ai bắt tôi phải làm những chuyện đó. Có những thứ tôi học cũng không (hoặc chưa) có liên quan gì đến công việc. Tôi học chỉ vì tôi thích và tò mò. Tôi học vì tôi muốn hiểu thêm những thứ mà tôi cho là hay ho. Tôi học vì tôi muốn đi mãi, đi mãi, đi đến tận cùng những cái mà người ta viết trong sách, để xem ở đó có gì hay không.<br/>
+^
+Hôm rồi tôi đọc một mẩu chuyện về Richard Feynman, trong đó có đoạn kể về lúc Feynman bị bệnh gần đất xa trời, ông tâm sự rằng, &ldquo;[I&rsquo;m going to die but I&rsquo;m not as sad as you think because] when you get as old as I am, you start to realize that you&rsquo;ve told most of the good stuff you know to other people anyway&rdquo;. Đương nhiên những gì tôi biết làm sao mà &ldquo;good&rdquo; bằng những gì Feynman biết, nhưng dẫu sao thì tôi cũng sẽ học theo Feynman: có biết chuyện gì hay ho thì kể cho nhiều người khác cùng biết. Bài này là một chuyện như thế.<br/>
+^
+Happy hacking!<br/>
+^
+<em>(cảm ơn đại ca M. đã đọc và sửa bản nháp của bài này)</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Học Khoa Học Máy Tính Nên đọc Sách Gì]]></title>
+    <link href="http://crushcoding.com/blog/2019/08/18/hoc-khmt-nen-doc-sach-gi/"/>
+    <updated>2019-08-18T00:00:00+00:00</updated>
+    <id>http://crushcoding.com/blog/2019/08/18/hoc-khmt-nen-doc-sach-gi</id>
+    <content type="html"><![CDATA[<p>Bài viết gốc - <a href="https://procul.org/blog/2007/10/01/sach-khmt/">Blog Khoa Học Máy Tính</a></p>
+
+<p>Bạn trantempo <a href="https://procul.org/blog/g-ri-t-long/#comment-35411">hỏi</a> một danh sách các sách nên đọc trong KHMT. Bạn Nguyên đã đưa một danh sách sơ bộ. Tôi sẽ cập nhật từ từ vào danh sách dưới đây trong một vài tuần tới để có một danh sách hoàn tất hơn. (Cần về nhà duyệt lại tủ sách). Các bạn có thể bình luận và thêm vào các quyển sách mà bạn ưa thích.</p>
+
+<!--more--> 
+
+
+<h1>1. Phân tích và thiết kế thuật toán (cơ bản)</h1>
+
+<p>Hiện nay có 3 quyển textbooks được dùng khá phổ biến, trong đó tôi thích quyển của Kleinberg và Tardos nhất. Tuy nhiên, từ quan điểm cá nhân thì tôi chưa thấy hài lòng với cả 3 vì các lý do khác nhau, mặc dù cả ba quyển đều rất tốt.</p>
+
+<ul>
+<li>Thomas H. Cormen, Charles E. Leiserson, Ronald Rivest, and Clifford Stein, Introduction to Algorithms (2e), 1180pp, ISBN: 0262032937, MIT Press, September 2001.</li>
+<li>Jon Kleinberg, Éva Tardos, Algorithm Design, 864 pages, Addison Wesley, ISBN-10: 0321295358, ISBN-13: 978-0321295354, March 16, 2005.</li>
+<li><ol type="a">
+<li>Dasgupta, C.H. Papadimitriou, and U.V. Vazirani, <a href="http://www.cs.berkeley.edu/~vazirani/algorithms.html">Algorithms</a>, McGraw Hill, 2007.</li>
+</ol>
+</li>
+</ul>
+
+
+<p>Hồi trước có quyển của Aho-Hopcroft-Ullman. Bây giờ đã khá lỗi thời, ít ai dùng.</p>
+
+<ul>
+<li>Alfred V. Aho John E. Hopcroft Jeffrey Ullman, Data Structures and Algorithms, 427pp. ISBN: 0201000237, Addison Wesley, January 1983.</li>
+</ul>
+
+
+<p>Tiếc rằng Robert Tarjan không viết sách giáo khoa, nếu không sách về data structure của ông hẳn phải rất hay.</p>
+
+<p>Hiện nay không thể dạy thuật toán cơ bản mà không dạy về NP-Completeness và các phương pháp xác suất. Do đó, các quyển sau đây cũng rất cần thiết:</p>
+
+<ul>
+<li>Michael R. Garey and David S. Johnson, <em>Computers and Intractability: A Guide to the Theory of NP-Completeness</em>, 338pp. ISBN: 0716710455, W. H. Freeman Company, November 1990.</li>
+<li>Michael Mitzenmacher and Eli Upfal, <em>Probability and Computing: Randomized Algorithms and Probabilistic Analysis</em>, Cambridge University Press (January 31, 2005)</li>
+</ul>
+
+
+<p>Tôi xếp 3 tập của Knuth vào dạng &ldquo;cao cấp hơn&rdquo;, trong trường hợp bạn đang thắc mắc. Về lecture notes (dạng presentation) thì tôi thấy <a href="http://www.cse.buffalo.edu/~hungngo/classes/2007/Fall-531/tentative_schedule.html">notes</a> của &hellip; tôi khá tốt 🙂 (từ từ đến cuối học kỳ sẽ có toàn bộ notes.)</p>
+
+<h1>2. Phân tích và thiết kế thuật toán (cao cấp hơn)</h1>
+
+<p>Khi nói đến phân tích và thiết kế thuật toán cao cấp, ta thường phải xem xét các đề tài cụ thể để giới thiệu. Các quyển sách cao cấp thường được viết về một đề tài nào đó: approximation algorithms, randomized algorithms, linear programming, convex programming, approximate counting, combinatorial optimization, network flows, algorithmic game theory, vân vân. Tôi sẽ gộp chung chúng lại và giới thiệu một vài quyển tiêu biểu.</p>
+
+<ul>
+<li>Donald Knuth, The Art of Computer Programming Volumes 1, 2, 3, Addison Wesley.</li>
+<li>Vijay Vazirani, Approximation Algorithms, Springer-Verlag, 397 pages hardcover, ISBN: 3-540-65367-8, published 2001.</li>
+<li>Rajeev Motwani and Prabhakar Raghavan, Randomized Algorithms, 492 pages, Cambridge University Press (August 25, 1995), ISBN: 0521474655</li>
+<li>Vašek Chvátal, Linear Programming, W. H. Freeman, 1983; 478pp. ISBN: 0716715872, W. H. Freeman Company, January 1983.</li>
+<li>Dorit Hochbaum (Editor), Approximation Algorithms for NP-Hard Problems, 624 pages ; Brooks/Cole Pub Co; ISBN: 0534949681; 1st edition (July 26, 1996)</li>
+<li>Alexander Schrijver, Theory of Linear and Integer Programming, 484pp. ISBN: 0471982326, Wiley, John &amp; Sons, Incorporated, June 1998.</li>
+<li>Christos H. Papadimitriou and Kenneth Steiglitz, Combinatorial Optimization: Algorithms and Complexity, Dover Publications; Unabridged edition (January 29, 1998).</li>
+<li>Mark Jerrum, Counting, Sampling and Integrating: Algorithms and Complexity (Lectures in Mathematics. ETH Zürich), Birkhäuser Basel; 1 edition (April 28, 2003)</li>
+<li>Ravindra K. Ahuja, Thomas L. Magnanti, and James B. Orlin, Network Flows: Theory, Algorithms, and Applications, Hardcover, 1st ed., 846pp., ISBN: 013617549X, Prentice Hall, February 1993.</li>
+<li>Noam Nisan, Tim Roughgarden, Eva Tardos, and Vijay V. Vazirani (editors), Algorithmic Game Theory, Cambridge University Press, 2007.</li>
+<li>Mark de Berg, M. van Krefeld, M. Overmars, and O. Schwarzkopf, Computational Geometry: Algorithms and Applications, Second Edition, Springer; 2nd rev. ed. edition (February 18, 2000).</li>
+</ul>
+
+
+<p>Đây là tôi hoàn toàn chưa đụng tới rất nhiều các đề tài quan trọng khác: algorithmic number theory, algorithmic coding theory, computational biology, v.v.</p>
+
+<p><strong>Chú ý</strong>: Ngoài ra, không thể nghiên cứu thuật toán hiện đại mà không có hiểu biết sâu sắc về lý thuyết độ phức tạp (computational complexity theory), lý thuyết đồ thị và toán rời rạc, lý thuyết xác suất và lý thuyết thông tin, toán tối ưu và toán ứng dụng, thậm chí cả hình học và giải tích cơ bản (cần cho computational geometry), hay lý thuyết số (cần cho các thuật toán cryptography). Tôi sẽ giới thiệu vài quyển về các đề tài này trong vài ngày tới.</p>
+
+<h1>3. Combinatorics</h1>
+
+<p>(bao gồm lý thuyết đồ thị và toán rời rạc). Combinatorics rất rộng, liên quan mật thiết đến rất nhiều nhánh khác nhau của toán học và khoa học máy tính. Dưới đây tôi chỉ liệt kê một sanh sách các sách tôi đã đọc và thấy hữu dụng trong nghiên cứu và trong phát triển tư duy toán học cho KHMT. Nghĩa là không kể những thứ hữu dụng mà tôi không biết gì cả như <a href="http://www.amazon.com/Additive-Combinatorics-Cambridge-Advanced-Mathematics/dp/0521853869/ref=pd_bbs_sr_1/103-5557427-3043056?ie=UTF8&amp;s=books&amp;qid=1191375903&amp;sr=1-1">Additive Combinatorics</a> của bác Terry Tao và bác Vũ Hà Văn.</p>
+
+<h2>3.1 Toán rời rạc phổ thông</h2>
+
+<p>Hiển nhiên sinh viên học KHMT phải biết toán rời rạc. Tuy nhiên, tôi cực kỳ khó chịu với loại toán rời rạc thường được dạy ở bậc đại học nói chung, vì hai lý do: (1) lớp toán rời rạc kiểu này không chuẩn bị đủ kiến thức cho sinh viên học thêm lên, (2) và nó cho sinh viên một bức tranh bèm nhèm về toán rời rạc, dễ làm sinh viên hiểu không đúng về tầm mức của toán rời rạc. Dĩ nhiên tôi hiểu rằng chương trình đại học thì có giới hạn, còn bể kiến thức thì vô cùng, do đó cái &ldquo;khó chịu&rdquo; này của tôi không có cơ sở, Chỉ nhân đây càm ràm để &ldquo;xả stress&rdquo; là chính.</p>
+
+<p>Có bốn quyển sách &ldquo;phải đọc&rdquo; về toán rời rạc cho sinh viên học KHMT (và cả sinh viên toán):</p>
+
+<ul>
+<li><ol type="a">
+<li><ol type="a">
+<li>van Lint and R. M. Wilson, <em>A Course in Combinatorics</em>, Cambridge University Press; 2nd edition (December 15, 2001). Rất tuyệt vời! Mỗi chương là một đề tài riêng biệt, từ đồ thị đến generating functions, từ design theory đến coding theory, từ q-series đến extremal set theory, v.v. đều có cả. Đa số các bài tập đều không tầm thường. Nếu bạn muốn biết combinatorics thật sự là gì, mà không có thời gian đọc nhiều quá, thì quyển này là bắt buộc!</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Ronald L. Graham, Donald E. Knuth, Oren Patashnik, <em>Concrete Mathematics: A Foundation for Computer Science</em>, Addison-Wesley Professional. Viết bởi computer scientists cho computer scientists. Tất cả những thứ sinh viên KHMT cần biết về asymptotic analysis. Kiểu Knuth. Nghĩa là cực kỳ cụ thể và chi tiết về phương pháp. Dĩ nhiên, phạm vi của quyển này rất hẹp, vì đề tài và đối tượng rất cụ thể.</li>
+<li>Laszlo Lovasz, <em>Combinatorial Problems and Exercises</em>, American Mathematical Society; 2 edition (June 26, 2007). Vừa ra 2nd edition. Cách duy nhất để học toán rời rạc là làm thật nhiều bài tập. Bạn hoàn toàn có thể trở thành một chuyên gia hạng ruồi về graph theory và extremal set theory bằng cách ngồi giải bài tập trong sách này. Nếu bạn đang lấy lớp combinatorics nào đó, nhiều khả năng là thầy của bạn lấy một vài bài tập trong này ra làm bài tập về nhà hoặc cả bài kiểm tra.</li>
+<li>Martin Aigner, Günter M. Ziegler, and K.H. Hofmann, <em>Proofs from THE BOOK</em>, Springer; 3rd ed. edition (November 13, 2003). Tôi không biết là quyển này đã ra đến 3rd edition, tôi chỉ có 1st edition. Nói đúng ra, quyển này không phải viết về toán rời rạc. Nhưng tư tưởng của nó lại rất tương đồng với tư tưởng của toán rời rạc mà tôi cảm nhận. Khi thấy một chứng minh đẹp như mơ, Erdos hay nói rằng &ldquo;chứng minh này chắc là phải nằm trong một quyển sách của thượng đế, quyển sách chứa các chứng minh đẹp nhất&rdquo;. Đó là tư tưởng chính của quyển sách. Nó chứa một bộ sưu tập các chứng minh đẹp như mơ. Dân yêu toán, ai lại không mơ?</li>
+</ul>
+
+
+<h2>3.2 Lý thuyết đồ thị</h2>
+
+<p>(bao gồm cả <strong>algebraic graph theory</strong>). Không có nhánh nào của KHMT mà lại không cần kiến thức cơ bản về lý thuyết đồ thị. Sách mở đầu của lý thuyết đồ thị thì có cực kỳ nhiều. Tôi vẫn thường giới thiệu quyển của West cho sinh viên vì thấy nó vừa phải và phù hợp với dân máy tính. Quyển bài tập của Lovasz ở trên có vài chương về lý thuyết đồ thị rất hay. Tôi quan tâm đến algebraic graph theory nó là công cụ chính để phân tích các expander graphs (dùng cực kỳ nhiều trong complexity theory, algorithm design, randomized algorithms, coding theory, networking, v.v.)</p>
+
+<ul>
+<li>Douglas West, <em>Introduction to Graph Theory</em>, Prentice Hall; 3 edition (December 1, 2007). Tôi thấy phạm vi đề tài của quyển này rất thích hợp cho dân học KHMT, lại rõ ràng dễ hiểu. Sau khi đọc xong một quyển giới thiệu ngành như quyển này, các quyển kế tiếp đều phải đọc theo đề tài, như algebraic graph theory, extremal graph theory, graph coloring, matching theory, v.v.</li>
+<li>Tommy R. Jensen and Bjarne Toft, <em>Graph Coloring Problems</em>, Wiley-Interscience; 1st edition (December 1994). Đây là tham khảo kinh điển về các bài toán tô màu đồ thị, dùng cực nhiều trong KHMT.</li>
+<li><ol type="a">
+<li>Lovász and M.D. Plummer, <em>Matching Theory</em>, Annals of Discrete Mathematics, 29, North-Holland Mathematics Studies, 121. Tôi tin rằng dân làm về graph theory và combinatorial optimization đều &hellip; bí mật đọc quyển này 🙂 Một đề tài rất đẹp và rất khó tìm thấy ở sách khác là về các Pfaffian và Permanent. Đặc biệt là về matching trên bipartite graphs thì tất cả những thứ tôi biết đều học từ quyển này ra, và đã dùng kiến thức học được trong ít nhất 5 bài báo!</li>
+</ol>
+</li>
+<li>Norman Biggs, <em>Algebraic Graph Theory</em>, Cambridge University Press. Quyển sách be bé này giới thiệu algebraic graph theory rất tốt. Đủ để dùng làm nhiều thứ, bao gồm hiểu các thứ liên quan đến expanders.</li>
+<li>Dragos M. Cvetkovic, Michael Doob, Horst Sachs, <em>Spectra of Graphs: Theory and Applications</em>, Academic Press; 3rd Revised edition (August 1, 1997). Đây là sách tham khảo chính về algebraic graph theory.</li>
+<li>Fan Chung, <em>Spectral Graph Theory</em>, American Mathematical Society (May 1997). Sách viết rất tốt và rõ ràng. Cái dở duy nhất là bà Fan Chung lại chọn bộ Lapacian eigenvalues thay vì bộ eigenvalues của đồ thị như trong các applications thường dùng. Chuyển qua chuyển lại các kết quả rất mất thời gian.</li>
+</ul>
+
+
+<h2>3.2 Phương pháp xác suất</h2>
+
+<p>(bao gồm <strong>random graphs</strong>). Phương pháp xác suất là một trong những công cụ chính của theoretical computer science, với ứng dụng ở khắp mọi nơi. Trong complexity theory &amp; algorithms ta dùng phương pháp xác suất phân tích và thiết kế PCP, randomized (approximation) algorithms, derandomization, pseudo-random number generation, v.v. Trong mạng máy tính ta có randomized routing, randomized MAC protocols, blocking analysis of switches and routers, v.v. Trong cơ sở dữ liệu gần đây phát triển mạnh probabilistic databases, v.v.</p>
+
+<p>Tôi sẽ giới thiệu sách về xác suất và thống kê trong một đề mục riêng. Phần dưới đây chỉ nói riêng về phương pháp xác suất theo nghĩa của Erdos.</p>
+
+<ul>
+<li>Noga Alon and Joel H. Spencer, <em>The Probabilistic Method</em>, Wiley-Interscience; 2 Sub edition (August 24, 2000). Kinh điển! Không có gì phải bàn.</li>
+<li>Béla Bollobás, <em>Random Graphs</em>, Cambridge University Press. Lại một quyển kinh điển nữa!</li>
+<li>Quyển của Mitzenmacher và Upfal đã giới thiệu trong phần <a href="https://procul.org/blog/2007/10/01/sach-khmt/comment-page-2/#pttkttcb">giải thuật</a>.</li>
+</ul>
+
+
+<h2>3.4  Enumerative combinatorics</h2>
+
+<ul>
+<li>Richard Stanley, <em>Enumerative Combinantorics</em> Vol. 1 &amp; 2, Cambridge University Press. Kinh điển! Chứa hầu hết tất cả những thứ mà dân khoa học máy tính cần biết về enumerative combinatorics.</li>
+<li>Dennis Stanton and Dennis White, <em>Constructive combinatorics</em>, Springer; 1 edition (May 15, 1986). Quyển này có lẽ ít người biết nhưng tôi thấy rất hay cho dân học máy tính. Nó viết về enumerative combinatorics từ góc nhìn thuật toán và bijective proofs. Tôi đã lấy lớp của cả hai vị Dennis. Bác Stanton là người thầy có ảnh hưởng lớn nhất đến triết lý giáo dục của tôi.</li>
+<li>David M. Bressoud, <em>Proofs and Confirmations: The Story of the Alternating-Sign Matrix Conjecture</em>, Cambridge University Press (August 13, 1999). Quyển này phải nói là trên cả tuyệt vời. Quyển sách nói về một conjecture rất nổi tiếng gọi là Alternating Sign Martrix Conjecture và duyệt lại toàn bộ quá trình người ta &ldquo;tấn công&rdquo; conjecture này. Tôi đã từng bỏ 6 tháng vật lộn với nó 🙁 . Kết thúc bằng các công trình của Zeilberger và Kuperberg. Nó tuyệt vời ở chỗ, ngoài việc dùng làm sách giáo khoa cho một vài lớp enumerative combinatorics rất tốt, nó vẽ ra rất rõ ràng quá trình phát triển và phương pháp tư duy của một nhánh toán học dựa trên một câu chuyện cụ thể, một đề tài nghiên cứu cụ thể. Terry Tao có viết <a href="http://arxiv.org/abs/math.HO/0702396">một bài</a> hàm chứa ý tưởng tương tự về tính liên thông của các phát triển trong toán. Đến bây giờ mở sách này ra đọc tôi vẫn tìm thấy những cái mới, và cả các bài toán chưa giải được. Enumerative combinatorics là &ldquo;tình yêu thời niên thiếu&rdquo; của tôi, và quyển này là quyển tốt nhất giải thích tại sao tôi vẫn còn &hellip; day dứt 🙂 (Trong quyển này có nói về một thuật toán tính định thức của <a href="http://en.wikipedia.org/wiki/Charles_Lutwidge_Dodgson">tác giả</a> truyện Alice lạc vào xứ thần tiên!)</li>
+<li>George E. Andrews, <em>The Theory of Partitions</em>, Cambridge University Press (July 28, 1998). George Andrews là người <a href="http://www.las.uiuc.edu/alumni/news/fall2006/06fall_lostnotebook.html">tìm ra những quyển sổ tay mất tích của Ramanujan</a>. Quyển sách của ông nằm giữa giải tích, lý thuyết số, và enumerative combinatorics. Có lẽ định lý hay nhất trong sách là công thức tính tổng số integer partitions của một số nguyên bất kỳ. Đọc sách này ta sẽ thấy generating functions mạnh như thế nào, và được dùng như thế nào trong các vấn đề cực kỳ hóc búa của lý thuyết số. Ngoài ra, nó cũng là quyển sách rất tốt về các hyper-geometric series và q-series. Tuyệt cú mèo! Có một lần tôi nghe George Andrews trình bày ở một hội nghị, ông mang theo một cuộn giấy to oành in một chương trình ông viết từ hồi đầu thập niên 70 để tìm các conjectures trong enumerative combinatorics. Ông kéo cuộn giấy đi từ đầu đến cuối phòng, chưa hết một nửa.</li>
+</ul>
+
+
+<h2>3.5 Algebraic combinatorics</h2>
+
+<p>Tư tưởng của nhánh này rất gần, theo một nghĩa nhất định, với các phương pháp đại số dùng trong coding theory và complexity theory hiện đại. Nó lại liên quan mật thiết đến giải tích của các hàm vuông góc. Tôi làm M.S. Thesis Toán trong nhánh này. Mặc dù bây giờ không làm về nó nữa, nhắc lại vẫn còn thấy &ldquo;nhiệt huyết&rdquo; bừng bừng 🙂 . Ngoài ra, nhánh này cũng là anh em cột chèo với algebraic graph theory, rất cần thiết trong cả complexity theory lẫn một số bài toán trong mạng máy tính! Đó là chưa kể liên minh sống còn với representation theory cũng lại được dùng trong KHMT (như trong <a href="https://procul.org/blog/index.php?s=l%C3%BD+thuy%E1%BA%BFt+bi%E1%BB%83u+di%E1%BB%85n+nh%C3%B3m&amp;submit=T%C3%ACm">loạt bài về nhân ma trận</a> tôi đang viết dở).</p>
+
+<ul>
+<li>Chris Godsil, <em>Algebraic Combinatorics</em>, Chapman &amp; Hall/CRC (April 1, 1993).</li>
+<li>Chihara, <em>An Introduction to Orthogonal Polynomials</em>, Routledge; 1 edition (January 1, 1978). Quyển kinh điển về các đa thức vuông góc.</li>
+<li>George E. Andrews, Richard Askey, Ranjan Roy, <em>Special Functions</em>, Cambridge University Press; New Ed edition (February 15, 2001). Tất cả những thứ bạn cần biết về các hàm đặc biệt!</li>
+<li>William Fulton, <em>Young Tableaux: With Applications to Representation Theory and Geometry</em>, Cambridge University Press (December 28, 1996).</li>
+<li><ol type="a">
+<li><ol type="a">
+<li>Macdonald, <em>Symmetric Functions and Hall Polynomials</em>, Oxford University Press, USA; 2 edition (June 30, 1999). Quyển này và quyển của Fulton là kinh điển về symmetric functions.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+
+<h2>3.6 Extremal set theory, extremal set systems, và design theory</h2>
+
+<p>Những thứ này thì dùng làm gì trong KHMT? Một vài ví dụ nhỏ: chúng liên quan mật thiết với <a href="https://procul.org/blog/2005/03/29/doan-bi-m%e1%ba%adt/">lý thuyết thử nhóm (group testing)</a> được dùng trong DNA library screening (bio-computing), trong thiết kế MAC protocols và thử lỗi của mạng quang (networking), và thiết kế thuật toán nói chung. Design theory lại cũng liên quan chặt chẽ với coding theory (sẽ giới thiệu sách sau) dùng trong communications và trong complexity theory.</p>
+
+<ul>
+<li>Konrad Engel, <em>Sperner Theory</em>, Cambridge University Press. Phát triển lý thuyết của một định lý rất đơn giản và hùng mạnh trong topology: định lý Sperner.</li>
+<li>Bela Bollobas, <em>Combinatorics</em>, Cambridge University Press. Nhỏ và hiệu quả!</li>
+<li><ol type="a">
+<li><ol type="a">
+<li>Brouwer, A. M. Cohen, A. Neumaier, <em>Distance Regular Graphs</em>, Springer (August 1989). Nhiều bài toán thiết kế các cấu trúc extremal có thể được mô hình hóa bằng distance regular graphs: một loại đồ thị rất giàu có về cấu trúc đại số, nhờ đó bài toán trở nên tổng quát hơn (dùng công cụ của đại số), và đôi khi dễ dàng hơn.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Ding-Zhu Du and Frank K. Hwang, <em>Combinatorial Group Testing and Its Applications</em>, World Scientific Publishing Company; 2nd edition (May 2000). Quyển này là tham khảo chính (và duy nhất) cho lý thuyết thử nhóm. Nó là dạng monograph chứ không phải textbook, dùng làm tham khảo.</li>
+</ul>
+
+
+<h1>4. Xử lý ngôn ngữ tự nhiên (danh sách của anh <a href="http://www.cs.cmu.edu/~nbach/">Bạch Hưng Nguyên</a>).</h1>
+
+<p>Sách cơ bản:</p>
+
+<ul>
+<li>[1] Manning &amp; Schutze, <em>Foundation of Statistical NLP</em> &ndash; (có online nếu có access vào MIT library)</li>
+<li>[2] Jurasky &amp; Martin, <em>Speech&amp;Language Procesing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition</em>, <a href="http://www.cs.colorado.edu/~martin/slp2.html">2nd edition</a>.</li>
+</ul>
+
+
+<p>Tham khảo thêm:</p>
+
+<ul>
+<li>[3] James Allen, <em>Natural Language Understanding</em></li>
+<li>[4] Fred Jelinek, <em>Statistical Method for Speech Recognition</em></li>
+<li>[5] Xudong Huang et al, <em>Spoken Language Processing</em></li>
+</ul>
+
+
+<p>Lộ trình tự đọc &amp; học trong 1 hoặc 2 học kì theo thứ tự sau</p>
+
+<blockquote><hr />
+
+<p>Chương 1+2+3+4 &ndash; [1]: Introduction / Mathematical Foundations/ Linguistic Essential / Corpus-based Work</p>
+
+<h2>Chương 7 &ndash; [2]: Phonetics  </h2>
+
+<p>Chương 6 &ndash; [1]: Statistical Inference: n-gram Models over Sparse Data</p>
+
+<h2>Chương 4 &ndash; [2]: N-grams  </h2>
+
+<p>Chương 8 &ndash; [5]: Hidden Markov Models<br/>
+Chương 2 &ndash; [4]: Hidden Markov Models<br/>
+Chương 4 &ndash; [2]: Word Classes and Part-of-Speech Tagging</p>
+
+<h2>Chương 6 &ndash; [2]: Hidden Markov and Maximum Entropy Models  </h2>
+
+<p>Chương 3 &ndash; [3]: Grammar and Parsing<br/>
+Chương 12 &ndash; [2]: Formal Grammars of English<br/>
+Chương 11 &ndash; [1]: Probabilistic Context Free Grammar<br/>
+Chương 12 &ndash; [1]: Probabilistic Parsing<br/>
+Chương 13 &ndash; [2]: Parsing with Context-Free Grammars</p>
+
+<h2>Chương 14 &ndash; [2]: Statistical Parsing  </h2>
+
+<h2>Chương 3 &ndash; [2]: Words and Transducers  </h2>
+
+<h2>Chương 22 &ndash; [2]: Information Extraction  </h2>
+
+<h2>Chương 25 &ndash; [2]: Machine Translation  </h2>
+
+<h2>Chương 15 &ndash; [1]: Topics in Information Retrieval  </h2>
+
+<h2>Chương 16 &ndash; [1]: Text Categorization  </h2></blockquote>
+
+<p>Lộ trình này giới thiệu chuyên sâu về phương pháp thống kê NLP, mô hình n-gram , mô hình Markov ẩn, &amp; kĩ thuật phân tích câu (parsing). Sau đó là giới thiệu sơ qua một số topics mà NLP đóng vai trò quan trọng như Trích chọn Thông Tin (Information Extraction), Dịch tự động (Machine Translation), Khai Thác Thông Tin (Information Retrieval), &amp; Phân Loại Văn Bản (Text Categorization). Về cơ bản sau khi xong lộ trình này là đủ để bắt tay vào chuyên sâu các vấn đề trong NLP. Rất nhiều topics của NLP không đề cập trong lộ trình này ví dụ như: Các máy Hữu hạn trạng thái (Finite-state Machines), Các kĩ thuật học máy (Machine Learning techniques), Nhận dạng tiếng nói (Speech Recognition), Tổng hợp tiếng nói (Speech Synthesis), Hệ thống Hỏi-Đáp (Q&amp;A systems).</p>
+
+<p><em>Sẽ tiếp tục cập nhật! Không biết bao giờ mới xong.</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Brazil Bâng Quơ]]></title>
+    <link href="http://crushcoding.com/blog/2019/07/06/brazil-co-don-truong-thanh/"/>
+    <updated>2019-07-06T00:00:00+00:00</updated>
+    <id>http://crushcoding.com/blog/2019/07/06/brazil-co-don-truong-thanh</id>
+    <content type="html"><![CDATA[<p>Anh đã làm mọi thứ để không phải đi, vì anh biết rằng chuyến đó sẽ chẳng dễ dàng gì.</p>
+
+<!--more--> 
+
+
+<p>Support xuyên đêm anh cũng đã thử, anh đã cố nghĩ hết các trường hợp có thể xảy ra, nhưng không có kết quả. Và rồi cái gì đến cũng phải đến, anh phải đi mặc dù tâm trí đang đâu đâu, kế hoạch là gì anh không biết, anh chưa từng gặp phải tình huống như vậy. Và vì để chứng tỏ người Việt Nam mình không thua kém, anh đi.
+^
+Cảm giác khó chịu đầu tiên là chuyên bay dài quá, phải mất 8h đồng hồ từ VN -> Qatar, và anh lại phải transit 8h nữa ở Qatar để rồi mất thêm 16h nữa từ Qatar -> Sao Paulo, vậy là anh sẽ mất 32h đồng hồ để đến nơi cần đến. Cảm giác đầu tiên khi đến Qatar là bọn nó làm ăn chuyên nghiệp hơn mình nhiều. Mình đang lơ ngơ không biết khu vực transit đi lối nào thì đã có ngay 1 thằng nhân viên ra hỏi và giúp đỡ tận tình. Tiếp đến là cần phải tìm nơi nào đó để ngủ. Ở Qatar có rất nhiều <strong>Sleeping room</strong> xếp dọc lối đi ra các cửa ra máy bay hoặc gần khu vực vệ sinh. Nếu không biết thì bạn có thể hỏi bất cứ nhân viên nào ở đó.
+^
+Nào dậy đi, anh còn cần bay thêm 16h nữa. Đây là thời gian tù nhất, vì ngủ nhiều thì đau đầu, không ngủ thì không biết làm gì cả. Xem TV thì nó đặt gần quá, mắt mình lại 11/10 nên nhìn gần rất là khó chịu, có lẽ lần sau nên đi vé thương gia xem thế nào :laughing:
+^
+Thôi thì trầy trật mãi cũng đến Sao Paulo, một thành phố anh được nghe nói là đầy nguy hiểm. Tuy nhiên, anh đâu có tâm trí để ý đến điều đó. Cái làm anh suy nghĩ là làm sao cho xong việc còn về. Khó khăn mới chỉ bắt đầu, tuần đầu tiên anh đến chỗ khách hàng vài lần, không tìm thấy lỗi và câu chuyện còn dài lắm. Dự định của anh đầu tiên là 14 ngày, nhưng phải đến 42 ngày anh mới được về nhưng mới chỉ hoàn thành 70% công việc.
+^
+Anh có tuyệt vọng không?</p>
+
+<blockquote><p>Có.
+^
+Anh có bao giờ muốn từ bỏ mọi thứ không?
+Tất nhiên là có, vì mình không biết bắt đầu từ đâu, có quá nhiều dữ liệu đầu vào, mình lại không có nhiều thời gian.
+^
+Bây giờ khi đã có một phần đáp án thì nếu cho bắt đầu lại, anh sẽ bắt đầu như thế nào?
+Thực ra cho đến bây giờ, nếu cho bắt đầu lại thì anh vẫn không biết bắt đầu như thế nào. Thế giới phần mềm quả thật rộng lớn, bất cứ một lỗi nào dù nhỏ cũng có thế phá hỏng hệ thống, vì nó rộng lớn quá so với thời gian anh có nên anh như bị chôn chân trong chính suy nghĩ của mình.
+^
+Khi một mình trên một đất nước xa lạ, đồng nghiệp thì ở xa và khác múi giờ, anh chỉ còn biết trông chờ vào chính mình. Cũng từ đây, anh hiểu thế nào là tự lập, thế nào là sự cô đơn và niềm tin anh đặt vào chính mình. Chỉ cần một hướng đi sai, anh có thể mất cơ hội để tìm ra vấn đề. Người ta nói rằng &ldquo;What doesn&rsquo;t kill you, makes you stronger!&rdquo;, điều duy nhất anh có thể bám víu để tiếp tục, để không gục ngã.
+^
+Vào thứ 7, chủ nhật khi không phải đi làm, anh có thời gian nghĩ lại về cuộc đời mình. Một suy nghĩ cứ mãi luẩn quẩn trong đầu anh &ldquo;What is your dream?&rdquo;. Không biết bao nhiêu lần anh tự hỏi mình như thế. Và ở đây, một đất nước xa lạ, nó làm anh chạnh lòng.
+^
+Chuyến đi này có phải nằm trong dự định của anh?
+Không, anh không muốn đến nơi đây, tại sao anh phải đến đây cơ chứ? Anh sẽ tìm được giấc mơ của mình ở đây chăng? Có thể lắm chứ.
+^
+Dù sao, anh cũng nhận ra được một điều: <strong>Nếu không có một quyết tâm vững vàng, một mục đích xác định, và đi đến cùng tới giấc mơ đó</strong> thì chắc chắn anh sẽ gục ngã, sẽ buông xuôi. Hành trình tìm kiếm và thực hiện giấc mơ chưa bao giờ và sẽ không bao giờ là dễ dàng cả. Và anh cần phải khắc sâu vào tiềm thức mình điều đó. Thà để anh chết trên con đường đi tìm giấc mơ của mình hơn là chết trong những lo sợ mà không dám tìm kiếm nó.
+^
+Anh bắt đầu nghĩ nhảm, anh thấy sao bọn nó hiện đại hơn mình quá. Đường xá thì không bằng phẳng như mình đâu, mà toàn như kiểu đi trên núi. Nhưng anh chưa thấy người ta vượt đèn đỏ bao giờ, cũng không bóp còi inh ỏi như ở mình, ở đây họ hay dùng tay để ra hiệu :+1: nghĩa là ổn, mày sang đường đi. Hệ thống tàu điện ngầm của bọn này thì to kinh khủng, ở những đoạn nối giữa các line, phải đi bộ đến mấy tầng để chuyển sang line tiếp theo. Trên mỗi toa tàu đều có tiếng Bồ Đào Nha và tiếng Anh, nên sử dụng rất đơn giản.
+^
+Ngồi trên tàu điện ngầm, một vài suy nghĩ cứ lẳn quẩn trong tâm trí:
+Người ta sẵn sàng bỏ ra một số tiền lớn để mua một chiếc IPhone, nhưng có ai chấp nhận bỏ ra một số tiền lớn cho một bữa ăn.
+^
+Dĩ nhiên là không, không ai muốn bỏ ra một khoản lớn cho nhu cầu cơ bản của mình cả. Mặc dù nhu cầu cơ bản là cái quan trọng hơn. Anh có thể chết nếu không ăn uống, nhưng nếu thiếu &ldquo;Smart phone&rdquo;, anh vẫn sống ngon ơ. Trước đây, anh thường băn khoăn về con đường phía trước của mình. Anh muốn trở thành một gã nông dân, anh muốn sống trên núi được gần với thiên nhiên.
+Xuân ăn măng trúc, đông ăn giá.
+^
+Nhưng anh à, đất nước cần những người nông dân như anh từng nghĩ, nhưng đất nước cần hơn những kỹ sư xây tàu điện ngầm, xây sân bay, sản xuất máy tính, điện thoại những thứ cần công nghệ tiên tiến hơn so với công nghệ nông nghiệp. Đứng vào đâu, tập trung vào lĩnh vực nào, lựa chọn là ở anh.
+^
+Còn nữa &hellip;.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Người Lạ - Mai Thảo Yên]]></title>
+    <link href="http://crushcoding.com/blog/2019/03/22/nguoi-la-mai-thao-yen/"/>
+    <updated>2019-03-22T00:00:00+00:00</updated>
+    <id>http://crushcoding.com/blog/2019/03/22/nguoi-la-mai-thao-yen</id>
+    <content type="html"><![CDATA[<p>&ldquo;Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trống trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô.&rdquo;</p>
+
+<!--more-->
+
+
+<p>Tôi bắt gặp <strong>Người lạ</strong> trong bài giới thiệu <a href="https://tuoitre.vn/van-hoc-tuoi-20-lan-thu-6-nguoi-tre-tren-duong-toi-di-tim-toi-20181224093228485.htm">Văn học tuổi 20 của báo Tuổi trẻ</a>.
+Ở cái tuổi của tác giả và của tôi thì những suy nghĩ về cuộc đời, những câu hỏi không tìm được lời giải khá là rõ nét. Câu chuyện bắt đầu với một sự chơi vơi, sự hoài nghi để rồi kết thúc trong một khoảng không vô định, cô đơn đến nao lòng.</p>
+
+<blockquote><p>Dù sao, chính An đã chọn đưa mình đến đây, ngồi ở những bậc thang đá này và mơ về biển khơi. Cái giá phải đánh đổi dù sao cũng vừa vặn và công bằng so với sự tham lam của cô.</p></blockquote>
+
+<p>Trước khi đọc cuốn sách này, tôi cứ nghĩ du học là thiên đường, khi nghe những lời tâm sự của An - mà có thể cũng là chính của tác giả thì mới thấu hiểu phần nào của sống của những du học sinh như An. Đó hẳn phải là một sự hi sinh, chịu đựng rất lớn, nhưng như theo cách cô nói - dù sao nó cũng công bằng với những ước mơ hoài bão của cô.</p>
+
+<blockquote><p>Nhưng buổi chiều hôm nay, khi chỉ còn An một mình trên bậc thang này, khi thanh âm rõ ràng nhất không đến từ tiếng sóng nước đập vào bờ cuồn cuộn, mà đến từ sự trống trải trong lòng, cô lại thấy mình như một chiếc thuyền đã rời bến. Ở giữa khơi xa, con thuyền này cần những ngọn gió sau lưng, sóng biển bốn bề, và cảm giác lao về phía trước để thấy mình toàn vẹn. Kể cả khi không rõ điểm đến là đâu. Kể cả khi có thể chẳng có điểm đến nào dành cho nó. An có thể đi rất nhiều chân trời, ngắm nhìn cuộc sống muôn màu ở những bến cảng khác nhau, nhưng về sau cùng, cô vẫn cần có biển cả, cần có sự lênh đênh này để nhìn thấy chính mình. Có lẽ kiếp sống này buộc An phải trở thành một người lạ ở chính quê hương cô, ở cả thành phố đã chứng kiến cô trưởng thành, trầy trật, va vấp. Mà cũng có lẽ, nếu người ta có một thứ gọi là bản chất, thì bản chất của An chình là chiếc thuyền đó.</p></blockquote>
+
+<p>Đã bao giờ bạn cảm thấy cô đơn trên chính ngôi nhà của mình, lạc lõng giữa thành phố đầy bon chen, phiền muộn? Và nếu muốn biến mình thành một con thuyền, có thể bơi ra biển lớn, để một lần được hiểu về bản chất của chính mình, bạn có đủ dũng cảm để ra đi? Bạn có đủ nghị lực để vượt qua được sự cô đơn sắp đến?</p>
+
+<p>Sẽ chẳng có một câu trả lời nào hoàn hảo, cũng không ai trả lời cho bạn, hoặc nếu có ai đó cho bạn lời khuyên thì chắc gì đã đúng với bạn? Bạn là duy nhất, vậy nên hãy tự tìm câu trả lời cho chính mình. Và khi đã lựa chọn rồi thì cũng đừng quay lại, chẳng có quyết định nào là hoàn toàn đúng hay sai cả. Cuộc sống không đơn giản như vậy, cũng không thể rạch ròi trắng-đen, đúng-sai. Hãy trân quý điều đó vì cuộc sống muôn màu. Điều này có vẻ đi ngược lại thế giới của máy tính, khi chúng ta chỉ có những bit 1 và 0, thế giới của máy tính thật buồn tẻ và đơn giản, còn cuộc sống của chúng ta thì không.</p>
+]]></content>
+  </entry>
+  
+</feed>

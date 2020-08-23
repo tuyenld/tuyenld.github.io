@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | tuyenld]]></title>
+  <link href="http://crushcoding.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://crushcoding.com/"/>
+  <updated>2020-08-23T16:19:32+00:00</updated>
+  <id>http://crushcoding.com/</id>
+  <author>
+    <name><![CDATA[Le Dinh-Tuyen]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Use Google Analytics API]]></title>
+    <link href="http://crushcoding.com/blog/2019/07/06/how-to-use-google-analytics-api/"/>
+    <updated>2019-07-06T00:00:00+00:00</updated>
+    <id>http://crushcoding.com/blog/2019/07/06/how-to-use-google-analytics-api</id>
+    <content type="html"><![CDATA[<p>Using Google Analytics API on ruby and python.</p>
+
+<!--more--> 
+
+
+<p>I want to display <strong>pageview</strong> on my blog (you can see the &ldquo;eye&rdquo; icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.
+* Services Account
+* Access Token
+* Fresh Token
+* OAuth 2.0</p>
+
+<p>Do I need spend all my free time to understand these?</p>
+
+<p>I don&rsquo;t know where can I start, I just want to it as simple as possible.
+Using google API is not easy task for me in the first time, even it is several line of code. I tried to find a sample example on github page, but I failed. I can&rsquo;t find any instruction one by one to do that. Therefore, I want to share with you how can I do that. Let&rsquo;s see.</p>
+
+<h2>1. Setting on your account</h2>
+
+<p>In this step you need to find:
+1. Your Profile ID: <code>profileID</code>
+2. <code>Service account</code> private key (<code>KEY_FILEPATH</code> *json file)</p>
+
+<h3>1.1 Add a <em>Services Account</em></h3>
+
+<h4>1. Goto <a href="https://console.developers.google.com/iam-admin/serviceaccounts?supportedpurview=project">Google console</a></h4>
+
+<h4>2. Click <em>Create service account</em> on the top, near navigation bar.</h4>
+
+<p><figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/add-service-acc.jpg" alt="">
+</figure></p>
+
+<h4>3. Click <em>CREATE KEY</em>, choose <em>json</em></h4>
+
+<p>You are able to download this private json file only one time.
+{:.info}</p>
+
+<p><figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/json-key-service-acc.jpg" alt="">
+</figure></p>
+
+<p>After finish, you will see something like this.
+<figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/add-service-finish.jpg" alt="">
+</figure></p>
+
+<h3>1.2 Add the <em>Services Account</em> to your <em>Google analytics service</em></h3>
+
+<h4>1. Goto <a href="https://analytics.google.com/analytics/web/">Google analytics</a></h4>
+
+<p>it will redirect you to link like this:
+<code>
+https://analytics.google.com/analytics/web/#/a133437467w193286472p188904382/admin/account/settings
+</code></p>
+
+<pre><code>/a[6 digits]w[8 digits]p[8 digits]
+</code></pre>
+
+<p>The 8 digits which after the &ldquo;p&rdquo; are your profile ID. (in my case this is 188904382)</p>
+
+<h4>2. Click <em>User Management</em></h4>
+
+<p><figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-google-api-service.jpg" alt="">
+</figure></p>
+
+<h4>3. Click <em>+</em> on the top to add <em>Service Account</em> > Click <em>Add users</em></h4>
+
+<p><figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/click-plus-symbol-to-add-new-acc.jpg" alt="">
+</figure>
+<figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/add-your-email.jpg" alt="">
+</figure></p>
+
+<p>After finish, you will see something as following.
+<figure class="align-center">
+  <img src="2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-analytics-finish.jpg" alt="">
+</figure></p>
+
+<h2>2. Using ruby</h2>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="lineno"> 1</span> <span class="o">&lt;</span><span class="sr">/p&gt;</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="sr">&lt;p&gt;require &amp;lsquo;googleauth&amp;rsquo;</span>
+<span class="lineno"> 4</span> <span class="sr">require &amp;lsquo;google/</span><span class="n">apis</span><span class="o">/</span><span class="n">analytics_v3</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="sr">&lt;h1&gt;Thank to &lt;a href=&quot;https:/</span><span class="o">/</span><span class="n">qiita</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mochizukikotaro</span><span class="o">/</span><span class="n">items</span><span class="o">/</span><span class="mi">4</span><span class="n">a7aef0fe50066a2ed80</span><span class="s2">&quot;&gt;https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80&lt;/a&gt;&lt;/h1&gt;</span>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="s2">&lt;p&gt;profileID = &amp;lsquo;ga:188904382&amp;rsquo;   # Profile ID</span>
+<span class="lineno"> 9</span> <span class="s2">startDate = &amp;lsquo;300daysAgo&amp;rsquo;</span>
+<span class="lineno">10</span> <span class="s2">endDate = &amp;lsquo;yesterday&amp;rsquo;</span>
+<span class="lineno">11</span> <span class="s2">metrics = &amp;lsquo;ga:pageviews&amp;rsquo;     # Metrics code</span>
+<span class="lineno">12</span> <span class="s2">dimensions = &amp;lsquo;ga:pagePath&amp;rsquo;   # Dimensions&lt;/p&gt;</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span> <span class="s2">&lt;h1&gt;The scope for the OAuth2 request.&lt;/h1&gt;</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span> <span class="s2">&lt;p&gt;SCOPE = &amp;lsquo;&lt;a href=&quot;</span><span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">analytics</span><span class="o">.</span><span class="n">readonly</span><span class="s2">&quot;&gt;https://www.googleapis.com/auth/analytics.readonly&lt;/a&gt;&amp;rsquo;</span>
+<span class="lineno">17</span> <span class="s2">URL = &amp;lsquo;&lt;a href=&quot;</span><span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analytics</span><span class="o">/</span><span class="n">v3</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">ga</span><span class="s2">&quot;&gt;https://www.googleapis.com/analytics/v3/data/ga&lt;/a&gt;&amp;rsquo;&lt;/p&gt;</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span> <span class="s2">&lt;h1&gt;The location of the key file with the key json data.&lt;/h1&gt;</span>
+<span class="lineno">20</span> 
+<span class="lineno">21</span> <span class="s2">&lt;p&gt;KEY_FILEPATH = &amp;lsquo;crushcoding-163b3f074083.json&amp;rsquo;&lt;/p&gt;</span>
+<span class="lineno">22</span> 
+<span class="lineno">23</span> <span class="s2">&lt;p&gt;authorizer = Google::Auth::ServiceAccountCredentials.make_creds(</span>
+<span class="lineno">24</span> <span class="s2">  json_key_io: File.open(KEY_FILEPATH),</span>
+<span class="lineno">25</span> <span class="s2">  scope: SCOPE)&lt;/p&gt;</span>
+<span class="lineno">26</span> 
+<span class="lineno">27</span> <span class="s2">&lt;p&gt;credentials = authorizer.fetch_access_token!</span>
+<span class="lineno">28</span> <span class="s2">puts credentials[&amp;lsquo;access_token&amp;rsquo;]&lt;/p&gt;</span>
+<span class="lineno">29</span> 
+<span class="lineno">30</span> <span class="s2">&lt;p&gt;stats = Google::Apis::AnalyticsV3::AnalyticsService.new</span>
+<span class="lineno">31</span> <span class="s2">stats.authorization = authorizer</span>
+<span class="lineno">32</span> <span class="s2">post_stats = stats.get_ga_data(profileID, startDate, endDate, metrics, dimensions: dimensions)&lt;/p&gt;</span>
+<span class="lineno">33</span> 
+<span class="lineno">34</span> <span class="s2">&lt;p&gt;post_stats.rows.each do |row|</span>
+<span class="lineno">35</span> <span class="s2">  puts row</span>
+<span class="lineno">36</span> <span class="s2">end&lt;/p&gt;</span>
+<span class="lineno">37</span> 
+<span class="lineno">38</span> <span class="s2">&lt;p&gt;</span></code></pre></div></p>
+
+<p>Sample output as following.
+<code>
+20
+/life/nguoi-la-mai-thao-yen.html
+1
+/life/nguoi-la-mai-thao-yen/
+13
+/openwrt/2019/02/11/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html
+1
+/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb
+</code></p>
+
+<h2>3. Using python</h2>
+
+<p><div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">service</span><span class="o">-</span><span class="n">account</span><span class="o">.</span><span class="n">py</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">httplib2</span>
+<span class="lineno"> 6</span> <span class="kn">import</span> <span class="nn">pprint</span>
+<span class="lineno"> 7</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="lineno"> 8</span> <span class="kn">import</span> <span class="nn">requests</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">profileID</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">ga</span><span class="p">:</span><span class="mi">188904382</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>   <span class="c"># Profile ID</span>
+<span class="lineno">13</span> <span class="n">startDate</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mi">300</span><span class="n">daysAgo</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+<span class="lineno">14</span> <span class="n">endDate</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">yesterday</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+<span class="lineno">15</span> <span class="n">metrics</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">ga</span><span class="p">:</span><span class="n">pageviews</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>     <span class="c"># Metrics code</span>
+<span class="lineno">16</span> <span class="n">dimensions</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">ga</span><span class="p">:</span><span class="n">pagePath</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>   <span class="c"># Dimensions&lt;/p&gt;</span>
+<span class="lineno">17</span> 
+<span class="lineno">18</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">scope</span> <span class="k">for</span> <span class="n">the</span> <span class="n">OAuth2</span> <span class="n">request</span><span class="o">.&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno">19</span> 
+<span class="lineno">20</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">SCOPE</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;https://www.googleapis.com/auth/analytics.readonly&quot;</span><span class="o">&gt;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">auth</span><span class="o">/</span><span class="n">analytics</span><span class="o">.</span><span class="n">readonly</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+<span class="lineno">21</span> <span class="n">URL</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;https://www.googleapis.com/analytics/v3/data/ga&quot;</span><span class="o">&gt;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analytics</span><span class="o">/</span><span class="n">v3</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">ga</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">22</span> 
+<span class="lineno">23</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">location</span> <span class="n">of</span> <span class="n">the</span> <span class="n">key</span> <span class="nb">file</span> <span class="k">with</span> <span class="n">the</span> <span class="n">key</span> <span class="n">json</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno">24</span> 
+<span class="lineno">25</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">KEY_FILEPATH</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">crushcoding</span><span class="o">-</span><span class="mi">163</span><span class="n">b3f074083</span><span class="o">.</span><span class="n">json</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">26</span> 
+<span class="lineno">27</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Defines</span> <span class="n">a</span> <span class="n">method</span> <span class="n">to</span> <span class="n">get</span> <span class="n">an</span> <span class="n">access</span> <span class="n">token</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nn">ServiceAccount</span> <span class="nn">object.</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno">28</span> 
+<span class="lineno">29</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">get_access_token</span><span class="p">():</span>
+<span class="lineno">30</span>   <span class="k">return</span> <span class="n">ServiceAccountCredentials</span><span class="o">.</span><span class="n">from_json_keyfile_name</span><span class="p">(</span>
+<span class="lineno">31</span>       <span class="n">KEY_FILEPATH</span><span class="p">,</span> <span class="n">SCOPE</span><span class="p">)</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">()</span><span class="o">.</span><span class="n">access_token</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">32</span> 
+<span class="lineno">33</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">credentials</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">()</span>
+<span class="lineno">34</span> <span class="k">print</span> <span class="p">(</span><span class="n">credentials</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">35</span> 
+<span class="lineno">36</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Sample</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382&quot;</span><span class="o">&gt;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analytics</span><span class="o">/</span><span class="n">v3</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">ga</span><span class="err">?</span><span class="n">ids</span><span class="o">=</span><span class="n">ga</span><span class="o">%</span><span class="mi">3</span><span class="n">A188904382</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno">37</span> 
+<span class="lineno">38</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">start</span><span class="o">-</span><span class="n">date</span><span class="o">=</span><span class="mi">30</span><span class="n">daysAgo</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">end</span><span class="o">-</span><span class="n">date</span><span class="o">=</span><span class="n">yesterday</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">metrics</span><span class="o">=</span><span class="n">ga</span><span class="o">%</span><span class="mi">3</span><span class="n">Apageviews</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno">39</span> 
+<span class="lineno">40</span> <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">dimensions</span><span class="o">=</span><span class="n">ga</span><span class="o">%</span><span class="mi">3</span><span class="n">ApagePath</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">access_token</span><span class="o">=</span><span class="n">ya29</span><span class="o">.</span><span class="n">Gxxx</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="lineno">41</span> 
+<span class="lineno">42</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">url</span> <span class="o">=</span> <span class="n">URL</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="err">?</span><span class="n">ids</span><span class="o">=&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">profileID</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">start</span><span class="o">-</span><span class="n">date</span><span class="o">=&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">startDate</span> <span class="o">+</span> \
+<span class="lineno">43</span>             <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">end</span><span class="o">-</span><span class="n">date</span><span class="o">=&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">endDate</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">metrics</span><span class="o">=&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">metrics</span> <span class="o">+</span> \
+<span class="lineno">44</span>             <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">dimensions</span><span class="o">=&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="o">+</span> <span class="n">dimensions</span> <span class="o">+</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">access_token</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">credentials</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">45</span> 
+<span class="lineno">46</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">print</span> <span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">47</span> 
+<span class="lineno">48</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="lineno">49</span> <span class="n">ga_data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="lineno">50</span> <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">ga_data</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="lineno">51</span> 
+<span class="lineno">52</span> <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span></code></pre></div></p>
+
+<p>Sample output as following.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>      [&lsquo;/about.html&rsquo;, &lsquo;2&rsquo;],
+</span><span class='line'>      [&lsquo;/archive.html&rsquo;, &lsquo;5&rsquo;],
+</span><span class='line'>      [&lsquo;/archive.html?tag=An+Nam&rsquo;, &lsquo;1&rsquo;],
+</span><span class='line'>      [&lsquo;/archive.html?tag=Nguyễn+Ái+Quốc&rsquo;, &lsquo;2&rsquo;],
+</span><span class='line'>      [&lsquo;/archive.html?tag=Văn+học&rsquo;, &lsquo;7&rsquo;],
+</span><span class='line'>      [&lsquo;/archive.html?tag=life&rsquo;, &lsquo;1&rsquo;],
+</span><span class='line'>      [&lsquo;/categories/&rsquo;, &lsquo;18&rsquo;],
+</span><span class='line'>      [&lsquo;/header-image&rsquo;, &lsquo;4&rsquo;],
+</span><span class='line'>      [&lsquo;/kkk&rsquo;, &lsquo;3&rsquo;],&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;
+</span><span class='line'>## 4. Some error you may encounted
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Error: Authorization failed. Server message: { &ldquo;error&rdquo;: &ldquo;invalid_grant&rdquo;, &ldquo;error_description&rdquo;: &ldquo;Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values and use a clock with skew to account for clock differences between systems.&rdquo; }
+</span><span class='line'>         Error: Run jekyll build &ndash;trace for more information.</span></code></pre></td></tr></table></div></figure></p>
+
+<blockquote><p>I ues on Ubuntu on my Virtual box and Ubuntu time is not synced. Solution is update time on Ubuntu: ``sudo ntpdate time.nist.gov```</p></blockquote>
+
+<h2>5. References</h2>
+
+<ul>
+<li><a href="https://ga-dev-tools.appspot.com/query-explorer/?csw=1">Google Query Explorer</a></li>
+<li><a href="https://martinfowler.com/articles/command-line-google.html">Martin Fowler blog</a></li>
+<li><a href="https://z3nth10n.net/en/2019/03/22/jekyll-ga-v2-plugin-to-get-google-analytics-data-into-your-site">Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site - Jekyll static site</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

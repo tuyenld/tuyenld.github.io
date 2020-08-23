@@ -250,7 +250,7 @@ task :rsync do
 end
 
 desc "deploy public directory to github pages"
-multitask :push do
+task :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
   cd "#{deploy_dir}" do 
@@ -313,6 +313,7 @@ end
 
 desc "Set up _deploy folder and deploy branch for Github Pages deployment"
 task :setup_github_pages, :repo do |t, args|
+  puts "Set up github pages"
   if args.repo
     repo_url = args.repo
   else

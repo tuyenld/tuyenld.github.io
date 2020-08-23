@@ -1,1 +1,4 @@
-Sitemap: https://crushcoding.com/sitemap.xml
+User-agent: *
+Disallow: 
+
+Sitemap: http://tuyenld.github.io/sitemap.xml 

@@ -12,9 +12,8 @@ rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "master"
 # tregiengchan
-octopress_branch  = "octopress"
+deploy_branch  = "master"
 
 ## -- Misc Configs -- ##
 
@@ -257,7 +256,7 @@ multitask :push do
   cd "#{deploy_dir}" do 
     # Bundler.with_clean_env { system "git pull" }
     # tregiengchan Correctly pulling from the compiled branch before pushing the generated changes
-    Bundler.with_clean_env { system "git pull origin #{octopress_branch}" }
+    Bundler.with_clean_env { system "git pull origin #{deploy_branch}" }
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)

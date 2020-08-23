@@ -4,10 +4,6 @@
 language: ruby
 rvm:
 - 2.1.0
-env:
-  global:
-  - GH_REPO="tuyenld/tuyenld.github.io"
-  - secure: THE ENCRYPTED RESULT
 before_install:
 - git config --global user.email "tuyenld.work@gmail.com"
 - git config --global user.name "Le Dinh-Tuyen(via Travis CI)"
@@ -18,3 +14,9 @@ script:
 - bundle exec rake install; bundle exec rake generate
 after_script:
 - bundle exec rake deploy
+- bundle exec rake push
+
+env:
+  global:
+  - GH_REPO="tuyenld/tuyenld.github.io"
+  - secure: THE ENCRYPTED RESULT

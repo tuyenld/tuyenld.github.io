@@ -1,15 +1,11 @@
 ---
+layout: post
 title: Người lạ - Mai Thảo Yên
-excerpt: "Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trống trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô."
-categories:
-  - Life
-tags: 
-  - Văn học
-  - Schoolarship
-  - Book
-toc: false
+categories:  Life
 ---
 
+"Dù có cố gắng đến thế nào, cô vẫn không thể xua đi nỗi cô đơn, trống trải. Nơi đây có lẽ sẽ không bao giờ dành cho cô."
+<!--more-->
 
 Tôi bắt gặp **Người lạ** trong bài giới thiệu [Văn học tuổi 20 của báo Tuổi trẻ](https://tuoitre.vn/van-hoc-tuoi-20-lan-thu-6-nguoi-tre-tren-duong-toi-di-tim-toi-20181224093228485.htm).
 Ở cái tuổi của tác giả và của tôi thì những suy nghĩ về cuộc đời, những câu hỏi không tìm được lời giải khá là rõ nét. Câu chuyện bắt đầu với một sự chơi vơi, sự hoài nghi để rồi kết thúc trong một khoảng không vô định, cô đơn đến nao lòng.

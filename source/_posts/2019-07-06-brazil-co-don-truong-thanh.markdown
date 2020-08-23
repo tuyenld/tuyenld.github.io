@@ -1,14 +1,12 @@
 ---
+layout: post
 title: Brazil bâng quơ
-excerpt: "40 ngày gian nan, áp lực và vô định."
-categories:
-  - life
-tags: 
-  - trip
-toc: false
+categories: Life
 ---
 
-Anh đã làm mọi thứ để không phải đi, vì anh biết rằng chuyến đó sẽ chẳng dễ dàng gì. Support xuyên đêm anh cũng đã thử, anh đã cố nghĩ hết các trường hợp có thể xảy ra, nhưng không có kết quả. Và rồi cái gì đến cũng phải đến, anh phải đi mặc dù tâm trí đang đâu đâu, kế hoạch là gì anh không biết, anh chưa từng gặp phải tình huống như vậy. Và vì để chứng tỏ người Việt Nam mình không thua kém, anh đi.
+Anh đã làm mọi thứ để không phải đi, vì anh biết rằng chuyến đó sẽ chẳng dễ dàng gì. 
+<!--more--> 
+Support xuyên đêm anh cũng đã thử, anh đã cố nghĩ hết các trường hợp có thể xảy ra, nhưng không có kết quả. Và rồi cái gì đến cũng phải đến, anh phải đi mặc dù tâm trí đang đâu đâu, kế hoạch là gì anh không biết, anh chưa từng gặp phải tình huống như vậy. Và vì để chứng tỏ người Việt Nam mình không thua kém, anh đi.
 ^
 Cảm giác khó chịu đầu tiên là chuyên bay dài quá, phải mất 8h đồng hồ từ VN -> Qatar, và anh lại phải transit 8h nữa ở Qatar để rồi mất thêm 16h nữa từ Qatar -> Sao Paulo, vậy là anh sẽ mất 32h đồng hồ để đến nơi cần đến. Cảm giác đầu tiên khi đến Qatar là bọn nó làm ăn chuyên nghiệp hơn mình nhiều. Mình đang lơ ngơ không biết khu vực transit đi lối nào thì đã có ngay 1 thằng nhân viên ra hỏi và giúp đỡ tận tình. Tiếp đến là cần phải tìm nơi nào đó để ngủ. Ở Qatar có rất nhiều **Sleeping room** xếp dọc lối đi ra các cửa ra máy bay hoặc gần khu vực vệ sinh. Nếu không biết thì bạn có thể hỏi bất cứ nhân viên nào ở đó.
 ^

@@ -1,15 +1,12 @@
 ---
+layout: post
 title: Cứ đi rồi sẽ đến... [Chuyện đi học]
-excerpt: "Vy from UCD Michael Smurfit Graduate Business School."
-categories:
-  - Schoolarship
-tags: 
-  - Schoolarship
-toc: false
+categories: Schoolarship
 ---
 
-Source: [Notes by Vy Vy Le](https://www.facebook.com/notes/vy-vy-le/c%E1%BB%A9-%C4%91i-r%E1%BB%93i-s%E1%BA%BD-%C4%91%E1%BA%BFn-chuy%E1%BB%87n-%C4%91i-h%E1%BB%8Dc/10152323224999541/)
+Nguồn bài viết: [Facebook notes by Vy Vy Le from UCD Michael Smurfit Graduate Business School](https://www.facebook.com/notes/vy-vy-le/c%E1%BB%A9-%C4%91i-r%E1%BB%93i-s%E1%BA%BD-%C4%91%E1%BA%BFn-chuy%E1%BB%87n-%C4%91i-h%E1%BB%8Dc/10152323224999541/)
 
+<!--more--> 
 
 Tháng 7...
 

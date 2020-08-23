@@ -1,14 +1,12 @@
 ---
+layout: post
 title: Một nghề cho chín còn hơn chín nghề 
-excerpt: "Quan điểm của thaidn."
-categories:
-  - Life
-tags: 
-  - No tags
+categories: Life
 ---
 
 
 Nguồn - [thái](https://vnhacker.blogspot.com/2009/01/mt-ngh-cho-chn-cn-hn-chn-ngh.html)
+<!--more--> 
 
 người ta nói, cách tốt nhất để ăn một con voi, là ăn một miếng thịt của nó mỗi ngày. ngẫm lại chuyện học, chuyện làm, mình thấy đây là một lời khuyên có lý. tri thức thì bao la vô tận, không thể nào ngày một ngày hai nắm bắt hết được, mà phải có thời gian, kế hoạch và phương pháp.
 ^

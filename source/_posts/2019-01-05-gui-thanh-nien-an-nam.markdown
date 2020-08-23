@@ -1,12 +1,12 @@
 ---
+layout: post
 title: "Gửi thanh niên An Nam"
-excerpt: "Phụ lục \"Bản án chế độ thực dân Pháp\" do Nguyễn Ái Quốc soạn thảo năm 1925."
-categories:
-  - Life
-tags: 
-  - Văn học
-toc: false
+categories: Life
 ---
+
+
+"Phụ lục \"Bản án chế độ thực dân Pháp\" do Nguyễn Ái Quốc soạn thảo năm 1925."
+<!--more--> 
 
 Ông Đu-Me, nguyên toàn quyền Đông Dương đã viết: 
 

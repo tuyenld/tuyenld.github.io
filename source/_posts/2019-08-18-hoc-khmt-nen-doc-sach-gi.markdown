@@ -1,21 +1,16 @@
 ---
+layout: post
 title: Học Khoa Học Máy Tính nên đọc sách gì
-excerpt: "Danh sách của bác NQH."
-aside: true
-aside:
-  toc: true
-categories:
-  - Life
-tags: 
-  - Book
+categories: Life
 ---
 
-<!-- https://puppypaste.com/ -->
 
 Bài viết gốc - [Blog Khoa Học Máy Tính](https://procul.org/blog/2007/10/01/sach-khmt/)
 
+
 Bạn trantempo [hỏi](https://procul.org/blog/g-ri-t-long/#comment-35411) một danh sách các sách nên đọc trong KHMT. Bạn Nguyên đã đưa một danh sách sơ bộ. Tôi sẽ cập nhật từ từ vào danh sách dưới đây trong một vài tuần tới để có một danh sách hoàn tất hơn. (Cần về nhà duyệt lại tủ sách). Các bạn có thể bình luận và thêm vào các quyển sách mà bạn ưa thích.
 
+<!--more--> 
 
 # 1. Phân tích và thiết kế thuật toán (cơ bản)
 Hiện nay có 3 quyển textbooks được dùng khá phổ biến, trong đó tôi thích quyển của Kleinberg và Tardos nhất. Tuy nhiên, từ quan điểm cá nhân thì tôi chưa thấy hài lòng với cả 3 vì các lý do khác nhau, mặc dù cả ba quyển đều rất tốt.

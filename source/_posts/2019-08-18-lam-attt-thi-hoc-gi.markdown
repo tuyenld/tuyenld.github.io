@@ -1,17 +1,12 @@
 ---
+layout: post
 title: Làm an toàn thông tin thì học gì
-excerpt: "Danh sách của bác thaidn."
-categories:
-  - Life
-tags: 
-  - Book
-aside: true
-aside:
-  toc: true
+categories: Life
 ---
 
 Bài viết gốc - [thái, May 02, 2012](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
-  
+<!--more--> 
+
 ## 1. Giới thiệu
   
 Tôi nhận được thư từ của nhiều bạn hỏi về việc nên học gì và như thế nào để có thể tìm được việc làm và làm được việc trong ngành an toàn thông tin (information security). An toàn thông tin là một ngành rộng lớn với rất nhiều lĩnh vực. Những gì tôi biết và làm được chỉ gói gọn trong một hai lĩnh vực. Có rất nhiều mảng kiến thức cơ bản mà tôi không nắm vững và cũng có nhiều kỹ năng mà tôi không thạo. Hack tài khoản Yahoo! Mail là một trong số đó. Tôi cũng không biết cách tìm địa chỉ IP của bạn chat :-(.  

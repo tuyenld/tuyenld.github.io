@@ -12,7 +12,9 @@ rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
-deploy_branch  = "gh-pages"
+deploy_branch  = "master"
+# tregiengchan
+octopress_branch  = "octopress"
 
 ## -- Misc Configs -- ##
 
@@ -253,7 +255,9 @@ multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
   cd "#{deploy_dir}" do 
-    Bundler.with_clean_env { system "git pull" }
+    # Bundler.with_clean_env { system "git pull" }
+    # tregiengchan Correctly pulling from the compiled branch before pushing the generated changes
+    Bundler.with_clean_env { system "git pull origin #{octopress_branch}" }
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
@@ -265,7 +269,10 @@ multitask :push do
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
-    Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
+    # Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
+    # tregiengchan hide github token
+    Bundler.with_clean_env { system "git push origin #{deploy_branch} --quiet" }
+
     puts "\n## Github Pages deploy complete"
   end
 end
@@ -330,7 +337,9 @@ task :setup_github_pages, :repo do |t, args|
       # If this is a user/organization pages repository, add the correct origin remote
       # and checkout the source branch for committing changes to the blog source.
       system "git remote add origin #{repo_url}"
-      puts "Added remote #{repo_url} as origin"
+      # puts "Added remote #{repo_url} as origin"
+      # tregiengchan hide repo_url in travis ci, it may contain token
+      puts "Added remote as origin"
       system "git config branch.master.remote origin"
       puts "Set origin as default remote"
       system "git branch -m master source"

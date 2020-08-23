@@ -1,5 +1,20 @@
+branches:
+  only:
+  - octopress
 language: ruby
 rvm:
-  - 2.0.0
-  - 1.9.3
-script: bundle exec rake install; bundle exec rake generate
+- 2.1.0
+env:
+  global:
+  - GH_REPO="tuyenld/tuyenld.github.io"
+  - secure: THE ENCRYPTED RESULT
+before_install:
+- git config --global user.email "tuyenld.work@gmail.com"
+- git config --global user.name "Le Dinh-Tuyen(via Travis CI)"
+before_script:
+- export REPO_URL="https://$GITHUB_TOKEN@github.com/$GH_REPO.git"
+- bundle exec rake setup_github_pages[$REPO_URL]
+script:
+- bundle exec rake generate
+after_script:
+- bundle exec rake deploy

@@ -9,12 +9,11 @@ name: I love you so much
 author: Le Dinh-Tuyen
 
 # Short bio or description (displayed in the header)
-description: An elegant Jekyll theme
+description: A weird world
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/bio/tuyenld.jpg"
-
 cloudinaryurl : "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/"
+avatar:         "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/bio/tuyenld.jpg"
 #
 # Flags below are optional
 #
@@ -73,6 +72,11 @@ kramdown:
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
     css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Set the Sass partials directory, as we're using @imports
 sass:

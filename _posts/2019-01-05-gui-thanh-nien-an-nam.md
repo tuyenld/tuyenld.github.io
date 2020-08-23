@@ -67,4 +67,4 @@ Hỡi Đông Dương đáng thương hại! Người sẽ chết mất, nếu đ
 
 (Phụ lục Bản án chế độ thực dân Pháp, nguyên tác tiếng Pháp Le Procès de la Colonisation Francaise, Librairie du Travail, Paris 1925, bản dịch tiếng Việt của xnb Sự Thật, Hà Nội 1960) 
 
-Nguồn: [http://www.talawas.org/talaDB/showFile.php?res=1569&rb=0504](http://www.talawas.org/talaDB/showFile.php?res=1569&rb=0504)
+Nguồn bài viết: [talawas.org](http://www.talawas.org/talaDB/showFile.php?res=1569&rb=0504)

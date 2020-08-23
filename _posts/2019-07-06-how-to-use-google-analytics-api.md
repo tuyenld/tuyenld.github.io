@@ -80,7 +80,7 @@ After finish, you will see something as following.
 
 ## 2. Using ruby
 
-{% highlight ruby linenos %}
+```ruby
 
 require 'googleauth'
 require 'google/apis/analytics_v3'
@@ -115,7 +115,7 @@ post_stats.rows.each do |row|
   puts row
 end
 
-{% endhighlight %}
+```
 
 Sample output as following.
 ```
@@ -131,7 +131,7 @@ Sample output as following.
 
 ## 3. Using python
 
-{% highlight python linenos %}
+```python
 
 # service-account.py
 
@@ -175,7 +175,7 @@ r = requests.get(url)
 ga_data = r.json()
 pprint.pprint(ga_data)
 
-{% endhighlight %}
+```
 
 Sample output as following.
 ```

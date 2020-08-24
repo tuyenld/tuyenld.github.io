@@ -1,20 +1,36 @@
-# branches:
-#   only:
-#   - octopress
 language: ruby
 rvm:
-- 2.1.0
+- 2.2.7
+
+
 before_install:
 - git config --global user.email "tuyenld.work@gmail.com"
 - git config --global user.name "Le Dinh-Tuyen(via Travis CI)"
+
 before_script:
 - export REPO_URL="https://$GITHUB_TOKEN@github.com/$GH_REPO.git"
-- bundle exec rake setup_github_pages[$REPO_URL]
+
+# Assume bundler is being used, therefore
+# the `install` step will run `bundle install` by default.
+
 script:
-- bundle exec rake install['octoflat']
-- bundle exec rake generate
+- bundle exec jekyll build
+
 after_script:
-- bundle exec rake deploy
+  - bundle exec rake ed:publish[$REPO_URL]
+
+# branch whitelist, only for GitHub Pages
+branches:
+  only:
+  - master     # test the master branch
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+sudo: false # route your build to the container-based infrastructure for a faster build
+
+cache: bundler
 
 env:
   global:

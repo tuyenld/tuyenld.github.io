@@ -6,7 +6,7 @@
 permalink: none
 
 # Set encoding to UTF-8
-encoding: utf-8
+# encoding: utf-8
 
 # Markdown specs
 markdown: kramdown

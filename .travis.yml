@@ -20,9 +20,9 @@ after_script:
   - bundle exec rake ed:publish[$REPO_URL]
 
 # branch whitelist, only for GitHub Pages
-branches:
-  only:
-  - master     # test the master branch
+# branches:
+#   only:
+#   - master     # test the master branch
 
 env:
   global:

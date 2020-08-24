@@ -5,4 +5,4 @@ gem 'unicode', '~>0.4.4.4'
 gem "kramdown", ">=2.3.0"
 gem "bibtex-ruby", ">=4.0.13"
 gem 'kramdown-parser-gfm'
-
+gem 'rake' , '>= 0.9.2'

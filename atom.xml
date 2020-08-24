@@ -4,7 +4,7 @@
  <title>tuyenld</title>
  <link href="https://crushcoding.com/atom.xml" rel="self"/>
  <link href="https://crushcoding.com/"/>
- <updated>2020-08-24T08:24:13+00:00</updated>
+ <updated>2020-08-24T15:34:09+00:00</updated>
  <id>https://crushcoding.com</id>
  <author>
    <name>Le Dinh-Tuyen</name>
@@ -14,7 +14,7 @@
  
  <entry>
    <title>Cứ đi rồi sẽ đến... [Chuyện đi học]</title>
-   <link href="https://crushcoding.com/schoolarship/cu-di-roi-se-den-chuyen-di-hoc.html"/>
+   <link href="https://crushcoding.com/schoolarship/cu-di-roi-se-den-chuyen-di-hoc"/>
    <updated>2019-09-30T00:00:00+00:00</updated>
    <id>https://crushcoding.com/schoolarship/cu-di-roi-se-den-chuyen-di-hoc</id>
    <content type="html">&lt;p&gt;Source: &lt;a href=&quot;https://www.facebook.com/notes/vy-vy-le/c%E1%BB%A9-%C4%91i-r%E1%BB%93i-s%E1%BA%BD-%C4%91%E1%BA%BFn-chuy%E1%BB%87n-%C4%91i-h%E1%BB%8Dc/10152323224999541/&quot;&gt;Notes by Vy Vy Le&lt;/a&gt;&lt;/p&gt;
@@ -730,7 +730,7 @@
 &lt;p&gt;Dám thất bại và dám theo đuổi một điều gì đó đến cùng&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-09-30-cu-di-roi-se-den-chuyen-di-hoc/UCD.jpg&quot; alt=&quot;UCD Michael Smurfit Graduate Business School&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-09-30-cu-di-roi-se-den-chuyen-di-hoc/UCD.jpg&quot; alt=&quot;UCD Michael Smurfit Graduate Business School&quot; /&gt;
   &lt;figcaption&gt;UCD Michael Smurfit Graduate Business School (wikimedia.org)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -820,7 +820,7 @@
  
  <entry>
    <title>Một nghề cho chín còn hơn chín nghề</title>
-   <link href="https://crushcoding.com/life/mot-nghe-cho-chin-con-hon-chin-nghe.html"/>
+   <link href="https://crushcoding.com/life/mot-nghe-cho-chin-con-hon-chin-nghe"/>
    <updated>2019-08-18T00:00:00+00:00</updated>
    <id>https://crushcoding.com/life/mot-nghe-cho-chin-con-hon-chin-nghe</id>
    <content type="html">&lt;p&gt;Nguồn - &lt;a href=&quot;https://vnhacker.blogspot.com/2009/01/mt-ngh-cho-chn-cn-hn-chn-ngh.html&quot;&gt;thái&lt;/a&gt;&lt;/p&gt;
@@ -854,7 +854,7 @@
  
  <entry>
    <title>Làm an toàn thông tin thì học gì</title>
-   <link href="https://crushcoding.com/life/lam-attt-thi-hoc-gi.html"/>
+   <link href="https://crushcoding.com/life/lam-attt-thi-hoc-gi"/>
    <updated>2019-08-18T00:00:00+00:00</updated>
    <id>https://crushcoding.com/life/lam-attt-thi-hoc-gi</id>
    <content type="html">&lt;p&gt;Bài viết gốc - &lt;a href=&quot;https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html&quot;&gt;thái, May 02, 2012&lt;/a&gt;&lt;/p&gt;
@@ -1053,7 +1053,7 @@
  
  <entry>
    <title>Học Khoa Học Máy Tính nên đọc sách gì</title>
-   <link href="https://crushcoding.com/life/hoc-khmt-nen-doc-sach-gi.html"/>
+   <link href="https://crushcoding.com/life/hoc-khmt-nen-doc-sach-gi"/>
    <updated>2019-08-18T00:00:00+00:00</updated>
    <id>https://crushcoding.com/life/hoc-khmt-nen-doc-sach-gi</id>
    <content type="html">&lt;!-- https://puppypaste.com/ --&gt;
@@ -1238,7 +1238,7 @@ Chương 16 – [1]: Text Categorization&lt;br /&gt;
  
  <entry>
    <title>How to use Google Analytics API</title>
-   <link href="https://crushcoding.com/blog/how-to-use-google-analytics-api.html"/>
+   <link href="https://crushcoding.com/blog/how-to-use-google-analytics-api"/>
    <updated>2019-07-06T00:00:00+00:00</updated>
    <id>https://crushcoding.com/blog/how-to-use-google-analytics-api</id>
    <content type="html">&lt;p&gt;I want to display &lt;strong&gt;pageview&lt;/strong&gt; on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.&lt;/p&gt;
@@ -1265,19 +1265,19 @@ Using google API is not easy task for me in the first time, even it is several l
 &lt;h4 id=&quot;1-goto-google-console&quot;&gt;1. Goto &lt;a href=&quot;https://console.developers.google.com/iam-admin/serviceaccounts?supportedpurview=project&quot;&gt;Google console&lt;/a&gt;&lt;/h4&gt;
 &lt;h4 id=&quot;2-click-create-service-account-on-the-top-near-navigation-bar&quot;&gt;2. Click &lt;em&gt;Create service account&lt;/em&gt; on the top, near navigation bar.&lt;/h4&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/add-service-acc.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-acc.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 &lt;h4 id=&quot;3-click-create-key-choose-json&quot;&gt;3. Click &lt;em&gt;CREATE KEY&lt;/em&gt;, choose &lt;em&gt;json&lt;/em&gt;&lt;/h4&gt;
 
 &lt;p class=&quot;info&quot;&gt;You are able to download this private json file only one time.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/json-key-service-acc.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/json-key-service-acc.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;After finish, you will see something like this.&lt;/p&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/add-service-finish.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-finish.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;12-add-the-services-account-to-your-google-analytics-service&quot;&gt;1.2 Add the &lt;em&gt;Services Account&lt;/em&gt; to your &lt;em&gt;Google analytics service&lt;/em&gt;&lt;/h3&gt;
@@ -1293,57 +1293,25 @@ Using google API is not easy task for me in the first time, even it is several l
 
 &lt;h4 id=&quot;2-click-user-management&quot;&gt;2. Click &lt;em&gt;User Management&lt;/em&gt;&lt;/h4&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-google-api-service.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-google-api-service.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;h4 id=&quot;3-click--on-the-top-to-add-service-account--click-add-users&quot;&gt;3. Click &lt;em&gt;+&lt;/em&gt; on the top to add &lt;em&gt;Service Account&lt;/em&gt; &amp;gt; Click &lt;em&gt;Add users&lt;/em&gt;&lt;/h4&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/click-plus-symbol-to-add-new-acc.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/click-plus-symbol-to-add-new-acc.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/add-your-email.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-your-email.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;After finish, you will see something as following.&lt;/p&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-analytics-finish.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-07-06-how-to-use-google-analytics-api/add-service-acc-to-analytics-finish.jpg&quot; alt=&quot;&quot; /&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;2-using-ruby&quot;&gt;2. Using ruby&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'googleauth'&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'googleauth'&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'google/apis/analytics_v3'&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;# Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80
@@ -1380,8 +1348,7 @@ Using google API is not easy task for me in the first time, even it is several l
 
 &lt;span class=&quot;n&quot;&gt;post_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Sample output as following.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;20
@@ -1396,48 +1363,7 @@ Using google API is not easy task for me in the first time, even it is several l
 
 &lt;h2 id=&quot;3-using-python&quot;&gt;3. Using python&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# service-account.py
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# service-account.py
 &lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;httplib2&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt;
@@ -1477,20 +1403,18 @@ Using google API is not easy task for me in the first time, even it is several l
 
 &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Sample output as following.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;          ['/about.html', '2'],
-          ['/archive.html', '5'],
-          ['/archive.html?tag=An+Nam', '1'],
-          ['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],
-          ['/archive.html?tag=Văn+học', '7'],
-          ['/archive.html?tag=life', '1'],
-          ['/categories/', '18'],
-          ['/header-image', '4'],
-          ['/kkk', '3'],
-
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;['/about.html', '2'],
+['/archive.html', '5'],
+['/archive.html?tag=An+Nam', '1'],
+['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],
+['/archive.html?tag=Văn+học', '7'],
+['/archive.html?tag=life', '1'],
+['/categories/', '18'],
+['/header-image', '4'],
+['/kkk', '3'],
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;4-some-error-you-may-encounted&quot;&gt;4. Some error you may encounted&lt;/h2&gt;
@@ -1498,9 +1422,7 @@ Using google API is not easy task for me in the first time, even it is several l
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error: Authorization failed. Server message: { &quot;error&quot;: &quot;invalid_grant&quot;, &quot;error_description&quot;: &quot;Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values and use a clock with skew to account for clock differences between systems.&quot; }
              Error: Run jekyll build --trace for more information.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;I ues on Ubuntu on my Virtual box and Ubuntu time is not synced. Solution is update time on Ubuntu: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo ntpdate time.nist.gov&lt;/code&gt;`&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I use Ubuntu on my Virtual box but the Ubuntu time is not synced. Solution is update time on Ubuntu: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo ntpdate time.nist.gov&lt;/code&gt;`&lt;/p&gt;
 
 &lt;h2 id=&quot;5-references&quot;&gt;5. References&lt;/h2&gt;
 &lt;ul&gt;
@@ -1513,7 +1435,7 @@ Using google API is not easy task for me in the first time, even it is several l
  
  <entry>
    <title>Brazil bâng quơ</title>
-   <link href="https://crushcoding.com/life/brazil-co-don-truong-thanh.html"/>
+   <link href="https://crushcoding.com/life/brazil-co-don-truong-thanh"/>
    <updated>2019-07-06T00:00:00+00:00</updated>
    <id>https://crushcoding.com/life/brazil-co-don-truong-thanh</id>
    <content type="html">&lt;p&gt;Anh đã làm mọi thứ để không phải đi, vì anh biết rằng chuyến đó sẽ chẳng dễ dàng gì. Support xuyên đêm anh cũng đã thử, anh đã cố nghĩ hết các trường hợp có thể xảy ra, nhưng không có kết quả. Và rồi cái gì đến cũng phải đến, anh phải đi mặc dù tâm trí đang đâu đâu, kế hoạch là gì anh không biết, anh chưa từng gặp phải tình huống như vậy. Và vì để chứng tỏ người Việt Nam mình không thua kém, anh đi.&lt;/p&gt;
@@ -1555,7 +1477,7 @@ Using google API is not easy task for me in the first time, even it is several l
  
  <entry>
    <title>Người lạ - Mai Thảo Yên</title>
-   <link href="https://crushcoding.com/life/nguoi-la-mai-thao-yen.html"/>
+   <link href="https://crushcoding.com/life/nguoi-la-mai-thao-yen"/>
    <updated>2019-03-22T00:00:00+00:00</updated>
    <id>https://crushcoding.com/life/nguoi-la-mai-thao-yen</id>
    <content type="html">&lt;p&gt;Tôi bắt gặp &lt;strong&gt;Người lạ&lt;/strong&gt; trong bài giới thiệu &lt;a href=&quot;https://tuoitre.vn/van-hoc-tuoi-20-lan-thu-6-nguoi-tre-tren-duong-toi-di-tim-toi-20181224093228485.htm&quot;&gt;Văn học tuổi 20 của báo Tuổi trẻ&lt;/a&gt;.
@@ -1578,7 +1500,7 @@ Using google API is not easy task for me in the first time, even it is several l
  
  <entry>
    <title>Upgrade flash chip on TP-Link from 4mb to 8mb</title>
-   <link href="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html"/>
+   <link href="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb"/>
    <updated>2019-02-11T00:00:00+00:00</updated>
    <id>https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb</id>
    <content type="html">&lt;h2 id=&quot;1-pre-requirement&quot;&gt;1. Pre-requirement&lt;/h2&gt;
@@ -1701,7 +1623,7 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr841n-v13&lt;/strong&
 
 &lt;p&gt;If you don’t want to use this script, you can create image by yourself. You may to need hex editor like &lt;a href=&quot;https://mh-nexus.de/en/hxd/&quot;&gt;HxDen&lt;/a&gt; to do this.&lt;/p&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/create_image_manual.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/create_image_manual.jpg&quot; alt=&quot;&quot; /&gt;
   &lt;figcaption&gt;New firmware layout&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1712,7 +1634,7 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr841n-v13&lt;/strong&
 &lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Note!&lt;/strong&gt; If your board can not booting, don’t worry. You can use &lt;a href=&quot;https://www.ebay.com/itm/SOIC8-SOP8-Flash-Chip-IC-Test-Clip-Socket-Adapter-BIOS-CH341A-USB-Programmer-/372555847443&quot;&gt;Clip Socket Adapter&lt;/a&gt; to try program flash again with out desolder chip.&lt;/p&gt;
 &lt;h2 id=&quot;3-enjoy&quot;&gt;3. Enjoy&lt;/h2&gt;
 &lt;figure class=&quot;align-center&quot;&gt;
-  &lt;img src=&quot;2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/software_status.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;img src=&quot;https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/software_status.jpg&quot; alt=&quot;&quot; /&gt;
   &lt;figcaption&gt;Software with new flash chip (8MB).&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1722,7 +1644,7 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr841n-v13&lt;/strong&
  
  <entry>
    <title>Gửi thanh niên An Nam</title>
-   <link href="https://crushcoding.com/life/gui-thanh-nien-an-nam.html"/>
+   <link href="https://crushcoding.com/life/gui-thanh-nien-an-nam"/>
    <updated>2019-01-05T00:00:00+00:00</updated>
    <id>https://crushcoding.com/life/gui-thanh-nien-an-nam</id>
    <content type="html">&lt;p&gt;Ông Đu-Me, nguyên toàn quyền Đông Dương đã viết:&lt;/p&gt;

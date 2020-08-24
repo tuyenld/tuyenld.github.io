@@ -43,7 +43,7 @@ index.addDoc({
   title: "How to use Google Analytics API",
   author: null,
   layout: "post",
-  content: "I want to display pageview on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.\n\n  Services Account\n  Access Token\n  Fresh Token\n  OAuth 2.0\n\n\nDo I need spend all my free time to understand these?\n\nI don’t know where can I start, I just want to it as simple as possible.\nUsing google API is not easy task for me in the first time, even it is several line of code. I tried to find a sample example on github page, but I failed. I can’t find any instruction one by one to do that. Therefore, I want to share with you how can I do that. Let’s see.\n\n1. Setting on your account\nIn this step you need to find:\n\n  Your Profile ID: profileID\n  Service account private key (KEY_FILEPATH *json file)\n\n\n1.1 Add a Services Account\n1. Goto Google console\n2. Click Create service account on the top, near navigation bar.\n\n  \n\n3. Click CREATE KEY, choose json\n\nYou are able to download this private json file only one time.\n\n\n  \n\n\nAfter finish, you will see something like this.\n\n  \n\n\n1.2 Add the Services Account to your Google analytics service\n\n1. Goto Google analytics\nit will redirect you to link like this:\nhttps://analytics.google.com/analytics/web/#/a133437467w193286472p188904382/admin/account/settings\n\n\n/a[6 digits]w[8 digits]p[8 digits]\n\nThe 8 digits which after the “p” are your profile ID. (in my case this is 188904382)\n\n2. Click User Management\n\n  \n\n\n3. Click + on the top to add Service Account &gt; Click Add users\n\n  \n\n\n  \n\n\nAfter finish, you will see something as following.\n\n  \n\n\n2. Using ruby\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\nrequire 'googleauth'\nrequire 'google/apis/analytics_v3'\n\n# Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80\n\n\nprofileID = 'ga:188904382'   # Profile ID \n\nstartDate = '300daysAgo'\nendDate = 'yesterday'\nmetrics = 'ga:pageviews'     # Metrics code\n\ndimensions = 'ga:pagePath'   # Dimensions\n\n# The scope for the OAuth2 request.\n\nSCOPE = 'https://www.googleapis.com/auth/analytics.readonly'\nURL = 'https://www.googleapis.com/analytics/v3/data/ga'\n\n# The location of the key file with the key json data.\n\nKEY_FILEPATH = 'crushcoding-163b3f074083.json'\n\n\nauthorizer = Google::Auth::ServiceAccountCredentials.make_creds(\n  json_key_io: File.open(KEY_FILEPATH),\n  scope: SCOPE)\n\ncredentials = authorizer.fetch_access_token!\nputs credentials['access_token']\n\nstats = Google::Apis::AnalyticsV3::AnalyticsService.new\nstats.authorization = authorizer\npost_stats = stats.get_ga_data(profileID, startDate, endDate, metrics, dimensions: dimensions)\n\npost_stats.rows.each do |row|\n  puts row\nend\n\n\nSample output as following.\n20\n/life/nguoi-la-mai-thao-yen.html\n1\n/life/nguoi-la-mai-thao-yen/\n13\n/openwrt/2019/02/11/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html\n1\n/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb\n\n\n3. Using python\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n# service-account.py\n\nimport httplib2\nimport pprint\nimport sys\nimport requests\n\nfrom oauth2client.service_account import ServiceAccountCredentials\n\nprofileID = 'ga:188904382'   # Profile ID \nstartDate = '300daysAgo'\nendDate = 'yesterday'\nmetrics = 'ga:pageviews'     # Metrics code\ndimensions = 'ga:pagePath'   # Dimensions\n# The scope for the OAuth2 request.\nSCOPE = 'https://www.googleapis.com/auth/analytics.readonly'\nURL = 'https://www.googleapis.com/analytics/v3/data/ga'\n\n# The location of the key file with the key json data.\nKEY_FILEPATH = 'crushcoding-163b3f074083.json'\n\n# Defines a method to get an access token from the ServiceAccount object.\ndef get_access_token():\n  return ServiceAccountCredentials.from_json_keyfile_name(\n      KEY_FILEPATH, SCOPE).get_access_token().access_token\n\ncredentials = get_access_token()\nprint (credentials)\n\n# Sample: https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382\n# &amp;start-date=30daysAgo&amp;end-date=yesterday&amp;metrics=ga%3Apageviews\n# &amp;dimensions=ga%3ApagePath&amp;access_token=ya29.Gxxx\nurl = URL + '?ids=' + profileID + '&amp;start-date=' + startDate + \\\n\t\t\t'&amp;end-date=' + endDate + '&amp;metrics=' + metrics + \\\n\t\t\t'&amp;dimensions=' + dimensions + '&amp;access_token={0}'.format(credentials)\n\nprint (url)\n\nr = requests.get(url)\nga_data = r.json()\npprint.pprint(ga_data)\n\n\nSample output as following.\n          ['/about.html', '2'],\n          ['/archive.html', '5'],\n          ['/archive.html?tag=An+Nam', '1'],\n          ['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],\n          ['/archive.html?tag=Văn+học', '7'],\n          ['/archive.html?tag=life', '1'],\n          ['/categories/', '18'],\n          ['/header-image', '4'],\n          ['/kkk', '3'],\n\n\n\n4. Some error you may encounted\n\nError: Authorization failed. Server message: { \"error\": \"invalid_grant\", \"error_description\": \"Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values and use a clock with skew to account for clock differences between systems.\" }\n             Error: Run jekyll build --trace for more information.\n\n\n  I ues on Ubuntu on my Virtual box and Ubuntu time is not synced. Solution is update time on Ubuntu: sudo ntpdate time.nist.gov`\n\n\n5. References\n\n  Google Query Explorer\n  Martin Fowler blog\n  Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site - Jekyll static site\n\n",
+  content: "I want to display pageview on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.\n\n  Services Account\n  Access Token\n  Fresh Token\n  OAuth 2.0\n\n\nDo I need spend all my free time to understand these?\n\nI don’t know where can I start, I just want to it as simple as possible.\nUsing google API is not easy task for me in the first time, even it is several line of code. I tried to find a sample example on github page, but I failed. I can’t find any instruction one by one to do that. Therefore, I want to share with you how can I do that. Let’s see.\n\n1. Setting on your account\nIn this step you need to find:\n\n  Your Profile ID: profileID\n  Service account private key (KEY_FILEPATH *json file)\n\n\n1.1 Add a Services Account\n1. Goto Google console\n2. Click Create service account on the top, near navigation bar.\n\n  \n\n3. Click CREATE KEY, choose json\n\nYou are able to download this private json file only one time.\n\n\n  \n\n\nAfter finish, you will see something like this.\n\n  \n\n\n1.2 Add the Services Account to your Google analytics service\n\n1. Goto Google analytics\nit will redirect you to link like this:\nhttps://analytics.google.com/analytics/web/#/a133437467w193286472p188904382/admin/account/settings\n\n\n/a[6 digits]w[8 digits]p[8 digits]\n\nThe 8 digits which after the “p” are your profile ID. (in my case this is 188904382)\n\n2. Click User Management\n\n  \n\n\n3. Click + on the top to add Service Account &gt; Click Add users\n\n  \n\n\n  \n\n\nAfter finish, you will see something as following.\n\n  \n\n\n2. Using ruby\n\nrequire 'googleauth'\nrequire 'google/apis/analytics_v3'\n\n# Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80\n\n\nprofileID = 'ga:188904382'   # Profile ID \n\nstartDate = '300daysAgo'\nendDate = 'yesterday'\nmetrics = 'ga:pageviews'     # Metrics code\n\ndimensions = 'ga:pagePath'   # Dimensions\n\n# The scope for the OAuth2 request.\n\nSCOPE = 'https://www.googleapis.com/auth/analytics.readonly'\nURL = 'https://www.googleapis.com/analytics/v3/data/ga'\n\n# The location of the key file with the key json data.\n\nKEY_FILEPATH = 'crushcoding-163b3f074083.json'\n\n\nauthorizer = Google::Auth::ServiceAccountCredentials.make_creds(\n  json_key_io: File.open(KEY_FILEPATH),\n  scope: SCOPE)\n\ncredentials = authorizer.fetch_access_token!\nputs credentials['access_token']\n\nstats = Google::Apis::AnalyticsV3::AnalyticsService.new\nstats.authorization = authorizer\npost_stats = stats.get_ga_data(profileID, startDate, endDate, metrics, dimensions: dimensions)\n\npost_stats.rows.each do |row|\n  puts row\nend\n\nSample output as following.\n20\n/life/nguoi-la-mai-thao-yen.html\n1\n/life/nguoi-la-mai-thao-yen/\n13\n/openwrt/2019/02/11/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html\n1\n/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb\n\n\n3. Using python\n\n# service-account.py\n\nimport httplib2\nimport pprint\nimport sys\nimport requests\n\nfrom oauth2client.service_account import ServiceAccountCredentials\n\nprofileID = 'ga:188904382'   # Profile ID \nstartDate = '300daysAgo'\nendDate = 'yesterday'\nmetrics = 'ga:pageviews'     # Metrics code\ndimensions = 'ga:pagePath'   # Dimensions\n# The scope for the OAuth2 request.\nSCOPE = 'https://www.googleapis.com/auth/analytics.readonly'\nURL = 'https://www.googleapis.com/analytics/v3/data/ga'\n\n# The location of the key file with the key json data.\nKEY_FILEPATH = 'crushcoding-163b3f074083.json'\n\n# Defines a method to get an access token from the ServiceAccount object.\ndef get_access_token():\n  return ServiceAccountCredentials.from_json_keyfile_name(\n      KEY_FILEPATH, SCOPE).get_access_token().access_token\n\ncredentials = get_access_token()\nprint (credentials)\n\n# Sample: https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382\n# &amp;start-date=30daysAgo&amp;end-date=yesterday&amp;metrics=ga%3Apageviews\n# &amp;dimensions=ga%3ApagePath&amp;access_token=ya29.Gxxx\nurl = URL + '?ids=' + profileID + '&amp;start-date=' + startDate + \\\n\t\t\t'&amp;end-date=' + endDate + '&amp;metrics=' + metrics + \\\n\t\t\t'&amp;dimensions=' + dimensions + '&amp;access_token={0}'.format(credentials)\n\nprint (url)\n\nr = requests.get(url)\nga_data = r.json()\npprint.pprint(ga_data)\n\nSample output as following.\n['/about.html', '2'],\n['/archive.html', '5'],\n['/archive.html?tag=An+Nam', '1'],\n['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],\n['/archive.html?tag=Văn+học', '7'],\n['/archive.html?tag=life', '1'],\n['/categories/', '18'],\n['/header-image', '4'],\n['/kkk', '3'],\n\n\n4. Some error you may encounted\n\nError: Authorization failed. Server message: { \"error\": \"invalid_grant\", \"error_description\": \"Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values and use a clock with skew to account for clock differences between systems.\" }\n             Error: Run jekyll build --trace for more information.\n\nI use Ubuntu on my Virtual box but the Ubuntu time is not synced. Solution is update time on Ubuntu: sudo ntpdate time.nist.gov`\n\n5. References\n\n  Google Query Explorer\n  Martin Fowler blog\n  Jekyll-Ga-V2 A Plugin To Get Google Analytics Data Into Your Site - Jekyll static site\n\n",
   id: 4
 });
 index.addDoc({
@@ -81,55 +81,55 @@ var store = [{
   "title": "Cứ đi rồi sẽ đến... [Chuyện đi học]",
   "author": null,
   "layout": "post",
-  "link": "/schoolarship/cu-di-roi-se-den-chuyen-di-hoc.html",
+  "link": "/schoolarship/cu-di-roi-se-den-chuyen-di-hoc",
 }
 ,{
   "title": "Một nghề cho chín còn hơn chín nghề",
   "author": null,
   "layout": "post",
-  "link": "/life/mot-nghe-cho-chin-con-hon-chin-nghe.html",
+  "link": "/life/mot-nghe-cho-chin-con-hon-chin-nghe",
 }
 ,{
   "title": "Làm an toàn thông tin thì học gì",
   "author": null,
   "layout": "post",
-  "link": "/life/lam-attt-thi-hoc-gi.html",
+  "link": "/life/lam-attt-thi-hoc-gi",
 }
 ,{
   "title": "Học Khoa Học Máy Tính nên đọc sách gì",
   "author": null,
   "layout": "post",
-  "link": "/life/hoc-khmt-nen-doc-sach-gi.html",
+  "link": "/life/hoc-khmt-nen-doc-sach-gi",
 }
 ,{
   "title": "How to use Google Analytics API",
   "author": null,
   "layout": "post",
-  "link": "/blog/how-to-use-google-analytics-api.html",
+  "link": "/blog/how-to-use-google-analytics-api",
 }
 ,{
   "title": "Brazil bâng quơ",
   "author": null,
   "layout": "post",
-  "link": "/life/brazil-co-don-truong-thanh.html",
+  "link": "/life/brazil-co-don-truong-thanh",
 }
 ,{
   "title": "Người lạ - Mai Thảo Yên",
   "author": null,
   "layout": "post",
-  "link": "/life/nguoi-la-mai-thao-yen.html",
+  "link": "/life/nguoi-la-mai-thao-yen",
 }
 ,{
   "title": "Upgrade flash chip on TP-Link from 4mb to 8mb",
   "author": null,
   "layout": "post",
-  "link": "/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html",
+  "link": "/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb",
 }
 ,{
   "title": "Gửi thanh niên An Nam",
   "author": null,
   "layout": "post",
-  "link": "/life/gui-thanh-nien-an-nam.html",
+  "link": "/life/gui-thanh-nien-an-nam",
 }
 ]
 

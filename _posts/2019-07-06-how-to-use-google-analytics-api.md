@@ -81,7 +81,7 @@ After finish, you will see something as following.
 
 ## 2. Using ruby
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 
 require 'googleauth'
 require 'google/apis/analytics_v3'
@@ -132,7 +132,7 @@ Sample output as following.
 
 ## 3. Using python
 
-{% highlight python linenos %}
+{% highlight python %}
 
 # service-account.py
 
@@ -180,16 +180,15 @@ pprint.pprint(ga_data)
 
 Sample output as following.
 ```
-          ['/about.html', '2'],
-          ['/archive.html', '5'],
-          ['/archive.html?tag=An+Nam', '1'],
-          ['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],
-          ['/archive.html?tag=Văn+học', '7'],
-          ['/archive.html?tag=life', '1'],
-          ['/categories/', '18'],
-          ['/header-image', '4'],
-          ['/kkk', '3'],
-
+['/about.html', '2'],
+['/archive.html', '5'],
+['/archive.html?tag=An+Nam', '1'],
+['/archive.html?tag=Nguyễn+Ái+Quốc', '2'],
+['/archive.html?tag=Văn+học', '7'],
+['/archive.html?tag=life', '1'],
+['/categories/', '18'],
+['/header-image', '4'],
+['/kkk', '3'],
 ```
 
 ## 4. Some error you may encounted
@@ -198,7 +197,7 @@ Sample output as following.
 Error: Authorization failed. Server message: { "error": "invalid_grant", "error_description": "Invalid JWT: Token must be a short-lived token (60 minutes) and in a reasonable timeframe. Check your iat and exp values and use a clock with skew to account for clock differences between systems." }
              Error: Run jekyll build --trace for more information.
 ```
-> I ues on Ubuntu on my Virtual box and Ubuntu time is not synced. Solution is update time on Ubuntu: ``sudo ntpdate time.nist.gov```
+I use Ubuntu on my Virtual box but the Ubuntu time is not synced. Solution is update time on Ubuntu: ``sudo ntpdate time.nist.gov```
 
 ## 5. References
 - [Google Query Explorer](https://ga-dev-tools.appspot.com/query-explorer/?csw=1)

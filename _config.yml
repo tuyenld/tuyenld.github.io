@@ -27,7 +27,7 @@ kramdown:
 # Setup
 title:               tuyenld
 tagline:             'A weird dude'
-description:         "\"I'm not afraid of dying. I'm afraid I haven't been alive enough - Mr. Nobody\""
+description:         "I am not afraid of dying. I'm afraid I haven't been alive enough - Mr_Nobody\""
 url:                 https://crushcoding.com
 baseurl:             # '/ed'
 
@@ -85,7 +85,9 @@ defaults:
       layout: "post"
 
 google_custom_search_engine_id: 014783372275656596289:xyeevhsbdw8 # Google Custom Search Engine ID
+cloudinaryurl : "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/"
 
+permalink: /:categories/:title
 # For development only
 host: 0.0.0.0
 port: 4000

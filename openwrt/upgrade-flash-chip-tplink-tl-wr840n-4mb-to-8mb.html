@@ -26,7 +26,7 @@
   
   
   
-  <meta property="dc:source" content="tuyenld." />
+  <meta property="dc:source" content="tuyenld" />
 
   <!-- Open Graph metadata -->
   <meta property="og:title" content="Upgrade flash chip on TP-Link from 4mb to 8mb" />
@@ -140,7 +140,7 @@
       <header class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">tuyenld.</a>
+            <a href="/" title="Home">tuyenld</a>
             <br><small>A weird dude</small>
           </h3>
         </div>
@@ -149,7 +149,7 @@
       <main class="container content" id="main">
         <article class="post">
   <h1 class="text-title">Upgrade flash chip on TP-Link from 4mb to 8mb</h1>
-  <h2 id="pre-requirement">1. Pre-requirement</h2>
+  <h2 id="1-pre-requirement">1. Pre-requirement</h2>
 <ul>
   <li>New flash chip: I used Winbond 8MiB GD25Q64CSIG</li>
   <li>Soldering iron: desolder old flash chip and re-solder new flash chip</li>
@@ -157,12 +157,12 @@
   <li>One PC/Laptop</li>
 </ul>
 
-<h2 id="lets-do-it">2. Let’s do it</h2>
-<p>### 2.1 Desolder old flash chip
-Hot air soldering station is ideally suited for desoldering flash. If you not, you can follow this video to do this.</p>
+<h2 id="2-lets-do-it">2. Let’s do it</h2>
+<h3 id="21-desolder-old-flash-chip">2.1 Desolder old flash chip</h3>
+<p>Hot air soldering station is ideally suited for desoldering flash. If you not, you can follow this video to do this.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nZGEtpECPQY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<p>### 2.2 Program new flash chip
-Firstly, you need to choose new flash chip you want to replace. Why I chose <code class="highlighter-rouge">Winbond GD25Q64CSIG</code> for replacement, see table bellow:</p>
+<h3 id="22-program-new-flash-chip">2.2 Program new flash chip</h3>
+<p>Firstly, you need to choose new flash chip you want to replace. Why I chose <code class="language-plaintext highlighter-rouge">Winbond GD25Q64CSIG</code> for replacement, see table bellow:</p>
 
 <table>
   <thead>
@@ -220,12 +220,12 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr841n-v13</strong>-squashfs
   </tbody>
 </table>
 
-<p class="notice--warning"><strong>Note!</strong> You are able to use openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr840n-v5</strong>-squashfs-sysupgrade with 8MB flash chip, your router still booting but you can not any configuration after reboot. You may got error <code class="highlighter-rouge">Your image is probably too big, leaving not enough space for jffs2</code></p>
+<p class="notice--warning"><strong>Note!</strong> You are able to use openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr840n-v5</strong>-squashfs-sysupgrade with 8MB flash chip, your router still booting but you can not any configuration after reboot. You may got error <code class="language-plaintext highlighter-rouge">Your image is probably too big, leaving not enough space for jffs2</code></p>
 
 <p>In the first time, I faced this problem. I can not save any configuration after reboot. If you look at boot log, it read:
 <script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_bad.log"></script></p>
 
-<p>No <code class="highlighter-rouge">/overlay</code> will be mounted:
+<p>No <code class="language-plaintext highlighter-rouge">/overlay</code> will be mounted:
 <script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_bad_no_overlay.log"></script></p>
 
 <p>If everything is good, it should be like this:
@@ -273,12 +273,12 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr841n-v13</strong>-squashfs
   <figcaption>New firmware layout</figcaption>
 </figure>
 
-<p>All file which I used in <a href="https://drive.google.com/file/d/1kqXvFQYrolipvrrD3Rkv7J7JTZwgVHDn/view?usp=sharing">here</a>
-### 2.3 Re-solder new flash chip
-After use CH341A to program new flash chip, you can re-solder new flash chip on target board.</p>
+<p>All file which I used in <a href="https://drive.google.com/file/d/1kqXvFQYrolipvrrD3Rkv7J7JTZwgVHDn/view?usp=sharing">here</a></p>
+<h3 id="23-re-solder-new-flash-chip">2.3 Re-solder new flash chip</h3>
+<p>After use CH341A to program new flash chip, you can re-solder new flash chip on target board.</p>
 
 <p class="notice--warning"><strong>Note!</strong> If your board can not booting, don’t worry. You can use <a href="https://www.ebay.com/itm/SOIC8-SOP8-Flash-Chip-IC-Test-Clip-Socket-Adapter-BIOS-CH341A-USB-Programmer-/372555847443">Clip Socket Adapter</a> to try program flash again with out desolder chip.</p>
-<p>## 3. Enjoy</p>
+<h2 id="3-enjoy">3. Enjoy</h2>
 <figure class="align-center">
   <img src="2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/software_status.jpg" alt="" />
   <figcaption>Software with new flash chip (8MB).</figcaption>

@@ -25,7 +25,7 @@ kramdown:
   enable_coderay: false
 
 # Setup
-title:               tuyenld.
+title:               tuyenld
 tagline:             'A weird dude'
 description:         "\"I'm not afraid of dying. I'm afraid I haven't been alive enough - Mr. Nobody\""
 url:                 https://crushcoding.com
@@ -45,7 +45,7 @@ exclude:
   - vendor
 
 # Gems
-gems: ['jekyll/scholar']
+plugins: ['jekyll/scholar']
 
 # Scholar
 scholar:

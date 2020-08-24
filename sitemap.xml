@@ -1,57 +1,263 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://crushcoding.com/blog/2019/09/30/cu-di-roi-se-den-chuyen-di-hoc/</loc>
-<lastmod>2019-09-30T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/08/18/mot-nghe-cho-chin-con-hon-chin-nghe/</loc>
-<lastmod>2019-08-18T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/08/18/lam-attt-thi-hoc-gi/</loc>
-<lastmod>2019-08-18T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/08/18/hoc-khmt-nen-doc-sach-gi/</loc>
-<lastmod>2019-08-18T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/07/06/how-to-use-google-analytics-api/</loc>
-<lastmod>2019-07-06T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/07/06/brazil-co-don-truong-thanh/</loc>
-<lastmod>2019-07-06T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/03/22/nguoi-la-mai-thao-yen/</loc>
-<lastmod>2019-03-22T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/02/11/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/</loc>
-<lastmod>2019-02-11T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/2019/01/05/gui-thanh-nien-an-nam/</loc>
-<lastmod>2019-01-05T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://crushcoding.com/</loc>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/archives/</loc>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/categories/life/</loc>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/categories/openwrt/</loc>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/categories/blog/</loc>
-</url>
-<url>
-<loc>http://crushcoding.com/blog/categories/schoolarship/</loc>
-</url>
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    
+    <url>
+      <loc>https://crushcoding.com/schoolarship/cu-di-roi-se-den-chuyen-di-hoc.html</loc>
+      
+        <lastmod>2019-09-30T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/life/mot-nghe-cho-chin-con-hon-chin-nghe.html</loc>
+      
+        <lastmod>2019-08-18T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/life/lam-attt-thi-hoc-gi.html</loc>
+      
+        <lastmod>2019-08-18T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/life/hoc-khmt-nen-doc-sach-gi.html</loc>
+      
+        <lastmod>2019-08-18T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/blog/how-to-use-google-analytics-api.html</loc>
+      
+        <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/life/brazil-co-don-truong-thanh.html</loc>
+      
+        <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/life/nguoi-la-mai-thao-yen.html</loc>
+      
+        <lastmod>2019-03-22T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html</loc>
+      
+        <lastmod>2019-02-11T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/life/gui-thanh-nien-an-nam.html</loc>
+      
+        <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+  
+    
+    <url>
+      <loc>https://crushcoding.com/404.html</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/archive.html</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/atom.xml</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/bibliography.html</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/search.html</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/assets/js/search.js</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>https://crushcoding.com/assets/css/style.css</loc>
+      
+        <lastmod>2020-08-24T07:36:28+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
 </urlset>
+

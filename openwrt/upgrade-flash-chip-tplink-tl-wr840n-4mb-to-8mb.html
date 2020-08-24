@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <title>
+    
+      Upgrade flash chip on TP-Link from 4mb to 8mb
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Upgrade flash chip on TP-Link from 4mb to 8mb" />
+  <meta property="dc:creator" content="Le Dinh-Tuyen" />
+  <meta property="dc:identifier" content="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html" />
+  
+  
+  
+  <meta property="dc:source" content="tuyenld." />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Upgrade flash chip on TP-Link from 4mb to 8mb" />
+  <meta property="og:url" content="https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html" />
+  <meta property="og:image" content="https://crushcoding.com/assets/open-graph-logo.png" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="An Ed edition">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/apple-touch-icon-precomposed.png" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://crushcoding.com/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>"I'm not afraid of dying. I'm afraid I haven't been alive enough - Mr. Nobody"</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive.html">Archive</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/bibliography.html">Bibliography</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/search.html">Search</a>
+        
+      
+    
+      
+    
+
+    <!-- The code below is used for manually entered links  -->
+<!--     <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/https://crushcoding.com/openwrt/upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb.html/" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+<!--     <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a>
+  </nav> -->
+
+  <div class="sidebar-item">
+    <p>
+      Built with <a href="https://minicomp.github.io/ed/">Ed.</a> Distributed under an MIT license.
+    </p>
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">tuyenld.</a>
+            <br><small>A weird dude</small>
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="post">
+  <h1 class="text-title">Upgrade flash chip on TP-Link from 4mb to 8mb</h1>
+  <h2 id="pre-requirement">1. Pre-requirement</h2>
+<ul>
+  <li>New flash chip: I used Winbond 8MiB GD25Q64CSIG</li>
+  <li>Soldering iron: desolder old flash chip and re-solder new flash chip</li>
+  <li>ROM programer and IC socket: I am using CH-341A (~ 5$)</li>
+  <li>One PC/Laptop</li>
+</ul>
+
+<h2 id="lets-do-it">2. Let’s do it</h2>
+<p>### 2.1 Desolder old flash chip
+Hot air soldering station is ideally suited for desoldering flash. If you not, you can follow this video to do this.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nZGEtpECPQY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>### 2.2 Program new flash chip
+Firstly, you need to choose new flash chip you want to replace. Why I chose <code class="highlighter-rouge">Winbond GD25Q64CSIG</code> for replacement, see table bellow:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Original</th>
+      <th>Mod</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>flash</td>
+      <td>GigaDevice GD25Q32B (4MB)</td>
+      <td>Winbond GD25Q64CSIG (8MB)</td>
+    </tr>
+    <tr>
+      <td>firmware</td>
+      <td>TL-WR840N(VN)_V5_170517</td>
+      <td>openwrt-18.06.1-ramips-mt76x8-tl-wr841n-v13-squashfs-sysupgrade</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I see the name of flash chip is the same, so I didn’t checked datasheet for compatible.</p>
+
+<p>Secondly, you need to choose OpenWRT firmware.
+Why I used openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr841n-v13</strong>-squashfs-sysupgrade instead of openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr840n-v5</strong>-squashfs-sysupgrade?</p>
+
+<p>Because it used the same CPU and different in flash and RAM chip.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th><a href="https://wikidevi.com/wiki/TP-LINK_TL-WR841N_v13.x">TP-LINK TL-WR841N v13.x</a></th>
+      <th><a href="https://wikidevi.com/wiki/TP-LINK_TL-WR840N_v5">TP-LINK TL-WR840N v5</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CPU</td>
+      <td>MediaTek MT7628NN (580MHz)</td>
+      <td>MediaTek MT7628NN @575MHz</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>Winbond W9751G6JB-25 (64MB)</td>
+      <td>ESMT M14D5121632A (64MB)</td>
+    </tr>
+    <tr>
+      <td>Flash</td>
+      <td>GigaDevice GD25Q64CSIG (8MB)</td>
+      <td>GigaDevice GD25Q32B (4MB)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice--warning"><strong>Note!</strong> You are able to use openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr840n-v5</strong>-squashfs-sysupgrade with 8MB flash chip, your router still booting but you can not any configuration after reboot. You may got error <code class="highlighter-rouge">Your image is probably too big, leaving not enough space for jffs2</code></p>
+
+<p>In the first time, I faced this problem. I can not save any configuration after reboot. If you look at boot log, it read:
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_bad.log"></script></p>
+
+<p>No <code class="highlighter-rouge">/overlay</code> will be mounted:
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_bad_no_overlay.log"></script></p>
+
+<p>If everything is good, it should be like this:
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=firmware_good.log"></script></p>
+
+<p>Now, you have new flash chip and suitable firware, but you can not use this firware to program new flash chip. Because <strong>RAW</strong> flash need more partion than firmware such as: bootloader and art. See more in <a href="https://openwrt.org/docs/techref/flash.layout">here</a></p>
+
+<p>You can use bellow shell script to generate firmware for any flash with different capacity.
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=create_new_firmware.sh"></script></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>flash_size_in_MB</td>
+      <td>new flash chip capacity</td>
+    </tr>
+    <tr>
+      <td>sysupgrade_OpenWRT</td>
+      <td>OpenWRT image (firmware)</td>
+    </tr>
+    <tr>
+      <td>art_file</td>
+      <td>ART partion from original flash, the last 64k block of the chip no matter what the chip size.</td>
+    </tr>
+    <tr>
+      <td>boot_loader</td>
+      <td>bootloader, the first 128kB from original flash</td>
+    </tr>
+    <tr>
+      <td>Output firmware</td>
+      <td>sysupgrade_OpenWRT_dump.bin, you can use this to program your new flash chip</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you don’t want to use this script, you can create image by yourself. You may to need hex editor like <a href="https://mh-nexus.de/en/hxd/">HxDen</a> to do this.</p>
+<figure class="align-center">
+  <img src="2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/create_image_manual.jpg" alt="" />
+  <figcaption>New firmware layout</figcaption>
+</figure>
+
+<p>All file which I used in <a href="https://drive.google.com/file/d/1kqXvFQYrolipvrrD3Rkv7J7JTZwgVHDn/view?usp=sharing">here</a>
+### 2.3 Re-solder new flash chip
+After use CH341A to program new flash chip, you can re-solder new flash chip on target board.</p>
+
+<p class="notice--warning"><strong>Note!</strong> If your board can not booting, don’t worry. You can use <a href="https://www.ebay.com/itm/SOIC8-SOP8-Flash-Chip-IC-Test-Clip-Socket-Adapter-BIOS-CH341A-USB-Programmer-/372555847443">Clip Socket Adapter</a> to try program flash again with out desolder chip.</p>
+<p>## 3. Enjoy</p>
+<figure class="align-center">
+  <img src="2019-02-11-upgrade-flash-chip-tplink-tl-wr840n-4mb-to-8mb/software_status.jpg" alt="" />
+  <figcaption>Software with new flash chip (8MB).</figcaption>
+</figure>
+
+<p class="notice--warning"><strong>Note!</strong> I used image come from <strong>TL-WR841N v13.x</strong>, except for LED will not working, everything work well (Wi-Fi, Ethernet, Router feature).</p>
+
+</article>
+
+      </main>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> -->
+  </body>
+</html>

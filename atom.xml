@@ -4,7 +4,7 @@
  <title>tuyenld</title>
  <link href="https://crushcoding.com/atom.xml" rel="self"/>
  <link href="https://crushcoding.com/"/>
- <updated>2020-08-24T15:34:09+00:00</updated>
+ <updated>2020-08-25T01:22:16+00:00</updated>
  <id>https://crushcoding.com</id>
  <author>
    <name>Le Dinh-Tuyen</name>
@@ -1241,7 +1241,17 @@ Chương 16 – [1]: Text Categorization&lt;br /&gt;
    <link href="https://crushcoding.com/blog/how-to-use-google-analytics-api"/>
    <updated>2019-07-06T00:00:00+00:00</updated>
    <id>https://crushcoding.com/blog/how-to-use-google-analytics-api</id>
-   <content type="html">&lt;p&gt;I want to display &lt;strong&gt;pageview&lt;/strong&gt; on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;Note!&lt;/strong&gt; I don’t use this feature on my site any more. However, you can see my old script &lt;a href=&quot;https://github.com/tuyenld/tuyenld.github.io/blob/dev/_plugins/jekyll-ga-v2.rb&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The screenshoot look like this&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;https://i.imgur.com/IjOjdmK.png&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I want to display &lt;strong&gt;pageview&lt;/strong&gt; on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Services Account&lt;/li&gt;
   &lt;li&gt;Access Token&lt;/li&gt;
@@ -1311,44 +1321,7 @@ Using google API is not easy task for me in the first time, even it is several l
 
 &lt;h2 id=&quot;2-using-ruby&quot;&gt;2. Using ruby&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'googleauth'&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'google/apis/analytics_v3'&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80
-&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ga:188904382'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Profile ID 
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'300daysAgo'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yesterday'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ga:pageviews'&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Metrics code
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ga:pagePath'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Dimensions
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# The scope for the OAuth2 request.
-&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;SCOPE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://www.googleapis.com/auth/analytics.readonly'&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://www.googleapis.com/analytics/v3/data/ga'&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# The location of the key file with the key json data.
-&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;KEY_FILEPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'crushcoding-163b3f074083.json'&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;authorizer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Auth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ServiceAccountCredentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;make_creds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;json_key_io: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;KEY_FILEPATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;scope: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SCOPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fetch_access_token!&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Apis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;AnalyticsV3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;AnalyticsService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;authorization&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorizer&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;post_stats&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_ga_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;dimensions: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;post_stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;rows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;script src=&quot;https://gist.github.com/tuyenld/26e6c5f60b5d5963d16bfd5298a2d464.js?file=google-analytic.ru&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Sample output as following.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;20
@@ -1363,47 +1336,7 @@ Using google API is not easy task for me in the first time, even it is several l
 
 &lt;h2 id=&quot;3-using-python&quot;&gt;3. Using python&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# service-account.py
-&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;httplib2&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;oauth2client.service_account&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServiceAccountCredentials&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ga:188904382'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Profile ID 
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'300daysAgo'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'yesterday'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ga:pageviews'&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Metrics code
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ga:pagePath'&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# Dimensions
-# The scope for the OAuth2 request.
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SCOPE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://www.googleapis.com/auth/analytics.readonly'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://www.googleapis.com/analytics/v3/data/ga'&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# The location of the key file with the key json data.
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KEY_FILEPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'crushcoding-163b3f074083.json'&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Defines a method to get an access token from the ServiceAccount object.
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ServiceAccountCredentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_json_keyfile_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;KEY_FILEPATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SCOPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;access_token&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Sample: https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382
-# &amp;amp;start-date=30daysAgo&amp;amp;end-date=yesterday&amp;amp;metrics=ga%3Apageviews
-# &amp;amp;dimensions=ga%3ApagePath&amp;amp;access_token=ya29.Gxxx
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'?ids='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;profileID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;start-date='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; \
-			&lt;span class=&quot;s&quot;&gt;'&amp;amp;end-date='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endDate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;metrics='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;metrics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; \
-			&lt;span class=&quot;s&quot;&gt;'&amp;amp;dimensions='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dimensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&amp;amp;access_token={0}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ga_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;script src=&quot;https://gist.github.com/tuyenld/26e6c5f60b5d5963d16bfd5298a2d464.js?file=google-analytic.py&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;Sample output as following.&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;['/about.html', '2'],
@@ -1518,61 +1451,15 @@ Using google API is not easy task for me in the first time, even it is several l
 &lt;h3 id=&quot;22-program-new-flash-chip&quot;&gt;2.2 Program new flash chip&lt;/h3&gt;
 &lt;p&gt;Firstly, you need to choose new flash chip you want to replace. Why I chose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Winbond GD25Q64CSIG&lt;/code&gt; for replacement, see table bellow:&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-      &lt;th&gt;Original&lt;/th&gt;
-      &lt;th&gt;Mod&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;flash&lt;/td&gt;
-      &lt;td&gt;GigaDevice GD25Q32B (4MB)&lt;/td&gt;
-      &lt;td&gt;Winbond GD25Q64CSIG (8MB)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;firmware&lt;/td&gt;
-      &lt;td&gt;TL-WR840N(VN)_V5_170517&lt;/td&gt;
-      &lt;td&gt;openwrt-18.06.1-ramips-mt76x8-tl-wr841n-v13-squashfs-sysupgrade&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=Original_vs_Mod_Chip.md&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;I see the name of flash chip is the same, so I didn’t checked datasheet for compatible.&lt;/p&gt;
 
 &lt;p&gt;Secondly, you need to choose OpenWRT firmware.
 Why I used openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr841n-v13&lt;/strong&gt;-squashfs-sysupgrade instead of openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr840n-v5&lt;/strong&gt;-squashfs-sysupgrade?&lt;/p&gt;
 
-&lt;p&gt;Because it used the same CPU and different in flash and RAM chip.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;https://wikidevi.com/wiki/TP-LINK_TL-WR841N_v13.x&quot;&gt;TP-LINK TL-WR841N v13.x&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;a href=&quot;https://wikidevi.com/wiki/TP-LINK_TL-WR840N_v5&quot;&gt;TP-LINK TL-WR840N v5&lt;/a&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CPU&lt;/td&gt;
-      &lt;td&gt;MediaTek MT7628NN (580MHz)&lt;/td&gt;
-      &lt;td&gt;MediaTek MT7628NN @575MHz&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RAM&lt;/td&gt;
-      &lt;td&gt;Winbond W9751G6JB-25 (64MB)&lt;/td&gt;
-      &lt;td&gt;ESMT M14D5121632A (64MB)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Flash&lt;/td&gt;
-      &lt;td&gt;GigaDevice GD25Q64CSIG (8MB)&lt;/td&gt;
-      &lt;td&gt;GigaDevice GD25Q32B (4MB)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;Because it used the same CPU and different in flash and RAM chip.
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=WR841Nv13_vs_WR840Nv5.md&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 
 &lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;Note!&lt;/strong&gt; You are able to use openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr840n-v5&lt;/strong&gt;-squashfs-sysupgrade with 8MB flash chip, your router still booting but you can not any configuration after reboot. You may got error &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Your image is probably too big, leaving not enough space for jffs2&lt;/code&gt;&lt;/p&gt;
 
@@ -1590,36 +1477,7 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-&lt;strong&gt;wr841n-v13&lt;/strong&
 &lt;p&gt;You can use bellow shell script to generate firmware for any flash with different capacity.
 &lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=create_new_firmware.sh&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;parameter&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;flash_size_in_MB&lt;/td&gt;
-      &lt;td&gt;new flash chip capacity&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;sysupgrade_OpenWRT&lt;/td&gt;
-      &lt;td&gt;OpenWRT image (firmware)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;art_file&lt;/td&gt;
-      &lt;td&gt;ART partion from original flash, the last 64k block of the chip no matter what the chip size.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;boot_loader&lt;/td&gt;
-      &lt;td&gt;bootloader, the first 128kB from original flash&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Output firmware&lt;/td&gt;
-      &lt;td&gt;sysupgrade_OpenWRT_dump.bin, you can use this to program your new flash chip&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;script src=&quot;https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=flash_partition.md&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;If you don’t want to use this script, you can create image by yourself. You may to need hex editor like &lt;a href=&quot;https://mh-nexus.de/en/hxd/&quot;&gt;HxDen&lt;/a&gt; to do this.&lt;/p&gt;
 &lt;figure class=&quot;align-center&quot;&gt;

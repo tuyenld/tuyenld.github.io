@@ -164,61 +164,15 @@
 <h3 id="22-program-new-flash-chip">2.2 Program new flash chip</h3>
 <p>Firstly, you need to choose new flash chip you want to replace. Why I chose <code class="language-plaintext highlighter-rouge">Winbond GD25Q64CSIG</code> for replacement, see table bellow:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Original</th>
-      <th>Mod</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>flash</td>
-      <td>GigaDevice GD25Q32B (4MB)</td>
-      <td>Winbond GD25Q64CSIG (8MB)</td>
-    </tr>
-    <tr>
-      <td>firmware</td>
-      <td>TL-WR840N(VN)_V5_170517</td>
-      <td>openwrt-18.06.1-ramips-mt76x8-tl-wr841n-v13-squashfs-sysupgrade</td>
-    </tr>
-  </tbody>
-</table>
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=Original_vs_Mod_Chip.md"></script>
 
 <p>I see the name of flash chip is the same, so I didn’t checked datasheet for compatible.</p>
 
 <p>Secondly, you need to choose OpenWRT firmware.
 Why I used openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr841n-v13</strong>-squashfs-sysupgrade instead of openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr840n-v5</strong>-squashfs-sysupgrade?</p>
 
-<p>Because it used the same CPU and different in flash and RAM chip.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th><a href="https://wikidevi.com/wiki/TP-LINK_TL-WR841N_v13.x">TP-LINK TL-WR841N v13.x</a></th>
-      <th><a href="https://wikidevi.com/wiki/TP-LINK_TL-WR840N_v5">TP-LINK TL-WR840N v5</a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CPU</td>
-      <td>MediaTek MT7628NN (580MHz)</td>
-      <td>MediaTek MT7628NN @575MHz</td>
-    </tr>
-    <tr>
-      <td>RAM</td>
-      <td>Winbond W9751G6JB-25 (64MB)</td>
-      <td>ESMT M14D5121632A (64MB)</td>
-    </tr>
-    <tr>
-      <td>Flash</td>
-      <td>GigaDevice GD25Q64CSIG (8MB)</td>
-      <td>GigaDevice GD25Q32B (4MB)</td>
-    </tr>
-  </tbody>
-</table>
+<p>Because it used the same CPU and different in flash and RAM chip.
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=WR841Nv13_vs_WR840Nv5.md"></script></p>
 
 <p class="notice--warning"><strong>Note!</strong> You are able to use openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr840n-v5</strong>-squashfs-sysupgrade with 8MB flash chip, your router still booting but you can not any configuration after reboot. You may got error <code class="language-plaintext highlighter-rouge">Your image is probably too big, leaving not enough space for jffs2</code></p>
 
@@ -236,36 +190,7 @@ Why I used openwrt-18.06.1-ramips-mt76x8-tl-<strong>wr841n-v13</strong>-squashfs
 <p>You can use bellow shell script to generate firmware for any flash with different capacity.
 <script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=create_new_firmware.sh"></script></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>parameter</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>flash_size_in_MB</td>
-      <td>new flash chip capacity</td>
-    </tr>
-    <tr>
-      <td>sysupgrade_OpenWRT</td>
-      <td>OpenWRT image (firmware)</td>
-    </tr>
-    <tr>
-      <td>art_file</td>
-      <td>ART partion from original flash, the last 64k block of the chip no matter what the chip size.</td>
-    </tr>
-    <tr>
-      <td>boot_loader</td>
-      <td>bootloader, the first 128kB from original flash</td>
-    </tr>
-    <tr>
-      <td>Output firmware</td>
-      <td>sysupgrade_OpenWRT_dump.bin, you can use this to program your new flash chip</td>
-    </tr>
-  </tbody>
-</table>
+<script src="https://gist.github.com/tuyenld/acb0f0e62cadca73b7dffc44d7cc1b4b.js?file=flash_partition.md"></script>
 
 <p>If you don’t want to use this script, you can create image by yourself. You may to need hex editor like <a href="https://mh-nexus.de/en/hxd/">HxDen</a> to do this.</p>
 <figure class="align-center">

@@ -149,7 +149,17 @@
       <main class="container content" id="main">
         <article class="post">
   <h1 class="text-title">How to use Google Analytics API</h1>
-  <p>I want to display <strong>pageview</strong> on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.</p>
+  <p><strong>Note!</strong> I don’t use this feature on my site any more. However, you can see my old script <a href="https://github.com/tuyenld/tuyenld.github.io/blob/dev/_plugins/jekyll-ga-v2.rb">here</a></p>
+
+<p>The screenshoot look like this</p>
+
+<figure class="align-center">
+  <img src="https://i.imgur.com/IjOjdmK.png" alt="" />
+</figure>
+
+<hr />
+
+<p>I want to display <strong>pageview</strong> on my blog (you can see the “eye” icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.</p>
 <ul>
   <li>Services Account</li>
   <li>Access Token</li>
@@ -219,44 +229,7 @@ Using google API is not easy task for me in the first time, even it is several l
 
 <h2 id="2-using-ruby">2. Using ruby</h2>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'googleauth'</span>
-<span class="nb">require</span> <span class="s1">'google/apis/analytics_v3'</span>
-
-<span class="c1"># Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80
-</span>
-
-<span class="n">profileID</span> <span class="o">=</span> <span class="s1">'ga:188904382'</span>   <span class="c1"># Profile ID 
-</span>
-<span class="n">startDate</span> <span class="o">=</span> <span class="s1">'300daysAgo'</span>
-<span class="n">endDate</span> <span class="o">=</span> <span class="s1">'yesterday'</span>
-<span class="n">metrics</span> <span class="o">=</span> <span class="s1">'ga:pageviews'</span>     <span class="c1"># Metrics code
-</span>
-<span class="n">dimensions</span> <span class="o">=</span> <span class="s1">'ga:pagePath'</span>   <span class="c1"># Dimensions
-</span>
-<span class="c1"># The scope for the OAuth2 request.
-</span>
-<span class="no">SCOPE</span> <span class="o">=</span> <span class="s1">'https://www.googleapis.com/auth/analytics.readonly'</span>
-<span class="no">URL</span> <span class="o">=</span> <span class="s1">'https://www.googleapis.com/analytics/v3/data/ga'</span>
-
-<span class="c1"># The location of the key file with the key json data.
-</span>
-<span class="no">KEY_FILEPATH</span> <span class="o">=</span> <span class="s1">'crushcoding-163b3f074083.json'</span>
-
-
-<span class="n">authorizer</span> <span class="o">=</span> <span class="no">Google</span><span class="o">::</span><span class="no">Auth</span><span class="o">::</span><span class="no">ServiceAccountCredentials</span><span class="p">.</span><span class="nf">make_creds</span><span class="p">(</span>
-  <span class="ss">json_key_io: </span><span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="no">KEY_FILEPATH</span><span class="p">),</span>
-  <span class="ss">scope: </span><span class="no">SCOPE</span><span class="p">)</span>
-
-<span class="n">credentials</span> <span class="o">=</span> <span class="n">authorizer</span><span class="p">.</span><span class="nf">fetch_access_token!</span>
-<span class="nb">puts</span> <span class="n">credentials</span><span class="p">[</span><span class="s1">'access_token'</span><span class="p">]</span>
-
-<span class="n">stats</span> <span class="o">=</span> <span class="no">Google</span><span class="o">::</span><span class="no">Apis</span><span class="o">::</span><span class="no">AnalyticsV3</span><span class="o">::</span><span class="no">AnalyticsService</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">stats</span><span class="p">.</span><span class="nf">authorization</span> <span class="o">=</span> <span class="n">authorizer</span>
-<span class="n">post_stats</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="nf">get_ga_data</span><span class="p">(</span><span class="n">profileID</span><span class="p">,</span> <span class="n">startDate</span><span class="p">,</span> <span class="n">endDate</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="ss">dimensions: </span><span class="n">dimensions</span><span class="p">)</span>
-
-<span class="n">post_stats</span><span class="p">.</span><span class="nf">rows</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">row</span>
-<span class="k">end</span></code></pre></figure>
+<script src="https://gist.github.com/tuyenld/26e6c5f60b5d5963d16bfd5298a2d464.js?file=google-analytic.ru"></script>
 
 <p>Sample output as following.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20
@@ -271,47 +244,7 @@ Using google API is not easy task for me in the first time, even it is several l
 
 <h2 id="3-using-python">3. Using python</h2>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># service-account.py
-</span>
-<span class="kn">import</span> <span class="nn">httplib2</span>
-<span class="kn">import</span> <span class="nn">pprint</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
-
-<span class="n">profileID</span> <span class="o">=</span> <span class="s">'ga:188904382'</span>   <span class="c1"># Profile ID 
-</span><span class="n">startDate</span> <span class="o">=</span> <span class="s">'300daysAgo'</span>
-<span class="n">endDate</span> <span class="o">=</span> <span class="s">'yesterday'</span>
-<span class="n">metrics</span> <span class="o">=</span> <span class="s">'ga:pageviews'</span>     <span class="c1"># Metrics code
-</span><span class="n">dimensions</span> <span class="o">=</span> <span class="s">'ga:pagePath'</span>   <span class="c1"># Dimensions
-# The scope for the OAuth2 request.
-</span><span class="n">SCOPE</span> <span class="o">=</span> <span class="s">'https://www.googleapis.com/auth/analytics.readonly'</span>
-<span class="n">URL</span> <span class="o">=</span> <span class="s">'https://www.googleapis.com/analytics/v3/data/ga'</span>
-
-<span class="c1"># The location of the key file with the key json data.
-</span><span class="n">KEY_FILEPATH</span> <span class="o">=</span> <span class="s">'crushcoding-163b3f074083.json'</span>
-
-<span class="c1"># Defines a method to get an access token from the ServiceAccount object.
-</span><span class="k">def</span> <span class="nf">get_access_token</span><span class="p">():</span>
-  <span class="k">return</span> <span class="n">ServiceAccountCredentials</span><span class="p">.</span><span class="n">from_json_keyfile_name</span><span class="p">(</span>
-      <span class="n">KEY_FILEPATH</span><span class="p">,</span> <span class="n">SCOPE</span><span class="p">).</span><span class="n">get_access_token</span><span class="p">().</span><span class="n">access_token</span>
-
-<span class="n">credentials</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">()</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">credentials</span><span class="p">)</span>
-
-<span class="c1"># Sample: https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382
-# &amp;start-date=30daysAgo&amp;end-date=yesterday&amp;metrics=ga%3Apageviews
-# &amp;dimensions=ga%3ApagePath&amp;access_token=ya29.Gxxx
-</span><span class="n">url</span> <span class="o">=</span> <span class="n">URL</span> <span class="o">+</span> <span class="s">'?ids='</span> <span class="o">+</span> <span class="n">profileID</span> <span class="o">+</span> <span class="s">'&amp;start-date='</span> <span class="o">+</span> <span class="n">startDate</span> <span class="o">+</span> \
-			<span class="s">'&amp;end-date='</span> <span class="o">+</span> <span class="n">endDate</span> <span class="o">+</span> <span class="s">'&amp;metrics='</span> <span class="o">+</span> <span class="n">metrics</span> <span class="o">+</span> \
-			<span class="s">'&amp;dimensions='</span> <span class="o">+</span> <span class="n">dimensions</span> <span class="o">+</span> <span class="s">'&amp;access_token={0}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">credentials</span><span class="p">)</span>
-
-<span class="k">print</span> <span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">ga_data</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">pprint</span><span class="p">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">ga_data</span><span class="p">)</span></code></pre></figure>
+<script src="https://gist.github.com/tuyenld/26e6c5f60b5d5963d16bfd5298a2d464.js?file=google-analytic.py"></script>
 
 <p>Sample output as following.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['/about.html', '2'],

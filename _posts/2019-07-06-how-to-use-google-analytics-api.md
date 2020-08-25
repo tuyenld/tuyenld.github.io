@@ -11,6 +11,16 @@ aside:
   toc: true
 ---
 
+**Note!** I don't use this feature on my site any more. However, you can see my old script [here](https://github.com/tuyenld/tuyenld.github.io/blob/dev/_plugins/jekyll-ga-v2.rb)
+
+The screenshoot look like this
+
+<figure class="align-center">
+  <img src="https://i.imgur.com/IjOjdmK.png" alt="">
+</figure>
+
+-------
+
 I want to display **pageview** on my blog (you can see the "eye" icon near the date of the post). One problem is this blog is static blog (powered by Jekyll), so I think about use Google Analytics to do that. I found a ton of document, there are many keyword on Google Cloud Product.
 * Services Account
 * Access Token
@@ -81,42 +91,7 @@ After finish, you will see something as following.
 
 ## 2. Using ruby
 
-{% highlight ruby %}
-
-require 'googleauth'
-require 'google/apis/analytics_v3'
-
-# Thank to https://qiita.com/mochizukikotaro/items/4a7aef0fe50066a2ed80
-
-profileID = 'ga:188904382'   # Profile ID 
-startDate = '300daysAgo'
-endDate = 'yesterday'
-metrics = 'ga:pageviews'     # Metrics code
-dimensions = 'ga:pagePath'   # Dimensions
-# The scope for the OAuth2 request.
-SCOPE = 'https://www.googleapis.com/auth/analytics.readonly'
-URL = 'https://www.googleapis.com/analytics/v3/data/ga'
-
-# The location of the key file with the key json data.
-KEY_FILEPATH = 'crushcoding-163b3f074083.json'
-
-
-authorizer = Google::Auth::ServiceAccountCredentials.make_creds(
-  json_key_io: File.open(KEY_FILEPATH),
-  scope: SCOPE)
-
-credentials = authorizer.fetch_access_token!
-puts credentials['access_token']
-
-stats = Google::Apis::AnalyticsV3::AnalyticsService.new
-stats.authorization = authorizer
-post_stats = stats.get_ga_data(profileID, startDate, endDate, metrics, dimensions: dimensions)
-
-post_stats.rows.each do |row|
-  puts row
-end
-
-{% endhighlight %}
+<script src="https://gist.github.com/tuyenld/26e6c5f60b5d5963d16bfd5298a2d464.js?file=google-analytic.ru"></script>
 
 Sample output as following.
 ```
@@ -132,51 +107,7 @@ Sample output as following.
 
 ## 3. Using python
 
-{% highlight python %}
-
-# service-account.py
-
-import httplib2
-import pprint
-import sys
-import requests
-
-from oauth2client.service_account import ServiceAccountCredentials
-
-profileID = 'ga:188904382'   # Profile ID 
-startDate = '300daysAgo'
-endDate = 'yesterday'
-metrics = 'ga:pageviews'     # Metrics code
-dimensions = 'ga:pagePath'   # Dimensions
-# The scope for the OAuth2 request.
-SCOPE = 'https://www.googleapis.com/auth/analytics.readonly'
-URL = 'https://www.googleapis.com/analytics/v3/data/ga'
-
-# The location of the key file with the key json data.
-KEY_FILEPATH = 'crushcoding-163b3f074083.json'
-
-# Defines a method to get an access token from the ServiceAccount object.
-def get_access_token():
-  return ServiceAccountCredentials.from_json_keyfile_name(
-      KEY_FILEPATH, SCOPE).get_access_token().access_token
-
-credentials = get_access_token()
-print (credentials)
-
-# Sample: https://www.googleapis.com/analytics/v3/data/ga?ids=ga%3A188904382
-# &start-date=30daysAgo&end-date=yesterday&metrics=ga%3Apageviews
-# &dimensions=ga%3ApagePath&access_token=ya29.Gxxx
-url = URL + '?ids=' + profileID + '&start-date=' + startDate + \
-			'&end-date=' + endDate + '&metrics=' + metrics + \
-			'&dimensions=' + dimensions + '&access_token={0}'.format(credentials)
-
-print (url)
-
-r = requests.get(url)
-ga_data = r.json()
-pprint.pprint(ga_data)
-
-{% endhighlight %}
+<script src="https://gist.github.com/tuyenld/26e6c5f60b5d5963d16bfd5298a2d464.js?file=google-analytic.py"></script>
 
 Sample output as following.
 ```

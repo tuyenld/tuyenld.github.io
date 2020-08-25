@@ -43,6 +43,10 @@ version:             0.0.5
 # Exclude optional folder
 exclude: 
   - vendor
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - ed..gemspec 
 
 # Gems
 plugins: ['jekyll/scholar']

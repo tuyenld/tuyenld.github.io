@@ -85,5 +85,10 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script> -->
+
+{% if site.utterance.repo and page.comments %}
+  {% include utterances-comment.html %}
+{% endif %}
+
   </body>
 </html>

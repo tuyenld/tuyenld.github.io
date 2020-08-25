@@ -9,6 +9,7 @@ tags:
 aside: true
 aside:
   toc: true
+comments: true
 ---
 
 **Note!** I don't use this feature on my site any more. However, you can see my old script [here](https://github.com/tuyenld/tuyenld.github.io/blob/dev/_plugins/jekyll-ga-v2.rb)

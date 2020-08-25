@@ -25,9 +25,9 @@ kramdown:
   enable_coderay: false
 
 # Setup
-title:               tuyenld
+title:               Le.
 tagline:             'A weird dude'
-description:         "I am not afraid of dying. I'm afraid I haven't been alive enough - Mr_Nobody\""
+description:         "I am not afraid of dying. I'm afraid I haven't been alive enough - Mr_Nobody"
 url:                 https://crushcoding.com
 baseurl:             # '/ed'
 
@@ -90,6 +90,15 @@ defaults:
 
 google_custom_search_engine_id: 014783372275656596289:xyeevhsbdw8 # Google Custom Search Engine ID
 cloudinaryurl : "https://res.cloudinary.com/crushcoding/image/upload/q_auto,f_auto/"
+
+# Add `comments: true` to the post’s YAML Front Matter you want to show comment
+utterance:
+  repo:  "tuyenld/tuyenld.github.io" # Choose the repository utterances will connect to. eg: owner/repo
+  issue-term: "pathname"   # Choose the mapping between blog posts and GitHub issues. 
+  theme: "github-light" # Choose an Utterances theme that matches your blog. 'github-light' is default
+
+  ## Optional
+  label:  blog-comments # Choose the label that will be assigned to issues created by Utterances.
 
 permalink: /:categories/:title
 # For development only

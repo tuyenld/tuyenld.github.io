@@ -10,9 +10,13 @@ sitemap: false
 */
 
 /* Fonts */
-$main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-$heading-font: sans-serif;
-$regular-font-size: 1.25em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
+/*$main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+$main-font: "EB Garamond", serif;
+/*$heading-font: sans-serif;*/
+$heading-font: "Arial", sans-serif;
+/* 20px / 16px = 1.25em; support text resizing in all browsers */
+/*$regular-font-size: 1.25em; */
+$regular-font-size: 1.4em;
 
 
 /*

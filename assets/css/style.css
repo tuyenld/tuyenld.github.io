@@ -4,7 +4,10 @@
   Feel free to change!
 */
 /* Fonts */
+/*$main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+/*$heading-font: sans-serif;*/
 /* 20px / 16px = 1.25em; support text resizing in all browsers */
+/*$regular-font-size: 1.25em; */
 /*
   Color
 
@@ -43,14 +46,15 @@ body {
   overflow-x: hidden; }
 
 html {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 1em;
-  /* 16px; specify in ems to support text resizing in all browsers */
+  font-family: "EB Garamond", serif;
+  /*16px; specify in ems to support text resizing in all browsers */
+  /*font-size: 1em;  */
+  font-size: 1.2em;
   line-height: 1.5; }
 
 @media (min-width: 38em) {
   html {
-    font-size: 1.25em; } }
+    font-size: 1.4em; } }
 body {
   color: #454545;
   background-color: #fff;
@@ -97,7 +101,7 @@ a:focus {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
+  font-family: "Arial", sans-serif;
   margin-bottom: .5rem;
   font-weight: normal;
   color: #404040;
@@ -198,7 +202,7 @@ tbody tr:nth-child(odd) th {
 
 .masthead-title {
   color: #505050;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "EB Garamond", serif;
   font-size: 1.8rem;
   line-height: .777em;
   margin-top: 2em;
@@ -211,7 +215,7 @@ tbody tr:nth-child(odd) th {
   color: #454545;
   display: none;
   /* This is an accessibility no-no */
-  font-family: sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: .88rem;
   font-weight: normal;
   letter-spacing: .05rem; }

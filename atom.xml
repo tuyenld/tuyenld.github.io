@@ -4,7 +4,7 @@
  <title>Le.</title>
  <link href="https://crushcoding.com/atom.xml" rel="self"/>
  <link href="https://crushcoding.com/"/>
- <updated>2020-08-25T10:42:01+00:00</updated>
+ <updated>2020-08-26T07:55:47+00:00</updated>
  <id>https://crushcoding.com</id>
  <author>
    <name>Le Dinh-Tuyen</name>
@@ -1241,9 +1241,9 @@ Chương 16 – [1]: Text Categorization&lt;br /&gt;
    <link href="https://crushcoding.com/blog/how-to-use-google-analytics-api"/>
    <updated>2019-07-06T00:00:00+00:00</updated>
    <id>https://crushcoding.com/blog/how-to-use-google-analytics-api</id>
-   <content type="html">&lt;p&gt;&lt;strong&gt;Note!&lt;/strong&gt; I don’t use this feature on my site any more. However, you can see my old script &lt;a href=&quot;https://github.com/tuyenld/tuyenld.github.io/blob/dev/_plugins/jekyll-ga-v2.rb&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;strong&gt;Update August 26, 2020:&lt;/strong&gt; I don’t use this feature on my site any more. However, you can see my old script &lt;a href=&quot;https://github.com/tuyenld/tuyenld.github.io/blob/dev/_plugins/jekyll-ga-v2.rb&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The screenshoot look like this&lt;/p&gt;
+&lt;p&gt;The previous webstite screenshoot look like following.&lt;/p&gt;
 
 &lt;figure class=&quot;align-center&quot;&gt;
   &lt;img src=&quot;https://i.imgur.com/IjOjdmK.png&quot; alt=&quot;&quot; /&gt;

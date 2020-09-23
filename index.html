@@ -18,8 +18,9 @@ title: Home
   <!-- {% assign post_sorted = site.posts | reverse %} -->
   {% for item in site.posts %}
     <li class="text-title">
+      [{{ item.date | date: "%F"}}]
       <a href="{{ site.baseurl }}{{ item.url }}">
-        [{{ item.date | date: "%F"}}] {{ item.title }}
+         {{ item.title }}
       </a>
     </li>
     {% if forloop.index == site.max_recent_posts %}

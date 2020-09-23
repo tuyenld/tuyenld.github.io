@@ -11,6 +11,11 @@ tags:
 comments: true
 ---
 
+----
+**Table of content**
+* ToC
+{:toc}
+----
 
 ## 1. Pre-requirement
 * New flash chip: I used Winbond 8MiB GD25Q64CSIG

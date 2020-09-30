@@ -106,3 +106,23 @@ sudo docker save -o ~/working/VMs/docker_jekyll-text-theme_dev_tuyenld.tar docke
 docker load -i ~/working/VMs/docker_jekyll-text-theme_dev_tuyenld.tar
 
 ```
+
+```bash
+# -w gfm as argument in the command line to omit the dimensional of Images ({width="3.266949912510936in" height="2.141852580927384in")
+# --extract-media: image output in docs
+pandoc --extract-media ./myMediaFolder DIY\ screen\ PI.docx -w gfm -o output.md
+
+
+```
+
+```
+Use four spaces to indent content between bullet points
+
+1. item 1
+2. item 2
+
+    ```
+    Code block
+    ```
+3. item 3
+```

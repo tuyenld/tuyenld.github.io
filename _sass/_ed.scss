@@ -147,6 +147,18 @@ p {
 /* Lists */
 ul {
   list-style: circle;
+  
+}
+
+/*ldtuyen */
+#markdown-toc li > li > ul {
+  list-style: none;
+}
+#markdown-toc li {
+  list-style: none;
+}
+#markdown-toc li > ul {
+  list-style: none;
 }
 
 ul, ol {

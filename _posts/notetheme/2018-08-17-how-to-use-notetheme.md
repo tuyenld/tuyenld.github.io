@@ -1,7 +1,7 @@
 ---
 title: How to use NoteTheme
 categories: [notetheme]
-tags: [jekyll,theme,notetheme]
+tags: [blog]
 maths: 1
 toc: 1
 comment: 1
@@ -11,6 +11,16 @@ datacamp: 1
 In this tutorial, I suppose that you have already [installed notetheme]({{ site.baseurl }}/how-to-install-notetheme), just follow the ones you need and don't forget to leave a comment below.
 
 {% include tip.html content="I'm not a native English speaker, please ignore my bad expressions." %}
+
+<fieldset class="field-set" markdown="1">
+<legend class="leg-title">TL;DR</legend>
+
+- Show the post in a flexible way.
+- Show the figures any place
+- Show the maths, the code blocks in a beautiful way.
+- and many things else...
+
+</fieldset>
 
 {% include toc.html %}
 
@@ -193,6 +203,73 @@ You can also insert a keyboard like this <kbd>Ctrl</kbd> + <kbd>B</kbd>, just us
 {% include img-inline.html content="/link/to/figure/" %}
 {% endraw %} ~~~
 
+### Insert code & figures
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+
+You can insert any code you want with the syntax highlight like below
+
+~~~ latex
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+ 
+\begin{document}
+
+This is an example of \LaTeX document, but you can use other language like C++, Python, Matlab,...
+
+\end{document}
+~~~
+
+</div>
+<div class="col s12 l6" markdown="1">
+
+or something appears in the command line windows like this
+
+<div class="terminal">
+$ sudo apt-get update
+</div>
+
+</div>
+</div>
+
+
+You can even couple inseting a code block with a side-by-side figure like this
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+~~~ python
+import matplotlib.pyplot as plt
+plt.plot(year,pop)
+plt.show()
+~~~
+</div>
+<div class="col s12 l6" markdown="1">
+
+![]({{ site.baseurl }}/images/posts/f1.svg){:.w-400 .no-border}
+
+</div>
+</div>
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+
+![]({{ site.baseurl }}/images/posts/dog.png){:.w-300 .no-border}
+
+</div>
+<div class="col s12 l6" markdown="1">
+
+... or something like this, but on the right! 
+
+**Oh, I'm a very small dog <img class="img-inline" src="{{ site.baseurl }}/images/posts/dog-inline.png" />  and I'm inline text.**
+
+</div>
+</div>
+
 ## Insert an video from Youtube
 
 Determine the youtube video's url, like this
@@ -209,9 +286,19 @@ Choose `wIsK4kQTrIg` and put it inside below code
 
 In that, `5` represents the percent your youtube container width in comparison with the page's width, for example, `5` means "50%". You can choose any integer number between `3` and `10`. This size is only available on a wide screen (min width is 993px), when the screen is smaller than 993px, the width becomes automatically 100% of page width.
 
+You can insert any size of youtube container on the large screen,
+
+{% include youtube.html content="8f7eSJOHeYY" size="8" %}
+
+... or with smaller one
+
+{% include youtube.html content="8f7eSJOHeYY" size="4" %}
+
 ## For writing posts
 
 ### Remove heading numbering
+
+{% include warning.html content="Only auto numbering from HEADER 2 (##)" %}
 
 If you don't want display number before some heading, just put BEFORE this heading `{.nocount}`, for example,
 
@@ -312,7 +399,7 @@ This is the result
 </div>
 </div>
 
-You can change the value of `5` and `6` by other numbers depending on the ratio between their size (their sum must be equal to `11`). Read more on the [grid of materialize](http://next.materializecss.com/grid).
+You can change the value of `5` and `6` by other numbers depending on the ratio between their size (their sum must be equal to `11`). Read more on the [grid of materialize](http://materializecss.com/grid).
 
 
 ### Insert a read-more link
@@ -386,6 +473,8 @@ Content in step 2
 
 
 ## Mathematical expressions
+
+You need to include `maths: 1` in YAML front 
 
 - Inline math, use `$math-expression$`
 - Block of math, use `$$math block$$` or 
@@ -573,7 +662,7 @@ The content of extra info of the post.
 </p>
 {% endhighlight %}
 
-> Other normal blockquote like this.
+> A bloquequote will display like this. You can also use [all designed components](https://materializecss.com/) from Materialize if you want.
 
 ### Insert resume of the post
 
@@ -648,3 +737,39 @@ Already-defined tags:
 {% endif %}
 {% endfor %}
 </p>
+
+## How can you make a post like this?
+
+<p class="post-more-info" markdown="1">
+If you need something more, just let me know in the comment below this post!
+</p>
+
+<div  class="thi-step">
+<div class="step">
+<div class="step-number">
+</div>
+<div class="step-content" markdown="1">
+Download [this theme](https://github.com/dinhanhthi/notetheme).
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">
+</div>
+<div class="step-content" markdown="1">
+Read [this link]({{site.baseurl}}/how-to-install-notetheme) to know how to install it and create a new website for yourself.
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">
+</div>
+<div class="step-content" markdown="1">
+Follow [this link]({{site.baseurl}}/how-to-use-notetheme) to make an awesome post like this one.
+</div>
+</div>
+</div>
+
+Just use <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy and paste shortcodes defined in NoteTheme.
+
+{% include more.html content="[Thank you and let's start!](https://dinhanhthi.github.io/NoteTheme/welcome-to-notetheme)." %}

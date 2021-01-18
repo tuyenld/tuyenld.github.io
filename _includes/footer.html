@@ -1,13 +1,23 @@
 <footer class="page-footer teal">
   <div class="footer-copyright">
     <div class="container text-white">
-     <a href="{{ site.baseurl }}">{{ site.title }}</a> &#xA9; {{"now" | date: "%Y"}} Inherited from <a href="https://shawnteoh.github.io/matjek/">MatJeck</a>.
+     <a href="{{ site.baseurl }}">{{ site.user.name }}</a> &#xA9; {{"now" | date: "%Y"}}. Built with <a href="https://github.com/dinhanhthi/notetheme">notetheme</a>.
     </div>
   </div>
 </footer>
 
-<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+{% if site.ext.jquery.src and site.ext.jquery.integrity %}
+  <script src={{ site.ext.jquery.src }} integrity={{ site.ext.jquery.integrity }} crossorigin="anonymous"></script>
+{% else %}
+  <script src="{{ site.baseurl }}/assets/js/jquery-2.2.4.min.js"></script>
+{% endif %}
+
+{% if site.ext.materialize.js %}
+  <script src={{ site.ext.materialize.js }}></script>
+{% else %}
+  <script src="{{ site.baseurl }}/assets/js/materialize.min.js"></script>
+{% endif %}
+
 
 {% for js in layout.js %}
   {% if js contains "//" %}

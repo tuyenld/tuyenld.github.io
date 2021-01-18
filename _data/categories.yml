@@ -2,3 +2,17 @@
   name: NoteTheme
 - slug: it
   name: Information Technology
+- slug: embedded
+  name: Embedded
+- slug: linux
+  name: Linux
+- slug: life
+  name: Life
+- slug: diy
+  name: DIY
+- slug: aoi
+  name: Age of Information
+- slug: toefl
+  name: TOEFL
+- slug: dl
+  name: Deep Learning

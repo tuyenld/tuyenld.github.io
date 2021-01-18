@@ -1,8 +1,69 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500&amp;subset=latin-ext,vietnamese" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=vietnamese" rel="stylesheet">
-  <meta name="google-site-verification" content="8zqeFQNuNAWS7ye6oN69hdEeYC_RsDyAlhht79xtAQo" />
+  <!-- <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500&amp;subset=latin-ext,vietnamese" rel="stylesheet"> -->
+  {% if site.ext.fonts.inter %}
+    <link rel="stylesheet" href={{ site.ext.fonts.inter }} rel="stylesheet">
+  {% else %}
+    <style>
+      /* inter - vietnamese */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        /*src: local(''),*/
+        src: 
+             url('{{ site.baseurl }}/assets/fonts/inter-v2-vietnamese_latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+             url('{{ site.baseurl }}/assets/fonts/inter-v2-vietnamese_latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* inter-regular - vietnamese */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        src: 
+             url('{{ site.baseurl }}/assets/fonts/inter-v2-vietnamese_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+             url('{{ site.baseurl }}/assets/fonts/inter-v2-vietnamese_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* inter-600 - vietnamese */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        src: 
+             url('{{ site.baseurl }}/assets/fonts/inter-v2-vietnamese_latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+             url('{{ site.baseurl }}/assets/fonts/inter-v2-vietnamese_latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+    </style>
+  {% endif %}
+
+  {% if site.ext.fonts.dancingScript %}
+    <link rel="stylesheet" href={{ site.ext.fonts.dancingScript }} rel="stylesheet">
+  {% else %}
+    <style>
+      /* dancing-script-regular - latin */
+      @font-face {
+        font-family: 'Dancing Script';
+        font-style: normal;
+        font-weight: 400;
+        src: 
+             url('{{ site.baseurl }}/assets/fonts/dancing-script-v15-vietnamese-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+             url('{{ site.baseurl }}/assets/fonts/dancing-script-v15-vietnamese-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      /* dancing-script-700 - latin */
+      @font-face {
+        font-family: 'Dancing Script';
+        font-style: normal;
+        font-weight: 700;
+        src: 
+             url('{{ site.baseurl }}/assets/fonts/dancing-script-v15-vietnamese-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+             url('{{ site.baseurl }}/assets/fonts/dancing-script-v15-vietnamese-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+    </style>
+  {% endif %}
+
+  {% if site.googleSiteVerification %}
+    <meta name="google-site-verification" content={{ site.googleSiteVerification }} />
+  {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="{{ site.baseurl }}{{ site.banner }}" />
 
@@ -14,7 +75,7 @@
     {% if page.title %}
       {{ page.title | escape }} | {{ site.title }}
     {% else %}
-      {{ site.title | escape }} | You cannot remember everything
+      {{ site.title | escape }} | {{ site.description }}
     {% endif %}
   </title>
 
@@ -44,8 +105,55 @@
   {% endif %}
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}{{ site.favicon }}">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+{% if site.ext.materialize.css %}
+  <link rel="stylesheet" href={{ site.ext.materialize.css }}>
+{% else %}
+  <link rel="stylesheet" href={{ site.baseurl }}/assets/css/materialize.min.css>
+{% endif %}
+
+  {% if site.ext.fonts.materialIcons %}
+    <link rel="stylesheet" href={{ site.ext.fonts.materialIcons }}>
+  {% else %}
+    <style>
+      /* http://google.github.io/material-design-icons/#icon-font-for-the-web */
+      @font-face {
+         font-family: 'Material Icons';
+         font-style: normal;
+         font-weight: 400;
+      /*   src: local('Material Icons'),
+              local('MaterialIcons-Regular'),*/
+           src:
+              url('{{ site.baseurl }}/assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+              url('{{ site.baseurl }}/assets/fonts/MaterialIcons-Regular.woff') format('woff');
+      }
+
+      .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+      }
+    </style>
+  {% endif %}
+
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/thi_scss.css">

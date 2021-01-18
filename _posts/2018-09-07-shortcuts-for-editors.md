@@ -1,7 +1,7 @@
 ---
 title: Shortcuts for editors
 categories: [it]
-tags: [jekyll,notetheme]
+tags: [blog]
 maths: 1
 toc: 1
 snippet: 1

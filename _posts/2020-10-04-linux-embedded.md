@@ -748,10 +748,22 @@ $ python3  -m site --user-base
 patent = 'uploads(.*?)\"'
 ```
 
+## Resize image keep ratio
+
+```bash
+# https://askubuntu.com/a/135489
+# 1654x is width pixel
+convert '*.png[1654x]' resized%03d.png
+```
+
 ## image to pdf
 ```bash
 # Reduce quality if the output file is too big
 convert "*.{png,jpeg}" -quality 100 outfile.pdf
+
+# Keep same image size
+# https://unix.stackexchange.com/a/74976
+convert "resized*.{png}" -quality 100 -units PixelsPerInch -density 150x150 multipage.pdf
 
 # Fix error: convert-im6.q16: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/408.
 sudo vi /etc/ImageMagick-6/policy.xml
@@ -774,6 +786,83 @@ Assuming it's simply a 'rights' (owner) password that restricts things like edit
 1. Do what you like with the OutputFile.
 
 If your PDF file is user password protected, change step 4 to `qpdf --decrypt --password=yourpassword InputFile OutputFile`
+
+## Shrinkpdf: shrink PDF files with Ghostscript (reduce pdf size)
+
+[How can I reduce the file size of a scanned PDF file?](https://askubuntu.com/a/113547)
+
+> No.1
+
+```bash
+http://www.alfredklomp.com/programming/shrinkpdf/
+
+# 150 dpi
+./shrinkpdf.sh file.pdf out.pdf 150
+# 120 dpi
+./shrinkpdf.sh file.pdf out.pdf 120
+
+```
+> No.2
+
+34.44″
+38.74″
+
+```bash
+    I use LibreOffice Draw to open the pdf.
+    I then "export as pdf"
+    And set "jpeg compression quality" to 10% and "image resolution" to 150 dpi
+
+    High-school-transcript-Tuyen-Le.pdf from 36 MB to 2.6 MB
+```
+
+
+## Edit pdf on Linux
+
+```bash
+
+Libre Office 7.1 (Draw) > Open > PDF File
+You also need to show panel: View > Page Pane
+
+cd DEBS/
+sudo dpkg -i *.deb
+
+```
+## extract-img-from-pdf
+
+```python
+# python3 extract-img-from-pdf.py
+import fitz
+doc = fitz.open("file.pdf")
+for i in range(len(doc)):
+    for img in doc.getPageImageList(i):
+        xref = img[0]
+        pix = fitz.Pixmap(doc, xref)
+        if pix.n < 5:       # this is GRAY or RGB
+            pix.writePNG("p%s-%s.png" % (i, xref))
+        else:               # CMYK: convert to RGB first
+            pix1 = fitz.Pixmap(fitz.csRGB, pix)
+            pix1.writePNG("p%s-%s.png" % (i, xref))
+            pix1 = None
+        pix = None
+```
+## Merge / convert multiple PDF files into one PDF
+
+```bash
+# https://stackoverflow.com/a/19358402
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf mine1.pdf mine2.pdf
+```
+
+## Migrate from Sublime Text to VS Code
+
+### Key binding
+[See more](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
+
+| vscode                | sublime-text  | decs                   |
+| --------------------- | ------------- | ---------------------- |
+| ctrl+shift+o > ctrl+r | ctrl+r        | Heading, function list |
+| ctrl+shift+i (linux)  |               | Table formater         |
+| ctrl+p                | ctrl+p        | Go to file             |
+| alt+up                | ctrl+shift+up | Move line up           |
 
 ## iptable
 ```bash

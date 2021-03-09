@@ -815,6 +815,15 @@ http://www.alfredklomp.com/programming/shrinkpdf/
     High-school-transcript-Tuyen-Le.pdf from 36 MB to 2.6 MB
 ```
 
+## How to resize page to fit drawing contents in Open office/Libre Office Draw
+
+
+1. Press `Ctrl-A` to select everything.
+2. Under `Format>Position and Size` you can see the exact size of the selection. It's helpful to copy the value of Width and Height to an editor (or a piece of paper). Click Cancel.
+3. Open `Format>Page`: Set Width and Height according to the size of the selection. Set all Margins to zero. Click OK.
+4. Open `Format>Position and Size` again: Set both Position X an Position Y to zero. 
+5. Click OK.
+
 
 ## Edit pdf on Linux
 
@@ -850,6 +859,9 @@ for i in range(len(doc)):
 ```bash
 # https://stackoverflow.com/a/19358402
 gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf mine1.pdf mine2.pdf
+
+# size(output) = size(file1) + size(file2)
+pdftk file1.pdf file2.pdf cat output output.pdf
 ```
 
 ## Migrate from Sublime Text to VS Code

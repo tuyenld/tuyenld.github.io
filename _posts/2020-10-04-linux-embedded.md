@@ -259,6 +259,11 @@ ldtuyen@pc:~$ sudo apt-get install dnsutils
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
+## Good calculator
+
+```bash
+Qalculate
+```
 ## Change Timezone time/date
 
 ```bash
@@ -649,7 +654,23 @@ sudo add-apt-repository ppa:openjdk-r/ppa \
 && sudo apt-get update -q \
 && sudo apt install -y openjdk-11-jdk
 ```
+## Remove PPA (Linux repo list)
 
+[How can PPAs be removed?](https://askubuntu.com/a/173209)
+
+Alternately, as ppas are stored in /etc/apt/sources.list.d you can find the one you want to remove by entering:
+
+```bash
+ls /etc/apt/sources.list.d
+```
+Then when you have noted the name of that offending ppa (e.g. myppa.list), you can enter:
+
+```bash
+sudo rm -i /etc/apt/sources.list.d/myppa.list
+
+# For example:
+sudo rm -i /etc/apt/sources.list.d/inkscape_dev-ubuntu-stable-hirsute.list
+```
 
 ## screen GNU
 
@@ -862,6 +883,11 @@ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf mine1.pdf mine
 
 # size(output) = size(file1) + size(file2)
 pdftk file1.pdf file2.pdf cat output output.pdf
+```
+
+## Make a sound once process is complete
+```bash
+make; spd-say done
 ```
 
 ## Migrate from Sublime Text to VS Code

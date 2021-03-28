@@ -1198,7 +1198,16 @@ vlc --demux=avformat wibble.mjpg
 vlc --demux=avformat 2592_1944_raspivid.mjpg
 >> OK
 
+vlc v4l2:// :v4l2-dev=/dev/video0 \
+            :v4l2-width=1600  \
+            :v4l2-height=1200 -- \
+            sout="#transcode{vcodec=theo,vb=256,fps=10}"
 
+
+vlc v4l2:// :v4l2-dev=/dev/video0 \
+            :v4l2-width=2592 \
+            :v4l2-height=1944 -- \
+            sout="#transcode{vcodec=theo,vb=256,fps=5}"
 ```
 
 

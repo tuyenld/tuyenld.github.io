@@ -774,11 +774,18 @@ patent = 'uploads(.*?)\"'
 ```bash
 # https://askubuntu.com/a/135489
 # 1654x is width pixel
+
+# need to install
+sudo apt install imagemagick
+
 convert '*.png[1654x]' resized%03d.png
 ```
 
 ## image to pdf
 ```bash
+# Need to install
+sudo apt install imagemagick
+
 # Reduce quality if the output file is too big
 convert "*.{png,jpeg}" -quality 100 outfile.pdf
 
@@ -860,6 +867,11 @@ sudo dpkg -i *.deb
 ## extract-img-from-pdf
 
 ```python
+# https://stackoverflow.com/a/47877930
+
+# need to install library
+# pip install PyMuPDF
+
 # python3 extract-img-from-pdf.py
 import fitz
 doc = fitz.open("file.pdf")

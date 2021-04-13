@@ -12,7 +12,9 @@
   name: DIY
 - slug: aoi
   name: Age of Information
-- slug: toefl
-  name: TOEFL
+- slug: lang
+  name: Language
 - slug: dl
   name: Deep Learning
+- slug: uncat
+  name: Uncategory

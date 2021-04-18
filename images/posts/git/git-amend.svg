@@ -15,7 +15,7 @@
    height="158.73"
    id="svg438"
    sodipodi:docname="git-amend.svg"
-   inkscape:version="1.0.2 (e86c870, 2021-01-15)">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
      id="metadata442">
     <rdf:RDF>
@@ -549,5 +549,27 @@
            id="use430" />
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.26025772px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.03150642"
+       x="407.46512"
+       y="241.31746"
+       id="text314"><tspan
+         sodipodi:role="line"
+         id="tspan312"
+         x="407.46512"
+         y="241.31746"
+         style="font-size:22.00547028px;stroke-width:1.03150642">9bc6e</tspan></text>
+    <text
+       id="text318"
+       y="246.68976"
+       x="811.46252"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.26025772px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.03150642"
+       xml:space="preserve"><tspan
+         style="font-size:22.00547028px;stroke-width:1.03150642"
+         y="246.68976"
+         x="811.46252"
+         id="tspan316"
+         sodipodi:role="line">e951c</tspan></text>
   </g>
 </svg>

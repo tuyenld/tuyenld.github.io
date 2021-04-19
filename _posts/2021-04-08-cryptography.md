@@ -31,4 +31,5 @@ $\vert U \vert$: size của tập hợp, số phần tử
 - $A_1 \subset U, A_2 \subset U: P[A_1 \cup A_2] \leq P[A_1] + P[A_2]$
 - random variables $X:U \to V$ e.g. $X:\{0,1\}^n \to \{0,1\}; X(y) = lsb(y) \space \in \{0,1\}$
 - Negligible và non-negligible 
-  - $\epsilon$:  
+  - $\epsilon$: 
+- malleable: easy to change to new shape (no integrity)

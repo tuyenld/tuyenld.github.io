@@ -897,6 +897,15 @@ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf mine1.pdf mine
 pdftk file1.pdf file2.pdf cat output output.pdf
 ```
 
+## Split one pdf page into two pages
+E.g. ![](/images/posts/linux/split-onepage-pdf.png)
+
+```bash
+# https://askubuntu.com/a/698307
+
+sudo apt-get install mupdf-tools
+mutool poster -x 2 input.pdf output.pdf
+```
 ## Make a sound once process is complete
 ```bash
 make; spd-say done

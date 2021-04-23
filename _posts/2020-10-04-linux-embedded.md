@@ -923,6 +923,12 @@ make; spd-say done
 | ctrl+p                              | ctrl+p        | Go to file             |
 | alt+up                              | ctrl+shift+up | Move line up           |
 
+### Cannot use Vietnamese keyboard in *.md file
+
+I am not sure whether it is the same issue. 
+But I suggest [deleting](https://github.com/yzhang-gh/vscode-markdown/issues/617#issuecomment-585629661) 
+the `onBackspaceKey` keybinding registered by this extension.
+
 ## iptable
 ```bash
 # https://backreference.org/2010/06/11/iptables-debugging/

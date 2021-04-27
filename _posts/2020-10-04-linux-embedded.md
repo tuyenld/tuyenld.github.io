@@ -896,7 +896,15 @@ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf mine1.pdf mine
 # size(output) = size(file1) + size(file2)
 pdftk file1.pdf file2.pdf cat output output.pdf
 ```
+## Remove pdf title, file metadate
 
+```bash
+sudo apt-get install libimage-exiftool-perl
+# https://askubuntu.com/a/391142
+
+exiftool -all= inputfile
+
+```
 ## Split one pdf page into two pages
 E.g. ![](/images/posts/linux/split-onepage-pdf.png)
 

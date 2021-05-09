@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux configurations
+title: Linux and Networking configurations
 categories:
 - linux
 comments: true
@@ -176,7 +176,8 @@ ping6 -D -O google.com
 # [1566958427.993347] 64 bytes from 2404::8b: icmp_seq=25 ttl=49 time=81.9 ms
 ```
 
-## Firewall ufw
+## Firewall ufw, ebtables, iptables, Netfilter
+
 ```bash
 # https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04
 sudo ufw status verbose
@@ -185,6 +186,125 @@ sudo ufw enable
 sudo ufw allow ssh
 sudo ufw allow samba
 ```
+
+### iptable
+```bash
+# https://backreference.org/2010/06/11/iptables-debugging/
+
+iptables -t raw -S -v  | grep helper
+iptables -t filter -S -v | grep helper
+iptables -t nat -S -v   | grep helper
+
+iptables -t raw  -L --line-numbers
+iptables -t filter -L INPUT -v --line-numbers
+
+# see number of package going chain
+iptables -t nat -nvL
+
+## debug out going package
+ip6tables -t raw -A PREROUTING -p ipv6-icmp -d 2001:db8:1111:1111::3 -j TRACE
+## debug in comming package
+ip6tables -t raw -A PREROUTING -p ipv6-icmp -d 2001:db8:0:22:22:22:22:22 -j TRACE
+
+# debug in/out package
+iptables -t raw -A PREROUTING -p gre -j TRACE
+iptables -t raw -A PREROUTING  -p udp -m multiport --dports 67,68 -j TRACE
+
+# Get status of packet
+iptables -m contrack --ctstate RELATED,ESTABLISHED
+```
+
+`ebtables, iptables` là các modul trong project **Netfilter**. Netfilter sẽ được load như modul driver.
+ebtables và iptables là các lệnh (apps) được sử dụng trên userspace.
+- ebtables chủ yếu sử dụng ở lớp 2 MAC nhưng cũng có thể sử dụng được 1 số chức năng ở lớp 3 Network
+- iptables chủ yếu được dùng ở lớp 3 Network nhưng cũng có thể cung cấp 1 số chức năng ở lớp 2 MAC
+
+### Policy và chain
+
+- Trong 1 chain
+  - Rule được add thành từng list
+  - Packet được kiểm tra với từng rule
+    - Nếu thỏa mãn điều kiện thì thực hiện target [ACCEPT, DROP]
+    - Nếu không thỏa mãn điều kiện:
+      - Thực hiện kiểm tra các rule tiếp theo
+      - Nếu không có rule nào thỏa mãn thì thực hiện POLICY (1 chain khi khởi tạo phải có POLICY: ACCEPT hoặc DROP)
+
+**Quy tắc khi sử dụng POLICY**
+| 1                                                   | 2                                   |
+| --------------------------------------------------- | ----------------------------------- |
+| Default policy là DROP; add rule là ACCEPT          | Default là ACCEPT; add rule là DROP |
+| Sử dụng cho Input Chain                             | Sử dụng cho output chain            |
+| Chỉ cho phép truy cập từ IP hoặc 1 dải port tin cậy | Chỉ chặn 1 số IP không được phép    |
+
+Table gồm nhiều chain, chain lại gồm nhiều rule. Target thì đã được định nghĩa sẵn:
+
+| Target | Function                                                   |
+| ------ | ---------------------------------------------------------- |
+| ACCEPT | Allow packet to passthrough the firewall                   |
+| DROP   | Deny access by the packet                                  |
+| REJECT | Deny access and notify the sender                          |
+| QUEUE  | Send packet to userspace                                   |
+| RETURN | Jump to the end of chain and let default target process it |
+
+**Các ví dụ cụ thể**
+`iptables -m phydev -i -o`  
+Để iptables có thể phân biệt được gói tin đến từ eth0, eth1... thì phải load modul `physdev`
+Nhưng modul này chỉ sử dụng được cho Bridge packet, không sử dụng được cho Routing packet.
+Ví dụ bản tin đến HTTPS là routing packet nên không dùng được cách này.  
+
+## IPv6
+### Redirect IPv6
+
+```cpp
+/*
+  +-------------+         +------------+
+  |             |   3     |            |
+  |             |---------|            |
+  |   R1        |         |    R2      |
+  |             |         |            |
+  +-------------+         +------------+
+          ---                /
+            2\----         -/ 4
+                  \--     /
+              +-------------+
+              |             |
+              |             |
+              |   Switch    |
+              |             |
+              |             |
+            --+-------------+-
+          -/                  \-                          -
+        -/  1               5   \-
+      -/               +------------+
++------------+         |            |
+|            |         |            |
+|            |         |            |
+|   PC1      |         |   PC2      |
+|            |         |            |
++------------+         +------------+
+ */
+```
+- Bình thường: 1->2->3->4->5
+- Redirect IPv4: 1->4->5
+- Redirect IPv6: 1->5
+
+**Tunnel vs NAT64**
+![tunnel-vs-NAT64](/images/posts/linux/tunnel-vs-NAT64.svg)
+
+### DHCPv6
+- DHCPv6 chạy cơ bản theo 4 bước (SARR)
+  - Solict --> Advertise --> Request --> Reply
+- Router Advertise có chứa thông tin về Prefix Length và Prefix addr
+- Cấu hình ISC DHCPv6 server trên Centos
+  - `Prefix-length` trong bản tin PD mà server gửi về phụ thuộc vào `prefix-len` mà client gửi trong bản tin DHCPv6 Solicit
+  - Nếu client request prefix khác với prefix được cấu hình trên server thì PD trả về là `Not available`
+- Cấu hình DHCPv6 server chạy trên Cisco IOS
+  - Ignore `prefix-length` mà client gửi --> trả về PD được cấu hình trên server.
+- Chú ý sự khác nhau của 2 bản tin: Router Adv (RA) và DHCPv6 Adv (dù đều là Advertise)
+- Rapid commit: 
+  - Advertise -> Reply ngay
+  - Bản tin Reply của DHCPv6 server phải có trường `rapid-commit` (server DHCPv6 Jagonet k có trường này)
+
 ## Show all process 
 
 ```bash
@@ -202,10 +322,140 @@ sudo apt-get install openssh-server
 sudo systemctl status ssh
 sudo systemctl enable ssh
 ```
+## ARP
+
+1. TTL: trong ARP là thời gian cho thuê (sau thời gian này, entry sẽ bị xóa)
+2. Nếu switch không biết gửi bản tin đến cổng nào, thì nó sẽ forward đến tất cả các cổng
+
+
+## DHCP
+
+- DHCP hoạt động cơ bản theo 4 bước: Discover-Offer-Request-ACK (viết tắt là DORA cho dễ nhớ)
+  - DHCP Discover đưa ra các option mà client muốn lấy
+  - DHCP Offer dựa vào các option mà client yêu cầu và các option mà nó được cấu hình để trả lời client.
+- DHCP sử dụng ARP để xác định xem địa chỉ IP đó đã có máy nào dùng chưa.
+- Trong thư viện BSD Redhat thì mọi hàm system call đều gọi đến hàm `sosend`
+- DHCP Server phân biệt để cấp IP cho CPE, CM, eMTA dựa vào
+  - option 60 `vendor-class-identifier` trong bản tin DHCP Discover
+  - docsis -> CM; pktc -> MTA; eRouter -> CPE
+
+**Đối với DOCSIS** 
+- DHCP Offer và DHCP ACK phải có (xem thêm [CM-SP-MULPIv3.1](https://volpefirm.com/wp-content/uploads/2017/01/CM-SP-MULPIv3.1-I10-170111.pdf))
+  - `yiaddr`: your IP address
+  - IP của TFTP server
+  - Config file name trên TFTP server
+- CMTS dựa vào kênh X/Y downstream/upstream để xác định DHCP request nào đến từ CM hay CPE 
+sau đó thay đổi địa chỉ Gateway IP address `GIADDR`
+- Chú ý: 
+  - `file name` nằm ở header là **boot file name**
+  - option `file name`: nằm ở phần option _option 67_ - suboption.
+
+### DHCP Relay agent
+
+```cpp
+/*
+                     ┌──────────────┐
+                     │  DHCP Server │
+     ┌─────────┐     │              │
+     │ Router  ├─────┴──────────────┘
+     │    R1   │
+     └─┬────┬──┘
+       │    │
+┌──────┤    ├───────┐
+│      │    │  PC2  │
+│  PC1 │    │       │
+└──────┘    └───────┘
+ */
+```
+- Trong chế độ này Router R1 không trực tiếp cấp IP cho PC1 và PC2 mà nó sẽ chuyển tiếp bản tin DHCP này đến DHCP Server.
+- PC1 và PC2 không cần biết địa chỉ của DHCP Server.
+- `255.255.255.255` là bản tin broadcast từ client, nếu Router không được cấu hình là Relay Agent thì nó sẽ hủy bản tin này đi.
+  - Bản tin Discover-Request có cùng 1 `transaction ID`
+  - Bản tin Request-ACK có cùng 1 `transaction ID`
+- Time Release là thời gian Rebinding khi Renew không thành công.
+  - Mặc định: Renew 30s; Rebinding 60s
+
+## UPNP
+
+1. Upnp trên Router
+   - Khi enable: cho phép các thiết bị tự mở port mà không cần config trên router
+   - dynamically add port formally
+   - chức năng như `port forwarding` nhưng không cần phải vào web router để cấu hình
+2. Upnp thường được nhắc đến là `UPnP IGD` dùng để nghe nhạc, xem phim
+
+## NTP (Network Time Protocol)
+
+Có 2 chuẩn giờ thường được sử dụng:
+1. GMT: Greenwitch Mean Time: lấy sự chuyển động của mặt trời làm chuẩn, theo đó 1 ngày có 86.400s
+2. UTC: dựa trên hệ SI sử dụng đồng hồ lượng tử, theo đó 1 ngày có 86.400,002s
+--> Ngày nay sử dụng UTC, còn GMT được dùng để chỉ timezone
+
+Một số nước có giờ mùa hè **DST** (Daily Saving Time)
++ Vào các ngày mùa hè, đồng hồ sẽ được vặn _ngược lại_ sớm hơn 1-2h, vào một thời điểm cố định và kéo dài một khoảng thời gian cố định trong năm (đến khi hết mùa hè chẳng hạn)
++ Mục đích của điều này là tiết kiệm ánh sáng mặt trời, dậy sớm để đi làm.
++ VD: Đúng 2h sáng chủ nhật thứ 2 của tháng 7, đồng hồ tại Mỹ sẽ được **vặn ngược lại** thành 3h sáng và mọi người cần dậy sớm hơn 1h nếu không muốn trễ làm. Đến 2h sáng chủ nhật thứ 3 của tháng 4, đồng hồ sẽ được vặn theo chiều ngược lại thành 1h. Mọi thứ lại trở về bình thường.
+
+## Gói tin travel trong mạng như thế nào
+
+![goi-tin-travel-trong-mang](/images/posts/linux/package-travel-in-network.svg)
+
+| No. | IP src.      | IP des.     | MAC src. | MAC des. |
+| --- | ------------ | ----------- | -------- | -------- |
+| 1   | 192.168.10.2 | 172.16.0.10 | 0E3      | 401      |
+| 2   | 192.168.10.2 | 172.16.0.10 | 402      | B01      |
+| 3   | 192.168.10.2 | 172.16.0.10 | B02      | 224      |
+
+**Kết luận**
+- Địa chỉ IP src. và IP des. không đổi khi đi qua mạng (xét trong trường hợp không có NAT)
+- Địa chỉ MAC src. và MAC des. bị đổi khi đi qua mỗi Router
+
+
+## Community Wi-Fi
+
+```cpp
+/*
+                       +----------+
+                       |  ISP     |
+          +------------+  Router  |
+          | Tunnel (2) |          |
+          |   +--------+----------+
+          |   |
+          |   |
+  +------+---+---+
+  |              +-------------------+
+  |  Home Wi-Fi  |     Direct (1)    |
+  |              +----------+-----+  |
+  +------+----+--+          ------+--+---
+          |    |             |           |
+          |    |             |  Normal   |
+          |    |             |  Internet |
+          |    |             |  Access   |
+          | (2)|             +-----------+
+  --------+    |
+  Guest network|
+  -------------+
+ */
+```
+
+**Mục đích**
+- Tận dụng băng thông đường truyền không dùng đến 
+- Khi có guest kết nối đến, sử dụng đường truyền riêng, không ảnh hưởng đến băng thông
+
+**Cách làm**
+- Có thể thêm `Option 82` trong bản tin DHCP để làm việc này
+  - Suboption: `Circuit ID`: VLAN; `Remote ID`: MAC
+- Sử dụng L2oGRE: tunnel layer 2 để nhà mạng phân biệt public Wi-Fi và private Wi-Fi 
+
 
 ## DNS 
 
-- Change DNS server Ubuntu 14.04
+1. Load Distribution: Có web cache, lưu thông tin thường truy cập
+2. Domain: foo.com, Hostname: relays.foo.com
+3. FQDN: Fully qualified domain name
+4. Các loại DNS: A, MX, NS, Alias
+5. DNS Zone: record bao gồm tên và địa chỉ chứa IP của nó
+
+### Change DNS server Ubuntu 14.04
 
 ```bash
 # >> Persistent
@@ -221,14 +471,14 @@ $ vi /etc/resolv.conf
 # Restart your network
 $ sudo /etc/init.d/networking restart		
 ```
-- Show DNS server after Reboot
+### Show DNS server after Reboot
 
 ```bash
 nmcli device show <interfacename> | grep IP4.DNS	# Ubuntu >= 15
 nmcli dev list iface <interfacename> | grep IP4		# Ubuntu <= 14
 ```
 
-- Assign DNS record
+### Assign DNS record
 
 ```bash
 $ sudo vi /etc/hosts 
@@ -240,7 +490,7 @@ $ sudo service network-manager restart
 $ sudo service networking restart
 ```
 
-- nslookup
+### nslookup
 
 ```bash
 ldtuyen@pc:~$ apt-cache search nslookup
@@ -433,6 +683,44 @@ iface eno1 inet static
         up ip -6 addr add 2001::2/64 dev eno1
 
 ```
+
+Các địa chỉ IP thường dùng:
+- Địa chỉ mạng là 0, địa chỉ gateway là 255
+- `127.0.0.1` loopback
+- `0.0.0.0` địa chỉ IP không tồn tại
+
+## Route trong Linux
+
+- Routing table sử dụng **Longest Prefix Match**. Ví dụ
+  - `192.168.0.0/16   next-hop 10.0.0.1 IF1`
+  - `192.168.1.0/24   next-hop 11.0.0.1 IF2`
+  - `192.168.1.128/25 next-hop 12.0.0.1 IF3`
+  - Như vậy, khi muốn gửi bản tin đến `192.168.1.129` thì sẽ gửi qua `192.168.1.128/28 IF3`
+### route -n
+
+Hoặc `ip route show`
+```bash
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.254   0.0.0.0         UG    100    0        0 eno16777736
+192.168.1.0     0.0.0.0         255.255.255.0   U     100    0        0 eno16777736
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
+```
+Các trường Flags
+- G: sử dụng gateway, sự khác nhau giữa có và không có cờ này được thể hiện bên dưới.
+- U: up - trạng thái đang hoạt động
+
+
+### route add
+
+| Indivisual host Destination                                  | Subnet Destionation                             |
+| ------------------------------------------------------------ | ----------------------------------------------- |
+| `route add -net 205.192.25.0 netmask 255.255.255.0 dev eth3` | `route add -net 205.192.25.0/24 gw 203.162.5.1` |
+| `route -n`                                                   | `route -n`                                      |
+| `205.192.25.0 0.0.0.0 U eth3 `                               | `205.192.25.0 203.162.5.1 UG eth3`              |
+| Khi gửi bản tin đến IP `205.192.25.5` thì                    |                                                 |
+| Des. IP: 205.192.25.5                                        | Des. IP: 205.192.25.5                           |
+| Des. Mac: ARP who is `205.192.25.5`                          | Des. Mac: ARP who is `203.162.5.1`              |
 
 ## nginx
 ```bash
@@ -936,30 +1224,6 @@ make; spd-say done
 I am not sure whether it is the same issue. 
 But I suggest [deleting](https://github.com/yzhang-gh/vscode-markdown/issues/617#issuecomment-585629661) 
 the `onBackspaceKey` keybinding registered by this extension.
-
-## iptable
-```bash
-# https://backreference.org/2010/06/11/iptables-debugging/
-
-iptables -t raw -S -v  | grep helper
-iptables -t filter -S -v | grep helper
-iptables -t nat -S -v   | grep helper
-
-iptables -t raw  -L --line-numbers
-iptables -t filter -L INPUT -v --line-numbers
-
-# see number of package going chain
-iptables -t nat -nvL
-
-## debug out going package
-ip6tables -t raw -A PREROUTING -p ipv6-icmp -d 2001:db8:1111:1111::3 -j TRACE
-## debug in comming package
-ip6tables -t raw -A PREROUTING -p ipv6-icmp -d 2001:db8:0:22:22:22:22:22 -j TRACE
-
-# debug in/out package
-iptables -t raw -A PREROUTING -p gre -j TRACE
-iptables -t raw -A PREROUTING  -p udp -m multiport --dports 67,68 -j TRACE
-```
 
 ## nmap
 ```bash

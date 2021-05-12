@@ -114,7 +114,7 @@ cat /etc/ssh/sshd_config
 ```
 Port 2221
 	
-ListenAddress 192.168.100.137
+ListenAddress 192.168.1.137
 
 # Change to no to disable tunnelled clear text passwords
 PasswordAuthentication no
@@ -129,7 +129,7 @@ cat /etc/ssh/sshd_config
 Port 2221
 # Use these options to restrict which interfaces/protocols sshd will bind to
 #ListenAddress ::
-ListenAddress 192.168.100.137
+ListenAddress 192.168.1.137
 Protocol 2
 # HostKeys for protocol version 2
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -217,7 +217,7 @@ UsePAM no
 sudo nano /etc/docker/daemon.json 
 {
 	"ipv6": true,
-	"fixed-cidr-v6": "2001:db8:1::/64"
+	"fixed-cidr-v6": "2001:22:1::/64"
 }
 
 sudo systemctl restart docker
@@ -228,9 +228,9 @@ ufw disable
 
 
 docker network create -d macvlan  \
-    --subnet=172.16.0.0/24  \
-    --ip-range=172.16.0.22/32 \
-    --gateway=172.16.0.1  \
+    --subnet=172.16.10.0/24  \
+    --ip-range=172.16.10.22/32 \
+    --gateway=172.16.10.1  \
     -o parent=eno1 macnet32
 
 # Start a container and verify the address is 192.168.32.128
@@ -248,11 +248,11 @@ sudo vim /etc/network/interfaces
 ```
  auto br0
  iface br0 inet static
-         address 172.16.0.20
+         address 172.16.10.20
          netmask 255.255.255.0
-         network 172.16.0.0
-         broadcast 172.16.0.255
-         gateway 172.16.0.1
+         network 172.16.10.0
+         broadcast 172.16.10.255
+         gateway 172.16.10.1
          bridge_ports eno1
          bridge_stp on
          bridge_maxwait 0
@@ -286,7 +286,7 @@ virsh edit win7
 
 ```
     <interface type='bridge'>
-      <mac address='52:54:00:53:ab:a4'/>
+      <mac address='52:54:55:53:ab:33'/>
       <source bridge='br0'/>
       <model type='rtl8139'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>

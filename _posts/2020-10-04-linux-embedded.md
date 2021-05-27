@@ -1069,6 +1069,12 @@ sudo apt install imagemagick
 convert '*.png[1654x]' resized%03d.png
 ```
 
+## Crop, cut image to one center part
+```bash
+# https://stackoverflow.com/a/41403898
+convert input.png -gravity center -crop WxH+0+0 +repage output.png
+```
+
 ## image to pdf
 ```bash
 # Need to install

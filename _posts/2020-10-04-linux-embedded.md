@@ -167,6 +167,13 @@ nano ~/.bashrc
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 ```
 
+## For
+
+```bash
+for f in *.txt; do
+    mv -- "$f" "$(basename -- "$f" .txt).text"
+done
+```
 ## Ping show timeout
 ```bash
 ping6 -D -O google.com
@@ -1067,6 +1074,9 @@ patent = 'uploads(.*?)\"'
 sudo apt install imagemagick
 
 convert '*.png[1654x]' resized%03d.png
+
+# you can maintain the filename by using -set option. Ex:
+convert "images/*.jpg[250x]" -set filename:base "%[basename]" "new_%[filename:base].jpg"
 ```
 
 ## Crop, cut image to one center part
@@ -1086,6 +1096,14 @@ convert "*.{png,jpeg}" -quality 100 outfile.pdf
 # Keep same image size
 # https://unix.stackexchange.com/a/74976
 convert "resized*.{png}" -quality 100 -units PixelsPerInch -density 150x150 multipage.pdf
+
+# convert images to pdf: How to make PDF Pages same size
+# https://unix.stackexchange.com/a/20057
+i=150; convert a.png b.png -compress jpeg -quality 70 \
+      -density ${i}x${i} -units PixelsPerInch \
+      -resize $((i*827/100))x$((i*1169/100)) \
+      -repage $((i*827/100))x$((i*1169/100)) multipage.pdf
+
 
 # Fix error: convert-im6.q16: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/408.
 sudo vi /etc/ImageMagick-6/policy.xml
